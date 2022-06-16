@@ -25,6 +25,9 @@ class Recipes
     #[ORM\Column(type: 'string', length: 255)]
     private $preparations;
 
+    #[ORM\OneToOne(mappedBy: 'Recipes', targetEntity: Picture::class, cascade: ['persist', 'remove'])]
+    private $picture;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -74,6 +77,23 @@ class Recipes
     public function setPreparations(string $preparations): self
     {
         $this->preparations = $preparations;
+
+        return $this;
+    }
+
+    public function getPicture(): ?Picture
+    {
+        return $this->picture;
+    }
+
+    public function setPicture(Picture $picture): self
+    {
+        // set the owning side of the relation if necessary
+        if ($picture->getRecipes() !== $this) {
+            $picture->setRecipes($this);
+        }
+
+        $this->picture = $picture;
 
         return $this;
     }
