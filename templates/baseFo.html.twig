@@ -7,11 +7,8 @@
         <meta name="author" content="" />
         <title>{% block title %}Evlow Foodies{% endblock %}</title>
         <!-- Favicon-->
-        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
-       
-        {% block css %}
-            <link href="/styles/app.css" rel="stylesheet" />
-        {% endblock %}
+        <link href="{{ asset('assets/css/styles.css') }}" rel="stylesheet">
+           
     </head>
     <body>
     <!-- Header-->

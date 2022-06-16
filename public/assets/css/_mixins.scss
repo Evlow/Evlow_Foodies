@@ -1,0 +1,67 @@
+//BUTTON
+@use "variables" as *;
+
+@mixin button-connect($background-color, $width, $height, $font-size) {
+    background-color: $background-color;
+    width: $width;
+    height: $height;
+    font-size: $font-size;
+    border: none;
+    font-weight: $weight;
+    border-radius: 15px 0 15px;
+}
+
+@mixin flex-center {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    text-align: center;
+}
+
+@mixin flex-start {
+    align-items: center;
+    justify-content: flex-start;
+    display: flex;}
+
+
+
+@mixin flex{
+    display: flex;
+    text-align: center;
+}
+@mixin positon-aboslute {
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+}
+
+@mixin border-none {
+    border-top: none;
+    border-left: none;
+    border-right: none;
+}
+
+@mixin separation-header{
+    border-top: solid 2px #9ce7a9;
+    border-bottom: solid 2px #9ce7a9;
+}
+
+@mixin separation-top {
+    border-top: solid 2px #9ce7a9;
+}
+@mixin separation-bottom {
+    border-bottom: solid 2px #9ce7a9;
+}
+
+
+@mixin width90-auto {
+    width: 90%;
+    margin: 0 auto;
+}
+
+@mixin width80-auto {
+    width: 80%;
+    margin: 0 auto;
+}
