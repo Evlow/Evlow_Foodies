@@ -6,7 +6,7 @@ use App\Entity\Recipes;
 use App\Form\RecipeType;
 use Monolog\DateTimeImmutable;
 use App\Repository\RecipesRepository;
-use Symfony\Bridge\Doctrine\ManagerRegistry;
+use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -47,12 +47,12 @@ class BoRecipesController extends AbstractController
         return $this->render('bo_recipes/recipes.html.twig', [
             //Enevoi variables à la vue
             'form_title' => 'Ajouter une recette',
-            'recipes' => 'recipes',
+            'recipes' => $recipe,
             'form_submit' => 'Ajoutez',
             'formRecipe' => $formRecipe->createView()
         ]);
     }
-    #[Route('/recettes/{id}', name: 'app_recipe')]
+    #[Route('/recettes/{id}', name: 'app_recipe_id')]
     public function index(int $id, ManagerRegistry $doctrine): Response
     {
         // On recupère toutes les recettes
@@ -66,12 +66,12 @@ class BoRecipesController extends AbstractController
     }
 
     #[Route('/recette/modifier/{id}', name: 'app_bo_recipes_up')]
-    public function recipetUpdate($id, Request $request, ManagerRegistry $doctrine): Response
+    public function recipeUpdate($id, Request $request, ManagerRegistry $doctrine): Response
     {      
         // On recupère le produit sélectionné avec l'ID
         $recipe = $doctrine->getRepository(Recipes::class)->find($id);
         // On initialise nos champs dates avec la date d'aujourd'hui
-        $recipe->setUpdatedAt(new DateTimeImmutable());
+        $recipe->setUpdatedAt(new DateTimeImmutable('now'));
         // Etape 01 : Crée une instance de la classe Form à partir de la classe Recipes
         $formRecipe = $this->createForm(RecipeType::class, $recipe);
      // Etape 02 : Permet de gérer le traitement de la saisie du formulaire.
@@ -105,14 +105,10 @@ class BoRecipesController extends AbstractController
     $entityManager->flush();
     $this->addFlash('success_edit', 'La recette '. $recipe->getTitle(). ' a été supprimée !');
     
-    return $this->redirectToRoute('app_fo_home');
-
-
-   
+    return $this->redirectToRoute('app_fo_home');  
 
    }
 
-
-
+  
 
 }

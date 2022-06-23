@@ -32,6 +32,21 @@
     <section>
         <h3 class="homeh3"><span>Les dernières recettes !</span></h3>
         <p>Vous retrouverez-ici les dernièrs recettes mises en ligne !</p>
+        <div class="carts">
+            <section class="content-card">
+                {% for recipe in recipes %}
+                <article class="card"> 
+                    <img class="img-card" src="/asset/vegetables.jpg" alt="">
+                    <h3 class="recipes-h3">{{recipe.title}}</h3>
+                    <p>{{recipe.description}}</p>
+                    <p>{{recipe.createdAt|date('d/m/Y')}}</p>
+    
+                    <button class="btn-article" type="button">Voir l'article</button>
+                </article>
+                {% endfor %}
+            </section>
+        
+        </div>
     </section>
 </article>
 {% endblock %}

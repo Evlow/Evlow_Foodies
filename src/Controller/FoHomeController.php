@@ -2,17 +2,19 @@
 
 namespace App\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\HttpFoundation\Response;
+use App\Entity\Recipes;
+use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class FoHomeController extends AbstractController
 {
     #[Route('/', name: 'app_fo_home')]
-    public function index(): Response
+    public function recipesAll(ManagerRegistry $doctrine)
     {
+        $recipes = $doctrine->getRepository(Recipes::class)->findBy([],['id' => 'DESC'], 4);
         return $this->render('fo_home/home.html.twig', [
-            'controller_name' => 'FoHomeController',
+            'recipes' => $recipes,
         ]);
     }
 }
