@@ -10,6 +10,7 @@ use Symfony\Bridge\Doctrine\ManagerRegistry;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class BoRecipesController extends AbstractController
@@ -92,5 +93,26 @@ class BoRecipesController extends AbstractController
         'formRecipe' => $formRecipe->createView()
     ]);
    }
+
+   #[Route('/recette/supprimé/{id}', name: 'app_bo_recipes_del')]
+   public function recipeDelete($id, ManagerRegistry $doctrine): RedirectResponse
+   {      
+       // On recupère la recette sélectionnée avec l'ID
+       $recipe= $doctrine->getRepository(Recipes::class)->find($id);
+   
+    $entityManager = $doctrine->getManager();
+    $entityManager->remove($recipe);
+    $entityManager->flush();
+    $this->addFlash('success_edit', 'La recette '. $recipe->getTitle(). ' a été supprimée !');
+    
+    return $this->redirectToRoute('app_home');
+
+
+   
+
+   }
+
+
+
 
 }
