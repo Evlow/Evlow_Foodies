@@ -38,7 +38,7 @@ class BoRecipesController extends AbstractController
             // Etape 3.2 : On envoi les données a la bdd
             $entityManager->flush();
             // Etape 3.3 : Affichage d'un message succès
-            $this->addFlash('success_product', 'La recette '. $recipe->getTitle(). ' a été ajouté !');
+            $this->addFlash('success_product', 'La recette '. $recipe->getTitle(). ' a été ajoutée !');
             // Etape 3.4 : redirection
             return $this->redirectToRoute('app_fo_home');
         }
@@ -51,7 +51,18 @@ class BoRecipesController extends AbstractController
             'formRecipe' => $formRecipe->createView()
         ]);
     }
-
+    #[Route('/recettes/{id}', name: 'app_recipe')]
+    public function index(int $id, ManagerRegistry $doctrine): Response
+    {
+        // On recupère toutes les recettes
+        $recipes = $doctrine->getRepository(Recipes::class)->findAll();
+        // On recupère la recette sélectionnée
+        $recipe = $doctrine->getRepository(Recipes::class)->find($id);
+        return $this->render('bo_recipes/recipes.html.twig', [
+            'recipes' => $recipes,
+            'recipe' => $recipe,
+        ]);
+    }
 
 
 }
