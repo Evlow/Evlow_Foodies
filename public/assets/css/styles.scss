@@ -151,10 +151,7 @@ margin: auto;
 .bloc-title {
   padding: 30px 0 30px 0;
 }
-.title-flex {
-  display: flex;
-  align-items: center;
-}
+
 //FOOTER
 footer {
   background-color: rgba(152, 228, 129, 0.0784313725);
@@ -381,7 +378,7 @@ h3 {
   margin: 0 auto;
 }
 
-h3:before {
+.homeh3:before {
   content: "";
   left: 0;
   right: 0;
@@ -391,7 +388,7 @@ h3:before {
   top: calc(50% - 1px);
 }
 
-h3 span {
+.homeh3 span {
   display: inline-block;
   padding: 0 10px;
   background: $primary-color;
@@ -450,3 +447,23 @@ margin: auto;
   display: flex;
   align-items: center;
 }
+
+//recipes//
+
+
+.carts {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.content-card{
+  display: flex;
+  justify-content: space-evenly;
+}  
+
+.card{
+  width: 20%;
+  border: #000 solid 3px;
+  text-align: center;
+}
+

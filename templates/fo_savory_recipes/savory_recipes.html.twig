@@ -1,83 +1,22 @@
 {% extends 'baseFo.html.twig' %}
 
 {% block body %}
-<main>
-    <h3 class="title-recipe">Tartes aux tomates</h3>
-    <div class="content-recipe">
-        <img class="img-recipe" src="./img/tomates.JPG" alt="">
-        <p class="p-intro">Lorem ipsum dolor sit amet. Et repellendus repudiandae aut dolorem culpa et
-            consectetur
-            dolor cum maiores
-            esse.
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic autem odio, asperiores repellendus
-            nostrum
-            id doloribus tenetur vel facere debitis commodi nesciunt deleniti consequatur neque doloremque nulla
-            perferendis dignissimos? Eaque!
-            Ratione in voluptatem consequatur vero pariatur necessitatibus accusamus sed magnam delectus rem
-            excepturi laudantium cum provident natus esse amet, voluptatibus ipsam suscipit at modi alias
-            dolorum
-            omnis laboriosam inventore? Magni!
-            Totam rem aspernatur iure! Culpa fugiat veritatis, ratie.</p>
+ <!-- CART -->
+ <div class="carts">
+        <h2>Les recettes salées</h2>
+        <section class="content-card">
+            {% for recipe in recipes %}
+            <article class="card"> 
+                <img class="img-card" src="/asset/vegetables.jpg" alt="">
+                <h3 class="recipes-h3">{{recipe.title}}</h3>
+                <p>{{recipe.description}}</p>
+                <p>{{recipe.createdAt|date('d/m/Y')}}</p>
+
+                <button class="btn-article" type="button">Voir l'article</button>
+            </article>
+            {% endfor %}
+        </section>
+    
     </div>
-    <article>
-        <div class="content-articles">
-            <section class="section-ingredients">
-             <div class="bloc-title">
-                    <div class="ovale">
-                    <h3 class="title-flex"><img class="ingredients" src="{{ asset('assets/picture/ingredient.svg') }}" alt="image ingrédients" />Ingédients
-                    </h3>
-                    </div>
-                </div>
-                <ul>
-                    <li>1 pâte feuilletée</li>
-                    <li>3 tomates</li>
-                    <li>3 cuillères à soupe de moutarde</li>
-                    <li>Herbes de Provence</li>
-                </ul>
-            </section>
 
-            <section class="section-preparations">
-                <div class="bloc-title">
-                    <div class="ovale">
-                    <h3 class="title-flex"><img class="preparations" src="{{ asset('assets/picture/preparation.svg') }}" alt="image préparation" />Préparations
-                    </h3>
-                </div>
-            </div>
-                <ul>
-                    <li> Lorem ipsum dolor sit amet. Et repellendus repudiandae aut dolo</li>
-                    <li> Lorem ipsum dolor sit amet. Et repellendus repudiandae aut dolo</li>
-                    <li> Lorem ipsum dolor sit amet. Et repellendus repudiandae aut dolo</li>
-                    <li> Lorem ipsum dolor sit amet. Et repellendus repudiandae aut dolo</li>
-                    <li> Lorem ipsum dolor sit amet. Et repellendus repudiandae aut dolo</li>
-                </ul>
-            </section>
-        </div>
-
-
-        <form method="POST" class="form-comment">
-            <h3 class="h3-comment">Laissez votre commentaire</h3>
-            <div class="content-comment">
-         
-                <div class="comment-row">
-            
-                    <div class="label-comment">
-                        <label class="name" for="nom">Prénom :</label>
-                        <input type="text" id="name" name="name" required />
-                    </div>
-                    <div class="label-comment">
-                        <label for="email">Adresse mail :</label>
-                        <input type="email" id="email" name="email" />
-                    </div>
-                </div>
-                <div class="comment">
-                    <label for="comment">Votre commentaire :</label>
-                    <textarea id="comment" name="comment" required></textarea>
-
-                    <div class="btn-contact">
-                        <button class="btn-send" type="submit">Envoyer</button>
-                    </div>
-                </div>
-            </div>
-    </article>
-</main>
 {% endblock %}

@@ -1,0 +1,131 @@
+@import url("https://fonts.googleapis.com/css2?family=Advent+Pro:wght@200&family=Beau+Rivage&family=David+Libre:wght@400;500&family=Palanquin:wght@100&family=Thasadith&display=swap");
+* {
+  font-family: "Advent Pro", sans-serif;
+}
+
+main {
+  width: 85%;
+  position: absolute;
+  top: 50px;
+  right: 0;
+  padding: 20px;
+}
+
+h1 {
+  font-size: 1em;
+  text-align: center;
+}
+
+h2 {
+  font-size: 1.5em;
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+label {
+  font-size: 1.3em;
+  font-weight: 600;
+}
+
+.img-aside {
+  width: 30px;
+  margin: 0 auto;
+  padding-top: 10px;
+}
+
+.img-import {
+  width: 20px;
+}
+
+.nav-back ul {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.nav-back a {
+  color: black;
+}
+
+header {
+  background-color: #ffa05c;
+  height: auto;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  padding-bottom: 5px;
+  font-size: 1.2em;
+}
+
+aside {
+  background-color: #f5b992;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  width: 150px;
+}
+
+.nav-aside a {
+  color: black;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.nav-aside li {
+  border: #461f03 1px solid;
+  border-radius: 20px 0 20px;
+  justify-content: center;
+  color: black;
+  width: 130px;
+  margin-bottom: 20px;
+  padding: 5px 0 5px 0;
+  background-color: antiquewhite;
+  font-size: 1.2em;
+}
+
+.nav-aside ul {
+  padding-top: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.img-import {
+  width: 30px;
+  margin-top: 20px;
+}
+
+.content-import {
+  display: flex;
+  border: dotted black 2px;
+  height: 200px;
+  width: 300px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+
+article {
+  background-color: rgb(248, 238, 231);
+  border-radius: 10px;
+  margin: auto;
+}
+
+#input-title {
+  width: 300px;
+  border-radius: 10px;
+  border-color: #f5b992;
+}
+
+textarea {
+  border-radius: 10px;
+  border-color: #f5b992;
+  width: 500px;
+  height: 200px;
+}
+
+.content-title {
+  padding: 40px;
+}/*# sourceMappingURL=styles.css.map */

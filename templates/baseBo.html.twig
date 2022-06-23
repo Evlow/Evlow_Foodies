@@ -9,9 +9,9 @@
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
        
-        {% block css %}
-            <link href="/css/styles.css" rel="stylesheet" />
-        {% endblock %}
+        <link href="{{ asset('assets/css/reset.css') }}" rel="stylesheet">
+        <link href="{{ asset('assets/css/stylesBo.css') }}" rel="stylesheet">
+   
     </head>
     <body>
     <!-- Navbar-->
