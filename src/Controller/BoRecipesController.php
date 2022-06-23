@@ -85,7 +85,7 @@ class BoRecipesController extends AbstractController
          // Etape 3.3 : Affichage d'un message succès
          $this->addFlash('success_product', 'La recette '. $recipe->getTitle(). ' a été modifiée !');
          // Etape 3.4 : redirection
-         return $this->redirectToRoute('app_home');
+         return $this->redirectToRoute('app_fo_home');
 
          
      }
@@ -105,7 +105,7 @@ class BoRecipesController extends AbstractController
     $entityManager->flush();
     $this->addFlash('success_edit', 'La recette '. $recipe->getTitle(). ' a été supprimée !');
     
-    return $this->redirectToRoute('app_home');
+    return $this->redirectToRoute('app_fo_home');
 
 
    
