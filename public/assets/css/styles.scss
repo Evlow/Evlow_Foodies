@@ -13,9 +13,9 @@ header {
 }
 
 h1 {
-  color: #ffa05c;
   font-size: $title-h1;
   text-align: center;
+ 
 }
 h2 {
   padding: $padding-top-bottom-30;
@@ -245,8 +245,6 @@ footer {
   flex-direction: column;
   margin: 0 auto;
 @include separation-header;
-
-
 }
 
 .comment {
@@ -348,7 +346,8 @@ article {
 }
 
 .content-intro::after {
-  background: url(/img/fond.jpg);
+  @include positon-absolute;
+  background: url(../picture/fond.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -357,7 +356,6 @@ article {
   content: "";
   opacity: 0.5;
   z-index: -1;
-@include positon-absolute;
 }
 
 section {

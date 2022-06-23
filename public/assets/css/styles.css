@@ -5,7 +5,7 @@
 }
 
 main {
-  background-color: rgb(254, 249, 249);
+  background-color: white;
 }
 
 header {
@@ -14,7 +14,6 @@ header {
 }
 
 h1 {
-  color:#ffa05c;
   font-size: 6em;
   text-align: center;
 }
@@ -360,4 +359,112 @@ label {
   border: none;
   font-weight: 600;
   border-radius: 15px 0 15px;
+}
+
+article {
+  background-color: white;
+}
+
+.logo-social img {
+  width: 30px;
+}
+
+.connect {
+  background-color: #ffa05c;
+  width: 100px;
+  height: 25px;
+  font-size: 1em;
+  border: none;
+  font-weight: 600;
+  border-radius: 15px 0 15px;
+}
+
+.connect-intro {
+  background-color: #ffa05c;
+  width: 140px;
+  height: 32px;
+  font-size: 0.9em;
+  border: none;
+  font-weight: 600;
+  border-radius: 15px 0 15px;
+}
+
+.content-intro {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  text-align: center;
+  height: 400px;
+  position: relative;
+  font-size: 1.5em;
+  font-weight: 600;
+}
+
+.paragraphe {
+  line-height: 80px;
+}
+
+.content-intro::after {
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  background: url(../picture/fond.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  text-align: center;
+  width: 100%;
+  content: "";
+  opacity: 0.5;
+  z-index: -1;
+}
+
+section {
+  width: 90%;
+  margin: 0 auto;
+}
+
+article {
+  padding: 50px 0 50px 0;
+  background-color: white;
+}
+
+section {
+  width: 90%;
+  margin: 0 auto;
+}
+
+h3 {
+  text-align: center;
+  position: relative;
+  width: 60%;
+  margin: 0 auto;
+}
+
+h3:before {
+  content: "";
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: #9ce7a9;
+  position: absolute;
+  top: calc(50% - 1px);
+}
+
+h3 span {
+  display: inline-block;
+  padding: 0 10px;
+  background: white;
+  position: relative;
+  z-index: 1;
+}
+
+article section p {
+  padding: 30px 0 30px 0;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  text-align: center;
 }/*# sourceMappingURL=styles.css.map */
