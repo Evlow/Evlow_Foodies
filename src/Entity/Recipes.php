@@ -28,6 +28,12 @@ class Recipes
     #[ORM\OneToOne(mappedBy: 'Recipes', targetEntity: Picture::class, cascade: ['persist', 'remove'])]
     private $picture;
 
+    #[ORM\Column(type: 'datetime_immutable', nullable: true)]
+    private $updatedAt;
+
+    #[ORM\Column(type: 'datetime_immutable')]
+    private $createdAt;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -94,6 +100,37 @@ class Recipes
         }
 
         $this->picture = $picture;
+
+        return $this;
+    }
+
+    public function setCreatedAd(\DateTimeInterface $createdAd): self
+    {
+        $this->createdAd = $createdAd;
+
+        return $this;
+    }
+
+    public function getUpdatedAt(): ?\DateTimeImmutable
+    {
+        return $this->updatedAt;
+    }
+
+    public function setUpdatedAt(?\DateTimeImmutable $updatedAt): self
+    {
+        $this->updatedAt = $updatedAt;
+
+        return $this;
+    }
+
+    public function getCreatedAt(): ?\DateTimeImmutable
+    {
+        return $this->createdAt;
+    }
+
+    public function setCreatedAt(\DateTimeImmutable $createdAt): self
+    {
+        $this->createdAt = $createdAt;
 
         return $this;
     }

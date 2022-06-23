@@ -1,20 +1,83 @@
-<!DOCTYPE html>
-
-<title>Hello FoSavoryRecipesController!</title>
+{% extends 'baseFo.html.twig' %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+<main>
+    <h3 class="title-recipe">Tartes aux tomates</h3>
+    <div class="content-recipe">
+        <img class="img-recipe" src="./img/tomates.JPG" alt="">
+        <p class="p-intro">Lorem ipsum dolor sit amet. Et repellendus repudiandae aut dolorem culpa et
+            consectetur
+            dolor cum maiores
+            esse.
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic autem odio, asperiores repellendus
+            nostrum
+            id doloribus tenetur vel facere debitis commodi nesciunt deleniti consequatur neque doloremque nulla
+            perferendis dignissimos? Eaque!
+            Ratione in voluptatem consequatur vero pariatur necessitatibus accusamus sed magnam delectus rem
+            excepturi laudantium cum provident natus esse amet, voluptatibus ipsam suscipit at modi alias
+            dolorum
+            omnis laboriosam inventore? Magni!
+            Totam rem aspernatur iure! Culpa fugiat veritatis, ratie.</p>
+    </div>
+    <article>
+        <div class="content-articles">
+            <section class="section-ingredients">
+             <div class="bloc-title">
+                    <div class="ovale">
+                    <h3 class="title-flex"><img class="ingredients" src="{{ asset('assets/picture/ingredient.svg') }}" alt="image ingrédients" />Ingédients
+                    </h3>
+                    </div>
+                </div>
+                <ul>
+                    <li>1 pâte feuilletée</li>
+                    <li>3 tomates</li>
+                    <li>3 cuillères à soupe de moutarde</li>
+                    <li>Herbes de Provence</li>
+                </ul>
+            </section>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+            <section class="section-preparations">
+                <div class="bloc-title">
+                    <div class="ovale">
+                    <h3 class="title-flex"><img class="preparations" src="{{ asset('assets/picture/preparation.svg') }}" alt="image préparation" />Préparations
+                    </h3>
+                </div>
+            </div>
+                <ul>
+                    <li> Lorem ipsum dolor sit amet. Et repellendus repudiandae aut dolo</li>
+                    <li> Lorem ipsum dolor sit amet. Et repellendus repudiandae aut dolo</li>
+                    <li> Lorem ipsum dolor sit amet. Et repellendus repudiandae aut dolo</li>
+                    <li> Lorem ipsum dolor sit amet. Et repellendus repudiandae aut dolo</li>
+                    <li> Lorem ipsum dolor sit amet. Et repellendus repudiandae aut dolo</li>
+                </ul>
+            </section>
+        </div>
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ 'C:/Users/mathi/Desktop/Evlow Foodies/Evlow_Foodies/src/Controller/FoSavoryRecipesController.php'|file_link(0) }}">src/Controller/FoSavoryRecipesController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'C:/Users/mathi/Desktop/Evlow Foodies/Evlow_Foodies/templates/fo_savory_recipes/index.html.twig'|file_link(0) }}">templates/fo_savory_recipes/index.html.twig</a></code></li>
-    </ul>
-</div>
+
+        <form method="POST" class="form-comment">
+            <h3 class="h3-comment">Laissez votre commentaire</h3>
+            <div class="content-comment">
+         
+                <div class="comment-row">
+            
+                    <div class="label-comment">
+                        <label class="name" for="nom">Prénom :</label>
+                        <input type="text" id="name" name="name" required />
+                    </div>
+                    <div class="label-comment">
+                        <label for="email">Adresse mail :</label>
+                        <input type="email" id="email" name="email" />
+                    </div>
+                </div>
+                <div class="comment">
+                    <label for="comment">Votre commentaire :</label>
+                    <textarea id="comment" name="comment" required></textarea>
+
+                    <div class="btn-contact">
+                        <button class="btn-send" type="submit">Envoyer</button>
+                    </div>
+                </div>
+            </div>
+    </article>
+</main>
 {% endblock %}
