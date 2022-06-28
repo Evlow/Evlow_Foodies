@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 
-#[UniqueEntity('title')]
+#[UniqueEntity('Title')]
 #[ORM\Entity(repositoryClass: RecipesRepository::class)]
 class Recipes
 {
@@ -17,7 +17,7 @@ class Recipes
     private $id;
 
     #[ORM\Column(type: 'string', length: 255)]
-    private $title;
+    private $Title;
 
     #[ORM\Column(type: 'string', length: 255, nullable: true)]
     private $description;
