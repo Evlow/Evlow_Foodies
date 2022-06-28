@@ -8,7 +8,7 @@ security:
         app_user_provider:
             entity:
                 class: App\Entity\User
-                property: email
+                property: pseudo
     firewalls:
         dev:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
@@ -19,7 +19,7 @@ security:
         # form_login:
         #     login_path: app_security
         #     check_path: app_security
-
+        # logout: security_logout
             # activate different ways to authenticate
             # https://symfony.com/doc/current/security.html#the-firewall
 

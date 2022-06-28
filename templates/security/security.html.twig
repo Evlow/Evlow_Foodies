@@ -13,12 +13,14 @@
             <h3><span>Connecte-toi !</span></h3>
         </section>
     </article>
-
+{% if error %}
+<div class="error"> {{error.messageKey|trans(error.messageData, 'security') }}</div>
+{% endif %}
     <form action="{{path('app_bo_recipes_add')}}" method="POST" class="form-connect">
         <div class="content-connect">
         <div class="connect-column">
             <label for="username">Identifiant:</label>
-            <input type="text" id="username" name="_username" required />
+            <input type="text" id="username" name="_username" value='{{last_username}}'required />
             <div class="lost-connect">
             <a href="#">Identifiant perdu ?</a>
             </div>
