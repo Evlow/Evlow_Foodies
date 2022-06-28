@@ -4,7 +4,10 @@ namespace App\Entity;
 
 use App\Repository\RecipesRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
+
+#[UniqueEntity('title')]
 #[ORM\Entity(repositoryClass: RecipesRepository::class)]
 class Recipes
 {
@@ -14,7 +17,7 @@ class Recipes
     private $id;
 
     #[ORM\Column(type: 'string', length: 255)]
-    private $Title;
+    private $title;
 
     #[ORM\Column(type: 'string', length: 255, nullable: true)]
     private $description;

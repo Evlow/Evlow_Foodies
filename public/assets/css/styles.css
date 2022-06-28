@@ -14,10 +14,14 @@ header {
 }
 
 h1 {
+  
   font-size: 6em;
   text-align: center;
 }
-
+header a {
+  outline-style:none;
+  color: #000;
+}
 h2 {
   padding: 30px 0 30px 0;
   font-size: 1.1em;
