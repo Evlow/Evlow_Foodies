@@ -25,6 +25,9 @@ class Contact
     #[ORM\Column(type: 'string', length: 255)]
     private $pseudo;
 
+    #[ORM\Column(type: 'text')]
+    private $message;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -74,6 +77,18 @@ class Contact
     public function setPseudo(string $pseudo): self
     {
         $this->pseudo = $pseudo;
+
+        return $this;
+    }
+
+    public function getMessage(): ?string
+    {
+        return $this->message;
+    }
+
+    public function setMessage(string $message): self
+    {
+        $this->message = $message;
 
         return $this;
     }
