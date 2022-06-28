@@ -2,11 +2,12 @@
 
 namespace App\Entity;
 
-use App\Repository\UserRepository;
 use Doctrine\ORM\Mapping as ORM;
-use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
+use App\Repository\UserRepository;
+use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 
 
 #[UniqueEntity('email')]
@@ -18,17 +19,30 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column(type: 'integer')]
     private ?int $id;
 
+    /**
+     * @Assert\NotBlank()
+     */
+    #[ORM\Column(type: 'string', length: 50)]
+    private $firstName;
+
+    #[ORM\Column(type: 'string', length: 50)]
+    private $lastName;
+
+      /**
+     * @Assert\Email()
+     * @Assert\NotBlank()
+     */
     #[ORM\Column(type: 'string', length: 180, unique: true)]
     private $email;
 
     #[ORM\Column(type: 'json')]
     private array $roles = [];
 
+    /**
+     * @Assert\NotBlank()
+     */
     #[ORM\Column(type: 'string')]
     private string $password;
-
-    #[ORM\Column(type: 'string', length: 50)]
-    private ?string $fullName;
 
     #[ORM\Column(type: 'string', length: 50)]
     private ?string $pseudo = null;
@@ -38,14 +52,40 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
     private $plainPassword = null;
 
+
+
+    #[ORM\Column(type: 'string', length: 255, nullable: true)]
+    private $Token;
+
+  
+
     public function __construct()
-    {
+    {   $this->roles = ['ROLE_USER'];
         $this->createdAt = new \DateTimeImmutable();
     }
 
     public function getId(): ?int
     {
         return $this->id;
+    }
+
+    public function setFirstName(string $firstName): self
+    {
+        $this->firstName = $firstName;
+
+        return $this;
+    }
+
+    public function getLastName(): ?string
+    {
+        return $this->lastName;
+    }
+
+    public function setLastName(string $lastName): self
+    {
+        $this->lastName = $lastName;
+
+        return $this;
     }
 
     public function getEmail(): ?string
@@ -113,18 +153,6 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         // $this->plainPassword = null;
     }
 
-    public function getFullName(): ?string
-    {
-        return $this->fullName;
-    }
-
-    public function setFullName(string $fullName): self
-    {
-        $this->fullName = $fullName;
-
-        return $this;
-    }
-
     public function getPseudo(): ?string
     {
         return $this->pseudo;
@@ -168,4 +196,23 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
         return $this;
     }
+
+    public function getToken(): ?string
+    {
+        return $this->Token;
+    }
+
+    public function setToken(?string $Token): self
+    {
+        $this->Token = $Token;
+
+        return $this;
+    }
+
+    public function getFirstName(): ?string
+    {
+        return $this->firstName;
+    }
+
+
 }
