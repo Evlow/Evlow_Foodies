@@ -1,0 +1,22 @@
+{% extends 'baseFo.html.twig' %}
+
+{% block body %}
+ <!-- CART -->
+ <div class="carts">
+        <h2>Les recettes salées</h2>
+        <section class="content-card">
+            {% for recipe in recipes %}
+            <article class="card"> 
+                <img class="img-card" src="/asset/vegetables.jpg" alt="">
+                <h3 class="recipes-h3">{{recipe.title}}</h3>
+                <p>{{recipe.description}}</p>
+                <p>{{recipe.createdAt|date('d/m/Y')}}</p>
+
+                <button class="btn-article" type="button">Voir l'article</button>
+            </article>
+            {% endfor %}
+        </section>
+    
+    </div>
+
+{% endblock %}

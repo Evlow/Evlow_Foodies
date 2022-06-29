@@ -4,33 +4,15 @@
     <!--NAV-->
     <nav>
         <ul id="unrolling">
-            <li><a href="#">Recettes salées</a>
-                <ul>
-                    <li><a href="#" target="_blank">Burgers</a></li>
-                    <li><a href="#" target="_blank">Pizzas</a></li>
-                    <li><a href="#" target="_blank">Quiches/Tartes</a></li>
-                </ul>
+            <li><a href="{{path('app_fo_savory_recipes')}}">Recettes salées</a>    
             </li>
-            <li><a href="#">Recettes sucrées</a>
-                <ul>
-                    <li><a href="#" target="_blank">Cookies</a></li>
-                    <li><a href="#" target="_blank">Gâteaux</a></li>
-                </ul>
+            <li><a href="{{path('app_fo_sweet_recipes')}}">Recettes sucrées</a>    
             </li>
-            <li><a href="#">Recettes p'tits gônes</a>
-                <ul>
-                    <li><a href="#" target="_blank">Cookies</a></li>
-                    <li><a href="#" target="_blank">Gâteaux</a></li>
-                </ul>
+            <li><a href="{{path('app_fo_little_gones_recipes')}}">Recettes p'tits gônes</a>    
             </li>
-            <li><a href="#">Régimes spécifiques</a>
-                <ul>
-                    <li><a href="#" target="_blank">Végétariens</a></li>
-                    <li><a href="#" target="_blank">Low carbs</a></li>
-                    <li><a href="#" target="_blank">Hyperprotéinéss</a></li>
-                </ul>
+            <li><a href="{{path('app_fo_specific_recipes')}}">Régimes spécifiques</a>
             </li>
-            <li><a href="Contact" target="_blank">Contact</a></li>
+            <li><a href="{{path('app_fo_contact')}}" target="_blank">Contact</a></li>
             <form>
                 <button class="connect" type="submit" formaction="#">Se connecter</button>
             </form>

@@ -1,0 +1,52 @@
+{% extends 'baseFo.html.twig' %}
+
+{% block body %}
+<!--INTRODUCTION-->
+<div class="content-intro">
+    <div class="paragraphe">
+        <p>En manque d’inspiration ? Vous retrouverez-ici des idées de recettes.</p>
+        <p>Envie de partager vos recettes ? Connectez-vous et à vous de concocter !</p>
+        <div>
+            <a href="{{path('app_fo_login')}}"><button class="connect">Se connecter</button></a>
+        </div>
+    </div>
+</div>
+
+
+<!--FOOD ?-->
+<article>
+    <section>
+        <h3 class="homeh3"><span>Qu’est ce qu’on mange ?</span></h3>
+        <p>Qu'est ce qu'on mange ? Cette question est posée une multitude de fois ! Il est parfois diffcile de trouver
+            une idée de repas ! Avec Evlow Foodies, vous trouverez des recettes, pour tous les goûts et facile à faire.
+        </p>
+    </section>
+    <!--SHARE RECIPES ?-->
+    <section>
+        <h3 class="homeh3" ><span>Envie de partager vos recettes ?</span></h3>
+        <p>Vous souhaitez partager vos succulentes recettes et en faire profiter à un maximum de personnes ? Cela est
+            possible ! il suffit de t'inscrire, de te connecter, de te laisser guider et le tour est joué ! Rien de plus
+            facile, crois-moi </p>
+    </section>
+    <!--LAST RECIPES ?-->
+    <section>
+        <h3 class="homeh3"><span>Les dernières recettes !</span></h3>
+        <p>Vous retrouverez-ici les dernièrs recettes mises en ligne !</p>
+        <div class="carts">
+            <section class="content-card">
+                {% for recipe in recipes %}
+                <article class="card"> 
+                    <img class="img-card" src="/asset/vegetables.jpg" alt="">
+                    <h3 class="recipes-h3">{{recipe.title}}</h3>
+                    <p>{{recipe.description}}</p>
+                    <p>{{recipe.createdAt|date('d/m/Y')}}</p>
+    
+                    <button class="btn-article" type="button">Voir l'article</button>
+                </article>
+                {% endfor %}
+            </section>
+        
+        </div>
+    </section>
+</article>
+{% endblock %}

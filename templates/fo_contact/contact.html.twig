@@ -1,0 +1,25 @@
+{% extends 'baseFo.html.twig' %}
+{% block title %} Contactez-moi | Evlow Foodies{% endblock %} 
+{% block body %}
+<main>
+    <article>
+        <section class="intro-contact">
+            <p>Une question ?</p>
+            <br>
+            <p>Un problème ?</p>
+            <br>
+            <p>Autre ?</p>
+            <br>
+            <h3><span>Contactez-moi !</span></h3>
+        </section>
+    </article>
+    <form method="POST" class="form-contact">
+
+        <div class="content-contact">
+            {{form (form)}}
+        </div>  
+        <input class="btn-submit" type="submit" value="Envoyer">
+ 
+    </form>
+</main>
+{% endblock %}
