@@ -1,5 +1,6 @@
-
 {% extends 'baseFo.html.twig' %}
+
+{% block title %}Connexion | Evlow Foodies{% endblock %}
 
 {% block body %}
 <main>
@@ -13,29 +14,43 @@
             <h3><span>Connecte-toi !</span></h3>
         </section>
     </article>
-{% if error %}
-<div class="error"> {{error.messageKey|trans(error.messageData, 'security') }}</div>
-{% endif %}
-    <form action="{{path('app_bo_recipes_add')}}" method="POST" class="form-connect">
+
+<form method="post">
+    {% if error %}
+        <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+    {% endif %}
+
+    {% if app.user %}
+        <div>
+            Bienvenue ! {{ app.user.userIdentifier }}, <a href="{{ path('app_logout') }}">Me deconnecter</a>
+        </div>
+    {% endif %}
+
+
+    <form action="" method="POST" class="form-connect">
         <div class="content-connect">
         <div class="connect-column">
             <label for="username">Identifiant:</label>
-            <input type="text" id="username" name="_username" value='{{last_username}}'required />
+            <input type="text" id="username" name="_username" value='{{last_username}}'autocomplete="username" required autofocus/>
             <div class="lost-connect">
             <a href="#">Identifiant perdu ?</a>
             </div>
         </div>
         <div class="connect-column">
             <label for="password">Mot de passe :</label>
-            <input type="password" id="password" name="_password" required />
+            <input type="password" id="password" name="_password" autocomplete="current-password" required/>
             <div class="lost-connect">
             <a href="#">Mot de passe perdu ?</a>
             </div>
         </div>
+        <input type="hidden" name="_csrf_token"
+           value="{{ csrf_token('authenticate') }}">
+
         <div class="btn-connexion">
             <button class="btn-connect" type="submit">Se connecter </button>
         </div>
         </div>
     </form>
 </main>
+
 {% endblock %}

@@ -32,7 +32,7 @@ class FoRegistrationController extends AbstractController
                     $form->get('plainPassword')->getData()
             )
             );
-            $user->setToken($this->generateToken());
+           
             $entityManager->persist($user);
             $entityManager->flush();
             $this->mailer->sendEmail($user->getEmail(), $user->getToken);
