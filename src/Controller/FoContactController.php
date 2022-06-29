@@ -26,9 +26,9 @@ class FoContactController extends AbstractController
             $entityManager->flush();
 
             $email = (new Email())
-            ->from($contact->getEmail())
+            ->from($contact['email'])
             ->to('mathilde.peauger@gmail.com')
-            ->subject('Test') 
+            ->subject('Vous avez reçu un email') 
             ->html($contact);
 
             $mailer->send($email);
@@ -39,7 +39,6 @@ class FoContactController extends AbstractController
         }
 
         return $this->render('fo_contact/contact.html.twig', [
-            'contact_email'=>$this->getParameter('app.contact.email'),
             'form' => $form->createView()
         ]);
     }
