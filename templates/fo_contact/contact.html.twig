@@ -13,18 +13,26 @@
             <h3><span>Contactez-moi !</span></h3>
         </section>
     </article>
-    {% for message in app.flashes('success') %}
-    <div class="alert alert-success">
-    {{ message }}
-    </div>
-    {% endfor %}
-    <form method="POST" class="form-contact">
+ 
 
         <div class="content-contact">
-            {{form (form)}}
+
+            <label for="{{ formContact.vars.id }}">*Nom</label>
+            <input type="text" id="{{formContact.vars.id}} "name="{{formContact.vars.full_name}}" value="{{formContact.vars.full_name}}">
+
+            <label for="{{ formContact.vars.id }}">*Prénom</label>
+            <input type="text" id="{{formContact.vars.id}} "name="{{formContact.vars.full_name}}" value="{{formContact.vars.full_name}}">
+
+         <label for="{{ formContact.vars.id }}">*Email</label>
+         <input type="text" id="{{formContact.vars.id}} "name="{{formContact.vars.full_name}}" value="{{formContact.vars.full_name}}">
+
+         <label for="{{ formContact.vars.id }}">*Message</label>
+            <textarea type="textarea" id="{{formContact.vars.id}} "name="{{formContact.vars.full_name}}" value="{{formContact.vars.full_name}}"></textarea>
         </div>  
-        <input class="btn-submit" type="submit" value="Envoyer">
+        <button class="btn-submit" type="submit"> Envoyer </input>
  
-    </form>
+ 
+
+        
 </main>
 {% endblock %}

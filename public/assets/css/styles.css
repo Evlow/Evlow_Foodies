@@ -527,4 +527,14 @@ article section p {
   width: 20%;
   border: #000 solid 3px;
   text-align: center;
+}
+
+.btn-contact {
+  background-color: #9ce7a9;
+  width: 125px;
+  height: 30px;
+  font-size: 1.2em;
+  border: none;
+  font-weight: 600;
+  border-radius: 15px 0 15px;
 }/*# sourceMappingURL=styles.css.map */

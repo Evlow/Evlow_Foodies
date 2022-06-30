@@ -1,19 +1,46 @@
 {% extends 'baseFo.html.twig' %}
-
-{% block title %}Inscription |Evlow Foodies{% endblock %}
-
+{% block title %}
+Contactez-moi | Evlow Foodies
+{% endblock %}
 {% block body %}
-    <h1>Register</h1>
+<main>
+    <article>
+        <section class="intro-contact">
+            <p>Une question ?</p>
+            <br>
+            <p>Un problème ?</p>
+            <br>
+            <p>Autre ?</p>
+            <br>
+            <h3>
+                <span>Contactez-moi !</span>
+            </h3>
+        </section>
+    </article>
+    {% for message in app.flashes('success') %}
+    <div class="alert alert-success">
+        {{ message }}
+    </div>
+    {% endfor %}
 
-    {{ form_start(registrationForm) }}
-        {{ form_row(registrationForm.email, 
-            {label:'email'  }) }}
-          
-        {{ form_row(registrationForm.plainPassword, {
-            label: 'Password'
-        }) }}
-        {{ form_row(registrationForm.agreeTerms) }}
+    <div class="content-contact">
+        <div class="contact-column">
+            {{form_label(formContact.lastName, '*Nom' )}}
+            {{form_widget(formContact.lastName,{'attr':{'class':''}}
+            )}}
+        </div>
+        <div class="contact-column">
+            {{form_label(formContact.firstName,'*Prénom' )}}
+            {{form_widget(formContact.firstName )}}
+        </div>
+        {{form_label(formContact.email, '*Email' )}}
+        {{form_widget(formContact.email )}}
+        <div class="message">
+            {{form_label(formContact.message )}}
+            {{form_widget(formContact.message,{'attr':{'class':'contact_message'}}
+            )}}
+        </div>
 
-        <button type="submit" class="btn">Register</button>
-    {{ form_end(registrationForm) }}
+ <button class="btn-submit" type="submit" value="Envoyer"></button>
+</main>
 {% endblock %}

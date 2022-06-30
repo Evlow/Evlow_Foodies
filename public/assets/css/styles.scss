@@ -467,3 +467,8 @@ margin: auto;
   text-align: center;
 }
 
+//contact
+
+.btn-contact {
+  @include button-connect($secondary-color, 125px, 30px, 1.2em);
+}

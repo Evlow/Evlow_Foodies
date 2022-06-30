@@ -32,11 +32,11 @@ class FoContactController extends AbstractController
                 ->to('admin@evlowfoodies.com');              
             $mailer->send($email);
 
-            $this->addFlash('success', 'Votre message a été envoyé');
+            $this->addFlash('success', 'Votre message a bien été envoyé');
         }
 
         return $this->render('fo_contact/contact.html.twig', [
-            'form' => $form->createView()
+            'formContact' => $form->createView()
         ]);
 }
 }
