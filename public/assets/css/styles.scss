@@ -24,8 +24,6 @@ h2 {
   color: $third-color;
 }
 h3 {
-  padding-bottom: 60px;
-  padding-top: 50px;
   font-size: $title-h3;
 }
 .title-recipe {
@@ -284,12 +282,10 @@ input {
 }
 label {
   font-weight: 600;
-  font-size: 1.2em;
+  font-size: 1em;
 }
 
-.intro-contact {
-  padding: 20px;
-}
+
 
 /* BUTTON */
 
@@ -358,13 +354,14 @@ section {
 }
 
 h3 {
+  padding: 40px 0 40px 0;
   text-align: center;
   position: relative;
   width: 60%;
   margin: 0 auto;
 }
 
-.homeh3:before {
+.home-h3:before {
   content: "";
   left: 0;
   right: 0;
@@ -374,7 +371,7 @@ h3 {
   top: calc(50% - 1px);
 }
 
-.homeh3 span {
+.home-h3 span {
   display: inline-block;
   padding: 0 10px;
   background: $primary-color;
@@ -382,9 +379,12 @@ h3 {
   z-index: 1;
 }
 
-article section p {
+.article-home .section-home  {
   padding: $padding-top-bottom-30;
   @include flex-center;
+}
+.p-home {
+text-align: center;
 }
 
 //recettes//
@@ -474,3 +474,42 @@ justify-content: center;
   @include flex;
   margin: auto;
 }  
+
+//REGISTRATION
+.content-connect{
+  width: 700px;
+  display: flex;
+margin: auto;
+}
+.form-connect{
+
+  display: flex;
+margin: auto;
+
+}
+.bloc-connect {  
+  display: flex;
+  justify-content: center;
+  background-image: url(../picture/fond-connect.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: 50%;
+  height: 650px;
+opacity:0.8;
+}
+
+#registration_form{
+ padding-left: 130px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.p-registration{
+  @include flex-center;
+padding: $padding-10;}
+
+input {
+  margin:5px 80px 5px 0;
+}
+
