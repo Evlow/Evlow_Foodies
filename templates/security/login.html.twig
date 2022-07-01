@@ -1,14 +1,14 @@
 {% extends 'baseFo.html.twig' %}
-
+    
 {% block title %}Connexion | Evlow Foodies{% endblock %}
 
 {% block body %}
-<form method="post">
     {% if error %}
         <div class="error">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
     {% endif %}
-
-    <label for="inputEmail">Email</label>
+    <form method="post" class="form-connect">
+        <div class="form-connect">
+        <label for="inputEmail">Email</label>
     <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" autocomplete="email" required autofocus>
     
     <label for="inputPassword">Password</label>
@@ -20,5 +20,9 @@
     <button class="btn btn-lg btn-primary" type="submit">
         Se connecter
     </button>
+
+
+    <h5>ESSAI</h5>
+</div>
 </form>
 {% endblock %}

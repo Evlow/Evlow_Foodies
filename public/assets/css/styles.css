@@ -331,31 +331,6 @@ label {
 }
 
 /* BUTTON */
-.btn-contact {
-  display: flex;
-  justify-content: flex-end;
-}
-
-.btn-send {
-  font-weight: 600;
-  font-size: 1em;
-  background-color: #9ce7a9;
-  border: none;
-  width: 160px;
-  height: 30px;
-  margin: 30px 0 60px 0;
-}
-
-.btn-send {
-  background-color: #9ce7a9;
-  width: 125px;
-  height: 30px;
-  font-size: 1.2em;
-  border: none;
-  font-weight: 600;
-  border-radius: 15px 0 15px;
-}
-
 article {
   background-color: white;
 }
@@ -529,12 +504,29 @@ article section p {
   text-align: center;
 }
 
-.btn-contact {
+.button-connect {
   background-color: #9ce7a9;
-  width: 125px;
-  height: 30px;
-  font-size: 1.2em;
+  width: 140px;
+  height: 32px;
+  font-size: 0.9em;
   border: none;
   font-weight: 600;
   border-radius: 15px 0 15px;
+}
+
+.form-contact {
+  background-image: url(../picture/fond-contact.png);
+  display: flex;
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 700px;
+  width: 50%;
+  margin: auto;
+  justify-content: center;
+}
+
+.content-contact {
+  display: flex;
+  text-align: center;
+  margin: auto;
 }/*# sourceMappingURL=styles.css.map */

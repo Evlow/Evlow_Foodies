@@ -292,27 +292,13 @@ label {
 }
 
 /* BUTTON */
-.btn-contact {
-  display: flex;
-  justify-content: flex-end;
-}
-
-.btn-send {
-  font-weight: 600;
-  font-size: 1em;
-  background-color: #9ce7a9;
-  border: none;
-  width: 160px;
-  height: 30px;
-  margin: 30px 0 60px 0;
-}
-
-.btn-send {
-  @include button-connect($secondary-color, 125px, 30px, 1.2em);
-}
 
 
-//ACCUEIL//
+
+
+
+
+// ACCUEIL
 article {
   background-color: $primary-color;
 }
@@ -469,6 +455,22 @@ margin: auto;
 
 //contact
 
-.btn-contact {
-  @include button-connect($secondary-color, 125px, 30px, 1.2em);
+.button-connect {
+  @include button-connect($secondary-color, 140px, 32px, 0.9em);
 }
+
+.form-contact{
+  background-image: url(../picture/fond-contact.png);
+display: flex;
+background-repeat: no-repeat;
+background-size: contain;
+height: 700px;
+width: 50%;
+margin: auto;
+justify-content: center;
+}
+
+.content-contact{
+  @include flex;
+  margin: auto;
+}  
