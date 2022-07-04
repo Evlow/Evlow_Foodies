@@ -9,7 +9,6 @@ main {
 }
 
 header {
-  background-color: rgba(152, 228, 129, 0.0784313725);
   padding: 30px;
 }
 
@@ -541,7 +540,7 @@ h3 {
   margin: auto;
 }
 
-.bloc-connect {
+.bloc-connect, .content-connect {
   display: flex;
   justify-content: center;
   background-image: url(../picture/fond-connect.png);
@@ -559,7 +558,7 @@ h3 {
   justify-content: center;
 }
 
-.p-registration {
+.p-registration, .p-contact {
   align-items: center;
   justify-content: center;
   display: flex;

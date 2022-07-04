@@ -8,7 +8,6 @@ main {
   background-color: $primary-color;
 }
 header {
-  background-color: rgba(152, 228, 129, 0.0784313725);
   padding: 30px;
 }
 
@@ -43,7 +42,7 @@ h4 {
 p {
   font-size: $p-size;
 }
-.p-intro{
+.p-intro {
   padding: 30px 0 30px 0;
 }
 .separation {
@@ -117,10 +116,9 @@ nav a {
   border-radius: 50px;
   margin-left: 100px;
 }
-.content-recipe{
-width: 60%;
-margin: auto;
-
+.content-recipe {
+  width: 60%;
+  margin: auto;
 }
 
 .section-ingredients li::before {
@@ -141,7 +139,7 @@ margin: auto;
   width: 100px;
   height: 60px;
   border-radius: 100px / 60px;
-  background:  #ffa05c;
+  background: #ffa05c;
   position: relative;
   display: flex;
   align-items: center;
@@ -220,7 +218,6 @@ footer {
 }
 .preparations {
   @extend .ingredients;
-
 }
 .section-ingredients {
   font-size: $p-size;
@@ -239,7 +236,7 @@ footer {
   display: flex;
   flex-direction: column;
   margin: 0 auto;
-@include separation-header;
+  @include separation-header;
 }
 
 .comment {
@@ -285,14 +282,7 @@ label {
   font-size: 1em;
 }
 
-
-
 /* BUTTON */
-
-
-
-
-
 
 // ACCUEIL
 article {
@@ -309,16 +299,16 @@ article {
   @include button-connect($third-color, 140px, 32px, 0.9em);
 }
 
-  .content-intro {
-    align-items: center;
-    justify-content: center;
-    display: flex;
-    text-align: center;
-    height: 400px;
-    position: relative;
-    font-size: 1.5em;
-    font-weight: 600;
-  }
+.content-intro {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  text-align: center;
+  height: 400px;
+  position: relative;
+  font-size: 1.5em;
+  font-weight: 600;
+}
 
 .paragraphe {
   line-height: 80px;
@@ -379,12 +369,12 @@ h3 {
   z-index: 1;
 }
 
-.article-home .section-home  {
+.article-home .section-home {
   padding: $padding-top-bottom-30;
   @include flex-center;
 }
 .p-home {
-text-align: center;
+  text-align: center;
 }
 
 //recettes//
@@ -397,10 +387,9 @@ text-align: center;
   border-radius: 50px;
   margin-left: 100px;
 }
-.content-recipe{
-width: 60%;
-margin: auto;
-
+.content-recipe {
+  width: 60%;
+  margin: auto;
 }
 
 .section-ingredients li::before {
@@ -421,7 +410,7 @@ margin: auto;
   width: 100px;
   height: 60px;
   border-radius: 100px / 60px;
-  background:  #ffa05c;
+  background: #ffa05c;
   position: relative;
   display: flex;
   align-items: center;
@@ -436,18 +425,17 @@ margin: auto;
 
 //recipes//
 
-
 .carts {
   width: 90%;
   margin: 0 auto;
 }
 
-.content-card{
+.content-card {
   display: flex;
   justify-content: space-evenly;
-}  
+}
 
-.card{
+.card {
   width: 20%;
   border: #000 solid 3px;
   text-align: center;
@@ -459,35 +447,33 @@ margin: auto;
   @include button-connect($secondary-color, 140px, 32px, 0.9em);
 }
 
-.form-contact{
+.form-contact {
   background-image: url(../picture/fond-contact.png);
-display: flex;
-background-repeat: no-repeat;
-background-size: contain;
-height: 700px;
-width: 50%;
-margin: auto;
-justify-content: center;
+  display: flex;
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 700px;
+  width: 50%;
+  margin: auto;
+  justify-content: center;
 }
 
-.content-contact{
+.content-contact {
   @include flex;
   margin: auto;
-}  
+}
 
 //REGISTRATION
-.content-connect{
+.content-connect {
   width: 700px;
   display: flex;
-margin: auto;
+  margin: auto;
 }
-.form-connect{
-
+.form-connect {
   display: flex;
-margin: auto;
-
+  margin: auto;
 }
-.bloc-connect {  
+.bloc-connect {
   display: flex;
   justify-content: center;
   background-image: url(../picture/fond-connect.png);
@@ -495,21 +481,34 @@ margin: auto;
   background-size: contain;
   background-position: 50%;
   height: 650px;
-opacity:0.8;
+  opacity: 0.8;
 }
 
-#registration_form{
- padding-left: 130px;
+#registration_form {
+  padding-left: 130px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
 
-.p-registration{
+.p-registration {
   @include flex-center;
-padding: $padding-10;}
-
-input {
-  margin:5px 80px 5px 0;
+  padding: $padding-10;
 }
 
+input {
+  margin: 5px 80px 5px 0;
+}
+
+//CONTACT//
+
+.p-contact {
+@extend .p-registration;
+}
+
+//LOGIN//
+
+.content-connect{
+   
+        @extend .bloc-connect
+}
