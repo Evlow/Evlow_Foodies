@@ -12,18 +12,18 @@ main {
 }
 
 h1 {
-  font-size: 1em;
+  font-size: 6em;
   text-align: center;
 }
 
 h2 {
-  font-size: 1.5em;
+  font-size: 1.1em;
   text-align: center;
   padding-bottom: 20px;
 }
 
 label {
-  font-size: 1.3em;
+  font-size: 20px;
   font-weight: 600;
 }
 
@@ -54,7 +54,7 @@ header {
   top: 0;
   z-index: 1;
   padding-bottom: 5px;
-  font-size: 1.2em;
+  font-size: 1em;
 }
 
 aside {
@@ -81,7 +81,7 @@ aside {
   margin-bottom: 20px;
   padding: 5px 0 5px 0;
   background-color: antiquewhite;
-  font-size: 1.2em;
+  font-size: 1em;
 }
 
 .nav-aside ul {
@@ -128,4 +128,4 @@ textarea {
 
 .content-title {
   padding: 40px;
-}/*# sourceMappingURL=styles.css.map */
+}/*# sourceMappingURL=stylesBo.css.map */

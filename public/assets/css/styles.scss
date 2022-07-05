@@ -61,53 +61,52 @@ nav ul {
   @include separation-header;
   justify-content: space-around;
   height: 80px;
-  position: relative;
   list-style-type: none;
 }
 
 nav a {
   color: $link-color;
   font-size: $size-link;
-  display: block;
   font-weight: $weight;
 }
+.btn-registration {
+  @include button($third-color, 120px, 25px, 1em);
+}
 
-.btn-login{
-background-color: #000;}
-.connect {
-  width: 100px;
-  height: 25px;
-  font-weight: 600;
-  border-radius: 15px 0 15px;
-  border-color: $third-color;
-  border: none;
-  background-color: $third-color;
+.btn-login  {
+  @include button($third-color, 130px, 25px, 1em);
+ 
+
+}
+
+.btn-login-home  {
+  @include button($third-color, 170px, 35px, 1em);
+  margin: 0 auto;
+ 
+
 }
 
 /* MENU DEROULANT */
 
-#unrolling {
-  text-align: center;
-}
+// #unrolling {
+//   text-align: center;
+// }
 
-#unrolling ul {
-  padding: 20px;
-  display: block;
-  position: absolute;
-  /* on cache les sous menus complètement sur la gauche */
-  left: -999em;
-}
-#unrolling li:hover ul {
-  /* Au survol des li du menu on replace les sous menus */
-  left: auto;
-  border: none;
-}
-#unrolling a {
-  padding-top: 10px;
-  text-decoration: none;
-  display: block;
-  color: #000;
-}
+// #unrolling ul {
+//   position: absolute;
+//   /* on cache les sous menus complètement sur la gauche */
+//   left: -999em;
+// }
+// #unrolling li:hover ul {
+//   /* Au survol des li du menu on replace les sous menus */
+//   left: auto;
+//   border: none;
+// }
+// #unrolling a {
+//   text-decoration: none;
+//   display: block;
+//   color: #000;
+// }
 //article
 
 .logo-social img {
@@ -296,10 +295,10 @@ article {
 }
 
 .connect {
-  @include button-connect($third-color, 100px, 25px, 1em);
+  @include button($third-color, 110px, 25px, 1em);
 }
 .connect-intro {
-  @include button-connect($third-color, 140px, 32px, 0.9em);
+  @include button($third-color, 140px, 32px, 0.9em);
 }
 
 .content-intro {
@@ -447,7 +446,7 @@ h3 {
 //contact
 
 .button-connect {
-  @include button-connect($secondary-color, 140px, 32px, 0.9em);
+  @include button($secondary-color, 140px, 32px, 0.9em);
 }
 
 .form-contact {
@@ -515,9 +514,7 @@ input {
   @extend .bloc-connect;
 }
 
-
 //SAVORY//
-
 
 .content-intro-savory {
   align-items: center;
@@ -542,7 +539,7 @@ input {
   z-index: -1;
 }
 
-.paragraphe-savory{
+.paragraphe-savory {
   padding: 80px;
   font-size: 2em;
 }
@@ -572,8 +569,8 @@ input {
   z-index: -1;
 }
 
-.paragraphe-sweet{
- @extend .paragraphe-savory;
+.paragraphe-sweet {
+  @extend .paragraphe-savory;
 }
 
 //GONES//
@@ -601,7 +598,7 @@ input {
   z-index: -1;
 }
 
-.paragraphe-gones{
+.paragraphe-gones {
   @extend .paragraphe-savory;
 }
 //SPECIFIC//
@@ -629,6 +626,6 @@ input {
   z-index: -1;
 }
 
-.paragraphe-specific{
+.paragraphe-specific {
   @extend .paragraphe-savory;
 }
