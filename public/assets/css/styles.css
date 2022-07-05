@@ -9,12 +9,14 @@ main {
 }
 
 header {
+  background-color: rgba(152, 228, 129, 0.0784313725);
   padding: 30px;
 }
 
 h1 {
   font-size: 6em;
   text-align: center;
+  color: #000;
 }
 
 h2 {
@@ -568,4 +570,117 @@ h3 {
 
 input {
   margin: 5px 80px 5px 0;
+}
+
+.content-intro-savory {
+  align-items: center;
+  justify-content: right;
+  display: flex;
+  text-align: center;
+  height: 400px;
+  position: relative;
+  font-size: 1.5em;
+  font-weight: 600;
+}
+
+.content-intro-savory::after {
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  background: url(../picture/savory.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  text-align: center;
+  width: 100%;
+  content: "";
+  z-index: -1;
+}
+
+.paragraphe-savory, .paragraphe-specific, .paragraphe-gones, .paragraphe-sweet {
+  padding: 80px;
+  font-size: 2em;
+}
+
+.content-intro-sweet {
+  align-items: center;
+  justify-content: left;
+  display: flex;
+  text-align: center;
+  height: 400px;
+  position: relative;
+  font-size: 1.5em;
+  font-weight: 600;
+}
+
+.content-intro-sweet::after {
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  background: url(../picture/sweet.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  text-align: center;
+  width: 100%;
+  content: "";
+  z-index: -1;
+}
+
+.content-intro-gones {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  text-align: center;
+  height: 400px;
+  position: relative;
+  font-size: 1.5em;
+  font-weight: 600;
+}
+
+.content-intro-gones::after {
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  background: url(../picture/gones.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  text-align: center;
+  width: 100%;
+  content: "";
+  z-index: -1;
+}
+
+.content-intro-specific {
+  align-items: center;
+  justify-content: left;
+  display: flex;
+  text-align: center;
+  height: 400px;
+  position: relative;
+  font-size: 1.5em;
+  font-weight: 600;
+}
+
+.content-intro-specific::after {
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  background: url(../picture/sweet.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  text-align: center;
+  width: 100%;
+  content: "";
+  z-index: -1;
 }/*# sourceMappingURL=styles.css.map */

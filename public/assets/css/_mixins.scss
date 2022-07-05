@@ -1,7 +1,7 @@
 //BUTTON
 @use "variables" as *;
 
-@mixin button-connect($background-color, $width, $height, $font-size) {
+@mixin button ($background-color, $width, $height, $font-size) {
     background-color: $background-color;
     width: $width;
     height: $height;

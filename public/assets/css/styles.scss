@@ -8,13 +8,14 @@ main {
   background-color: $primary-color;
 }
 header {
+  background-color: rgba(152, 228, 129, 0.0784313725);
   padding: 30px;
 }
 
 h1 {
   font-size: $title-h1;
   text-align: center;
- 
+  color: #000;
 }
 h2 {
   padding: $padding-top-bottom-30;
@@ -71,6 +72,8 @@ nav a {
   font-weight: $weight;
 }
 
+.btn-login{
+background-color: #000;}
 .connect {
   width: 100px;
   height: 25px;
@@ -503,12 +506,129 @@ input {
 //CONTACT//
 
 .p-contact {
-@extend .p-registration;
+  @extend .p-registration;
 }
 
 //LOGIN//
 
-.content-connect{
-   
-        @extend .bloc-connect
+.content-connect {
+  @extend .bloc-connect;
+}
+
+
+//SAVORY//
+
+
+.content-intro-savory {
+  align-items: center;
+  justify-content: right;
+  display: flex;
+  text-align: center;
+  height: 400px;
+  position: relative;
+  font-size: 1.5em;
+  font-weight: 600;
+}
+
+.content-intro-savory::after {
+  @include positon-absolute;
+  background: url(../picture/savory.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  text-align: center;
+  width: 100%;
+  content: "";
+  z-index: -1;
+}
+
+.paragraphe-savory{
+  padding: 80px;
+  font-size: 2em;
+}
+
+//SWEET//
+
+.content-intro-sweet {
+  align-items: center;
+  justify-content: left;
+  display: flex;
+  text-align: center;
+  height: 400px;
+  position: relative;
+  font-size: 1.5em;
+  font-weight: 600;
+}
+
+.content-intro-sweet::after {
+  @include positon-absolute;
+  background: url(../picture/sweet.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  text-align: center;
+  width: 100%;
+  content: "";
+  z-index: -1;
+}
+
+.paragraphe-sweet{
+ @extend .paragraphe-savory;
+}
+
+//GONES//
+
+.content-intro-gones {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  text-align: center;
+  height: 400px;
+  position: relative;
+  font-size: 1.5em;
+  font-weight: 600;
+}
+
+.content-intro-gones::after {
+  @include positon-absolute;
+  background: url(../picture/gones.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  text-align: center;
+  width: 100%;
+  content: "";
+  z-index: -1;
+}
+
+.paragraphe-gones{
+  @extend .paragraphe-savory;
+}
+//SPECIFIC//
+
+.content-intro-specific {
+  align-items: center;
+  justify-content: left;
+  display: flex;
+  text-align: center;
+  height: 400px;
+  position: relative;
+  font-size: 1.5em;
+  font-weight: 600;
+}
+
+.content-intro-specific::after {
+  @include positon-absolute;
+  background: url(../picture/sweet.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  text-align: center;
+  width: 100%;
+  content: "";
+  z-index: -1;
+}
+
+.paragraphe-specific{
+  @extend .paragraphe-savory;
 }
