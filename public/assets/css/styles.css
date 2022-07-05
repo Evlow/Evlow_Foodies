@@ -84,7 +84,7 @@ nav a {
 .btn-registration {
   background-color: #ffa05c;
   width: 120px;
-  height: 25px;
+  height: 30px;
   font-size: 1em;
   border: none;
   font-weight: 600;
@@ -92,12 +92,13 @@ nav a {
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #000;
 }
 
 .btn-login {
   background-color: #ffa05c;
   width: 130px;
-  height: 25px;
+  height: 30px;
   font-size: 1em;
   border: none;
   font-weight: 600;
@@ -105,6 +106,7 @@ nav a {
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #000;
 }
 
 .btn-login-home {
@@ -119,6 +121,17 @@ nav a {
   justify-content: center;
   align-items: center;
   margin: 0 auto;
+  color: #000;
+}
+
+.btn-article {
+  background-color: #9ce7a9;
+  width: 100px;
+  height: 30px;
+  font-size: 1.2em;
+  border: none;
+  font-weight: 600;
+  border-radius: 15px 0 15px;
 }
 
 /* MENU DEROULANT */

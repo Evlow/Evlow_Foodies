@@ -70,11 +70,13 @@ nav a {
   font-weight: $weight;
 }
 .btn-registration {
-  @include button($third-color, 120px, 25px, 1em);
+  @include button($third-color, 120px, 30px, 1em);
+  color:#000;
 }
 
 .btn-login  {
-  @include button($third-color, 130px, 25px, 1em);
+  @include button($third-color, 130px, 30px, 1em);
+  color:#000;
  
 
 }
@@ -82,10 +84,21 @@ nav a {
 .btn-login-home  {
   @include button($third-color, 170px, 35px, 1em);
   margin: 0 auto;
+  color:#000;
  
 
 }
 
+.btn-article{
+  background-color: $secondary-color;
+  width: 100px;
+  height: 30px;
+  font-size: 1.2em;
+  border: none;
+  font-weight: $weight;
+  border-radius: 15px 0 15px;
+ 
+}
 /* MENU DEROULANT */
 
 // #unrolling {

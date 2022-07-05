@@ -7,13 +7,7 @@
          <p>Les recettes salées</p>
      </div>
  </div>
-
-
-
-
-
  <div class="carts">
-        <h2>Les recettes salées</h2>
         <section class="content-card">
             {% for recipe in recipes %}
             <article class="card"> 
@@ -21,12 +15,10 @@
                 <h3 class="recipes-h3">{{recipe.title}}</h3>
                 <p>{{recipe.description}}</p>
                 <p>{{recipe.createdAt|date('d/m/Y')}}</p>
-
-                <button class="btn-article" type="button">Voir l'article</button>
+                <a href='#'class="btn-article" type="button">Voir l'article<a/>
             </article>
             {% endfor %}
-        </section>
-    
+        </section>   
     </div>
 
 {% endblock %}
