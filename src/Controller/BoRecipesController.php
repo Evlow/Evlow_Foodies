@@ -47,7 +47,6 @@ class BoRecipesController extends AbstractController
         return $this->render('bo_recipes/recipes.html.twig', [
             //Enevoi variables à la vue
             'form_title' => 'Ajouter une recette',
-            'recipes' => $recipe,
             'form_submit' => 'Ajoutez',
             'formRecipe' => $formRecipe->createView()
         ]);
