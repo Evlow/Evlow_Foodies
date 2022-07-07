@@ -504,8 +504,19 @@ h3 {
   align-items: center;
 }
 
-.recipe-img {
-  width: 90%;
+.recipe-img-home {
+  width: 200px;
+  height: 200px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: 50% 40%;
+     object-position: 50% 40%;
+  overflow: hidden;
+}
+
+.content-recipe-img {
+  width: 100%;
+  height: auto;
 }
 
 .carts {
@@ -732,4 +743,24 @@ input {
   width: 100%;
   content: "";
   z-index: -1;
+}
+
+.content-img-sheet {
+  display: flex;
+  justify-content: center;
+}
+
+.recipe-sheet-img {
+  width: 600px;
+  height: 550px;
+  border-radius: 50px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: 50% 30%;
+     object-position: 50% 30%;
+  overflow: hidden;
+}
+
+.paragraphe-recipe-sheet {
+  font-size: 2em;
 }/*# sourceMappingURL=styles.css.map */

@@ -1,0 +1,77 @@
+{% extends 'baseFo.html.twig' %}
+
+{% block body %}
+<main>
+    {% for recipe in recipes %}
+    <div class="content-intro-recipe-sheet">
+        <div class="paragraphe-recipe-sheet">
+            <p>{{recipe.title}}</p>
+        </div>
+        <div class="content-img-sheet">
+        <img class="recipe-sheet-img" src="{{vich_uploader_asset(recipe, 'imageFile')}}" alt="image">
+    </div>
+        <p>{{recipe.description}}</p>
+    </div>
+    <article>
+        <div class="content-articles">
+            <section class="section-ingredients">
+                <div class="bloc-title">
+                    <div class="ovale">
+                        <h3 class="title-flex"><img class="ingredients" src="{{ asset('assets/picture/ingredient.svg') }}"
+                                alt="image ingrédients" />Ingédients
+                        </h3>
+                    </div>
+                </div>
+                <ul>
+                    {% for ingredient in recipes %}
+                    <li>{{recipe.ingredients}}</li>
+
+                    {% endfor %}
+                </ul>
+            </section>
+
+            <section class="section-preparations">
+                <div class="bloc-title">
+                    <div class="ovale">
+                        <h3 class="title-flex"><img class="preparations" src="{{ asset('assets/picture/preparation.svg') }}"
+                                alt="image préparation" />Préparations
+                        </h3>
+                    </div>
+                </div>
+                <ul>
+                    <li>{{recipe.preparations}}</li>
+                </ul>
+            </section>
+            {% endfor %}
+        </div>
+
+
+        <form method="POST" class="form-comment">
+            <h3 class="h3-comment">Laissez votre commentaire</h3>
+            <div class="content-comment">
+
+                <div class="comment-row">
+
+                    <div class="label-comment">
+                        <label class="name" for="nom">Prénom :</label>
+                        <input type="text" id="name" name="name" required />
+                    </div>
+                    <div class="label-comment">
+                        <label for="email">Adresse mail :</label>
+                        <input type="email" id="email" name="email" />
+                    </div>
+                </div>
+                <div class="comment">
+                    <label for="comment">Votre commentaire :</label>
+                    <textarea id="comment" name="comment" required></textarea>
+
+                    <div class="btn-contact">
+                        <button class="btn-send" type="submit">Envoyer</button>
+                    </div>
+                </div>
+            </div>
+    </article>
+</main>
+
+
+{% endblock %}

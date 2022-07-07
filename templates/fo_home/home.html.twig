@@ -37,8 +37,10 @@
                 {% for recipe in recipes %}
                 <article class="card"> 
                     <h3 class="recipes-h3">{{recipe.title}}</h3>
-                    <img class="recipe-img" src="{{vich_uploader_asset(recipe, 'imageFile')}}" alt="image">
-                    <a class="btn-recipe" href="{{ path('app_fo_recipe_sheet', { 'id' : recipe.id }) }}">Voir la recette</a>
+                    <div class="content-recipe-img">
+                    <img class="recipe-img-home" src="{{vich_uploader_asset(recipe, 'imageFile')}}" alt="image">
+                </div>
+                    <a class="btn-recipe" href="{{ path('app_fo_recipe_sheet', { id: recipe.id }) }}">Voir la recette</a>
                 </article>
                 {% endfor %}
             </section>
