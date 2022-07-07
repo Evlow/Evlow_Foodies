@@ -1,11 +1,11 @@
 <?php
 
 namespace App\Controller;
-
 use App\Entity\Recipes;
 use App\Form\RecipeType;
 use Monolog\DateTimeImmutable;
 use App\Repository\RecipesRepository;
+use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -17,7 +17,7 @@ class BoRecipesController extends AbstractController
 {
 
   #[Route('/ajouter-recette', name: 'app_bo_recipes_add')]
-    public function RecipeAdd(Request $request, RecipesRepository $doctrine): Response
+    public function RecipeAdd(Request $request, EntityManagerInterface $entityManager): Response
     {
         // On instancie notre objet produit
         $recipe = new Recipes();
@@ -33,7 +33,6 @@ class BoRecipesController extends AbstractController
         // Etape 03 : test si le formulaire a été saisi et si les règles de validations sont vérifiées
         if($formRecipe->isSubmitted() && $formRecipe->isValid())
         {
-            $entityManager = $doctrine->getManager();
             // Etape 3.1 : On demande à doctrine de surveiller / gerer l'objet en cours
             $entityManager->persist($recipe);
             // Etape 3.2 : On envoi les données a la bdd

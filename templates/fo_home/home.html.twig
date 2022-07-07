@@ -31,17 +31,14 @@
     <!--LAST RECIPES ?-->
     <section class="home-section">
         <h3 class="home-h3"><span>Les dernières recettes !</span></h3>
-        <p class="p-home">Vous retrouverez-ici les dernièrs recettes mises en ligne !</p>
+        <p class="p-recipe">Vous retrouverez-ici les dernièrs recettes mises en ligne !</p>
         <div class="carts">
             <section class="content-card">
                 {% for recipe in recipes %}
                 <article class="card"> 
-                    <img class="img-card" src="/asset/vegetables.jpg" alt="">
                     <h3 class="recipes-h3">{{recipe.title}}</h3>
-                    <p>{{recipe.description}}</p>
-                    <p>{{recipe.createdAt|date('d/m/Y')}}</p>
-    
-                    <button class="btn-article" type="button">Voir l'article</button>
+                    <img class="recipe-img" src="{{vich_uploader_asset(recipe, 'imageFile')}}" alt="image">
+                    <a class="btn-recipe" href="{{ path('app_fo_recipe_sheet', { 'id' : recipe.id }) }}">Voir la recette</a>
                 </article>
                 {% endfor %}
             </section>
