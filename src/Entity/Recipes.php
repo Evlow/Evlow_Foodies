@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\RecipesRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\HttpFoundation\File\File;
@@ -44,6 +46,14 @@ class Recipes
 
     #[ORM\Column(type: 'datetime_immutable')]
     private $createdAt;
+
+    #[ORM\OneToMany(mappedBy: 'recipes', targetEntity: Comments::class, orphanRemoval: true)]
+    private $comments;
+
+    public function __construct()
+    {
+        $this->comments = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -150,6 +160,36 @@ class Recipes
     public function setCreatedAt(\DateTimeImmutable $createdAt): self
     {
         $this->createdAt = $createdAt;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Comments>
+     */
+    public function getComments(): Collection
+    {
+        return $this->comments;
+    }
+
+    public function addComment(Comments $comment): self
+    {
+        if (!$this->comments->contains($comment)) {
+            $this->comments[] = $comment;
+            $comment->setRecipes($this);
+        }
+
+        return $this;
+    }
+
+    public function removeComment(Comments $comment): self
+    {
+        if ($this->comments->removeElement($comment)) {
+            // set the owning side to null (unless already changed)
+            if ($comment->getRecipes() === $this) {
+                $comment->setRecipes(null);
+            }
+        }
 
         return $this;
     }
