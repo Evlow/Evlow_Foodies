@@ -23,10 +23,15 @@
                     </div>
                 </div>
                 <ul>
-                    {% for ingredient in recipes %}
-                    <li>{{recipe.ingredients}}</li>
+                    <li>{{recipe.ingredient1}}</li>
+                    <li>{{recipe.ingredient2}}</li>
+                    <li>{{recipe.ingredient3}}</li>
+                    <li>{{recipe.ingredient4}}</li>
+                    <li>{{recipe.ingredient5}}</li>
+                    <li>{{recipe.ingredient6}}</li>
+                    <li>{{recipe.ingredient7}}</li>
+                    <li>{{recipe.ingredient8}}</li>
 
-                    {% endfor %}
                 </ul>
             </section>
 
@@ -39,37 +44,15 @@
                     </div>
                 </div>
                 <ul>
-                    <li>{{recipe.preparations}}</li>
+                    <li>{{recipe.preparation1}}</li>
+                    <li>{{recipe.preparation2}}</li>
+                    <li>{{recipe.preparation3}}</li>
+                    <li>{{recipe.preparation4}}</li>
+                    <li>{{recipe.preparation5}}</li>
                 </ul>
             </section>
             {% endfor %}
         </div>
-
-
-        <form method="POST" class="form-comment">
-            <h3 class="h3-comment">Laissez votre commentaire</h3>
-            <div class="content-comment">
-
-                <div class="comment-row">
-
-                    <div class="label-comment">
-                        <label class="name" for="nom">Prénom :</label>
-                        <input type="text" id="name" name="name" required />
-                    </div>
-                    <div class="label-comment">
-                        <label for="email">Adresse mail :</label>
-                        <input type="email" id="email" name="email" />
-                    </div>
-                </div>
-                <div class="comment">
-                    <label for="comment">Votre commentaire :</label>
-                    <textarea id="comment" name="comment" required></textarea>
-
-                    <div class="btn-contact">
-                        <button class="btn-send" type="submit">Envoyer</button>
-                    </div>
-                </div>
-            </div>
     </article>
 </main>
 
