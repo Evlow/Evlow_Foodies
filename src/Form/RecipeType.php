@@ -17,7 +17,9 @@ class RecipeType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('Title', TextType::class)
+            ->add('Title', TextType::class, [
+                'label'=>"Titre de la recette"
+            ])
             ->add('imageFile', VichImageType::class, [
                 'label' => 'Image de la recette'
             ])
@@ -28,28 +30,34 @@ class RecipeType extends AbstractType
                 'label' => 'ingrédient n°2'
             ])
             ->add('ingredient_3', TextType::class, [
-                'label' => 'ingrédient n°3'
+                'label' => 'ingrédient n°3',
+                'required' => false
             ])
             ->add('ingredient_4', TextType::class, [
-                'label' => 'ingrédient n°4'
+                'label' => 'ingrédient n°4',
+                'required' => false
             ])
             ->add('ingredient_5', TextType::class, [
-                'label' => 'ingrédient n°5'
+                'label' => 'ingrédient n°5',
+                'required' => false
             ])
             ->add('ingredient_6', TextType::class, [
                 'label' => 'ingrédient n°6'
             ])
             ->add('ingredient_7', TextType::class, [
-                'label' => 'ingrédient n°7'
+                'label' => 'ingrédient n°7',
+                'required' => false
             ])
             ->add('ingredient_8', TextType::class, [
-                'label' => 'ingrédient n°8'
+                'label' => 'ingrédient n°8',
+                'required' => false
             ])
             ->add('ingredient_9', TextType::class, [
                 'label' => 'ingrédient n°9'
             ])
             ->add('ingredient_10', TextType::class, [
-                'label' => 'ingrédient n°10'
+                'label' => 'ingrédient n°10',
+                'required' => false
             ])
 
             ->add('preparation_1', TextareaType::class, [
@@ -59,13 +67,16 @@ class RecipeType extends AbstractType
                 'label' => 'préparation n°2'
             ])
             ->add('preparation_3', TextareaType::class, [
-                'label' => 'préparation n°3'
+                'label' => 'préparation n°3',
+                'required' => false
             ])
             ->add('preparation_4', TextareaType::class, [
-                'label' => 'préparation n°4'
+                'label' => 'préparation n°4',
+                'required' => false
             ])
             ->add('preparation_5', TextareaType::class, [
-                'label' => 'préparation n°5'
+                'label' => 'préparation n°5',
+                'required' => false
             ]);
          
     }

@@ -97,6 +97,10 @@ class Recipes
     #[ORM\Column(type: 'string', length: 255, nullable: true)]
     private $preparation_5;
 
+    #[ORM\ManyToOne(targetEntity: Category::class, inversedBy: 'recipes')]
+    #[ORM\JoinColumn(nullable: false)]
+    private $Category;
+
     
     public function getId(): ?int
     {
@@ -424,6 +428,18 @@ class Recipes
     public function setPreparation5(?string $preparation_5): self
     {
         $this->preparation_5 = $preparation_5;
+
+        return $this;
+    }
+
+    public function getCategory(): ?Category
+    {
+        return $this->Category;
+    }
+
+    public function setCategory(?Category $Category): self
+    {
+        $this->Category = $Category;
 
         return $this;
     }
