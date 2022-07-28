@@ -2,9 +2,11 @@
 
 namespace App\Form;
 
+use App\Entity\Category;
 use App\Entity\Recipes;
 
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Vich\UploaderBundle\Form\Type\VichImageType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -77,7 +79,13 @@ class RecipeType extends AbstractType
             ->add('preparation_5', TextareaType::class, [
                 'label' => 'préparation n°5',
                 'required' => false
-            ]);
+            ])
+            ->add('category', ChoiceType::class,[
+                'choices' => Category::class,
+             
+                ])
+                ;
+            
          
     }
 

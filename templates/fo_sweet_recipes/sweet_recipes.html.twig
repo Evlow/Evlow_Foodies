@@ -7,5 +7,17 @@
          <p>Les recettes sucrées</p>
      </div>
  </div>
+ <div class="carts">
+    <section class="content-card">
+        {% for recipe in recipes %}
+        <article class="card"> 
+            <img class="recipe-img" src="{{vich_uploader_asset(recipe, 'imageFile')}}" alt="image">
+            <h3 class="recipes-h3">{{recipe.title}}</h3>
+            <p>{{recipe.description}}</p>
+            <a class="btn-recipe" href="{{ path('app_fo_recipe_sheet', { id: recipe.id }) }}">Voir la recette</a>
+        </article>
+        {% endfor %}
+    </section>   
+</div>
 
 {% endblock %}
