@@ -2,17 +2,23 @@
 
 namespace App\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use App\Repository\RecipesRepository;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class FoSweetRecipesController extends AbstractController
 {
     #[Route('/recettes-sucrées', name: 'app_fo_sweet_recipes')]
-    public function index(): Response
-    {
-        return $this->render('fo_sweet_recipes/sweet_recipes.html.twig', [
-            'controller_name' => 'FoSweetRecipesController',
+    public function index(RecipesRepository $repository): Response    {
+        $recipe = $repository->findBy([
+            'category' => 2,
         ]);
-    }
+    
+        return $this->render('fo_savory_recipes/savory_recipes.html.twig', 
+        [
+           'recipes'=>$recipe,
+           
+        ]);
+    } 
 }

@@ -72,34 +72,8 @@ class Category
 
         return $this;
     }
-
-    /**
-     * @return Collection<int, Recipes>
-     */
-    public function getCategorie(): Collection
+    //convertir objet en chaîne de caractères
+    public function __toString(): string
     {
-        return $this->categorie;
-    }
-
-    public function addCategorie(Recipes $categorie): self
-    {
-        if (!$this->categorie->contains($categorie)) {
-            $this->categorie[] = $categorie;
-            $categorie->setCategory($this);
-        }
-
-        return $this;
-    }
-
-    public function removeCategorie(Recipes $categorie): self
-    {
-        if ($this->categorie->removeElement($categorie)) {
-            // set the owning side to null (unless already changed)
-            if ($categorie->getCategory() === $this) {
-                $categorie->setCategory(null);
-            }
-        }
-
-        return $this;
-    }
-}
+        return $this->title;
+    }}
