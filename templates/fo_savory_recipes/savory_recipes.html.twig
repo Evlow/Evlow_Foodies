@@ -11,7 +11,7 @@
         <section class="content-card">
             {% for recipe in recipes %}
             <article class="card"> 
-                <img class="recipe-img" src="{{vich_uploader_asset(recipe, 'imageFile')}}" alt="image">
+                <img class="recipe-img-home" src="{{vich_uploader_asset(recipe, 'imageFile')}}" alt="image">
                 <h3 class="recipes-h3">{{recipe.title}}</h3>
                 <p>{{recipe.description}}</p>
                 <a class="btn-recipe" href="{{ path('app_fo_recipe_sheet', { id: recipe.id }) }}">Voir la recette</a>

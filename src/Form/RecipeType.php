@@ -24,7 +24,8 @@ class RecipeType extends AbstractType
                 'label'=>"Titre de la recette"
             ])
             ->add('imageFile', VichImageType::class, [
-                'label' => 'Image de la recette'
+                'label' => 'Image de la recette',
+                
             ])
             ->add('ingredient_1', TextType::class, [
                 'label' => 'ingrédient n°1'
@@ -45,7 +46,8 @@ class RecipeType extends AbstractType
                 'required' => false
             ])
             ->add('ingredient_6', TextType::class, [
-                'label' => 'ingrédient n°6'
+                'label' => 'ingrédient n°6',
+                'required' => false
             ])
             ->add('ingredient_7', TextType::class, [
                 'label' => 'ingrédient n°7',
@@ -56,7 +58,8 @@ class RecipeType extends AbstractType
                 'required' => false
             ])
             ->add('ingredient_9', TextType::class, [
-                'label' => 'ingrédient n°9'
+                'label' => 'ingrédient n°9',
+                'required' => false
             ])
             ->add('ingredient_10', TextType::class, [
                 'label' => 'ingrédient n°10',
@@ -83,6 +86,7 @@ class RecipeType extends AbstractType
             ])
             ->add('category', EntityType::class, [
                 'class'  => Category::class,
+                'label' => 'Catégorie',
                     
             ]);
     }

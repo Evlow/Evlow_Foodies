@@ -15,7 +15,7 @@ class FoSpecificRecipesController extends AbstractController
             'category' => 4,
         ]);
     
-        return $this->render('fo_savory_recipes/savory_recipes.html.twig', 
+        return $this->render('fo_specific_recipes/specific_recipes.html.twig', 
         [
            'recipes'=>$recipe,
            
