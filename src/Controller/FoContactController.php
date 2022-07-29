@@ -35,7 +35,7 @@ class FoContactController extends AbstractController
             $this->addFlash('success', 'Votre message a bien été envoyé');
         }
 
-        return $this->render('fo_contact/contact.html.twig', [
+        return $this->render('pages/front/contact.html.twig', [
             'formContact' => $form->createView()
         ]);
 }

@@ -1,0 +1,18 @@
+{% extends '/bases/baseBo.html.twig' %}
+
+{% block body %}
+<main>     
+    <h2>Modification de la recette </h2>
+<!-- début formulaire -->
+
+    <article>
+        {{ form_start(formRecipe)}} 
+        {{ form_widget(formRecipe)}}
+        <a class="btn-recipe" href="{{ path('app_bo_recipes_edit', { id: recipe.id }) }}"> Modifier la recette</a>
+
+    {{ form_end(formRecipe)}}
+    </article>    
+
+</main>
+
+{% endblock %}

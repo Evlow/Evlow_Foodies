@@ -6,13 +6,13 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-class BoBasketController extends AbstractController
+class BoDashboardController extends AbstractController
 {
-    #[Route('/corbeille', name: 'app_bo_basket')]
+    #[Route('/dashboard', name: 'app_bo_dashboard')]
     public function index(): Response
     {
-        return $this->render('pages/back/basket.html.twig', [
-            'controller_name' => 'BoBasketController',
+        return $this->render('pages/back/dashboard.html.twig', [
+            'controller_name' => 'DashboardController',
         ]);
     }
 }

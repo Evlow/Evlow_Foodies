@@ -13,7 +13,7 @@ class FoHomeController extends AbstractController
     public function recipesAll(ManagerRegistry $doctrine)
     {
         $recipes = $doctrine->getRepository(Recipes::class)->findBy([],['id' => 'DESC'], 4);
-        return $this->render('fo_home/home.html.twig', [
+        return $this->render('pages/front/home.html.twig', [
             'recipes' => $recipes,
         ]);
     }

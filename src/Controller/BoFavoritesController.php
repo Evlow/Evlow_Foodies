@@ -11,7 +11,7 @@ class BoFavoritesController extends AbstractController
     #[Route('/mes-favoris', name: 'app_bo_favorites')]
     public function index(): Response
     {
-        return $this->render('bo_favorites/favorites.html.twig', [
+        return $this->render('pages/back/favorites.html.twig', [
             'controller_name' => 'BoFavoritesController',
         ]);
     }

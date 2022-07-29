@@ -14,7 +14,7 @@ class FoRecipeSheetController extends AbstractController
     public function index( RecipesRepository $repository): Response
     {
         
-        return $this->render('fo_recipe_sheet/recipe_sheet.html.twig', [
+        return $this->render('pages/front/recipe_sheet.html.twig', [
             'recipes'=>$repository->findBy(
            
             )

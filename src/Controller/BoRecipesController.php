@@ -3,7 +3,6 @@
 namespace App\Controller;
 
 use App\Entity\Recipes;
-use App\Entity\Comments;
 use App\Form\RecipeType;
 use Monolog\DateTimeImmutable;
 use Doctrine\ORM\EntityManagerInterface;
@@ -16,8 +15,20 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class BoRecipesController extends AbstractController
 {
+    #[Route('/recettes', name: 'app_recipe', methods: ['GET'])]
+    public function index(int $id, ManagerRegistry $doctrine): Response
+    {
+        // On recupère toutes les recettes
+        $recipes = $doctrine->getRepository(Recipes::class)->findAll();
+        // On recupère la recette sélectionnée
+        $recipe = $doctrine->getRepository(Recipes::class)->find($id);
+        return $this->render('pages/bo_recipes/recipes.html.twig', [
+            'recipes' => $recipes,
+            'recipe' => $recipe,
+        ]);
+    }
 
-    #[Route('/ajouter-recette', name: 'app_bo_recipes_add')]
+    #[Route('/recette/ajouter', name: 'app_bo_recipes_add')]
     public function RecipeAdd(Request $request, EntityManagerInterface $entityManager): Response
     {
         // On instancie notre objet produit
@@ -40,10 +51,10 @@ class BoRecipesController extends AbstractController
             // Etape 3.3 : Affichage d'un message succès
             $this->addFlash('success_product', 'La recette ' . $recipe->getTitle() . ' a été ajoutée !');
             // Etape 3.4 : redirection
-            return $this->redirectToRoute('app_fo_home');
+            return $this->redirectToRoute('pages/app_fo_home');
         }
 
-        return $this->render('bo_recipes/recipes.html.twig', [
+        return $this->render('pages/bo_recipes/recipes.html.twig', [
             //Enevoi variables à la vue
             'form_title' => 'Ajouter une recette',
             'form_submit' => 'Ajoutez',
@@ -52,20 +63,9 @@ class BoRecipesController extends AbstractController
 
         
     }
-    #[Route('/recettes/{id}', name: 'app_recipe_id')]
-    public function index(int $id, ManagerRegistry $doctrine): Response
-    {
-        // On recupère toutes les recettes
-        $recipes = $doctrine->getRepository(Recipes::class)->findAll();
-        // On recupère la recette sélectionnée
-        $recipe = $doctrine->getRepository(Recipes::class)->find($id);
-        return $this->render('bo_recipes/recipes.html.twig', [
-            'recipes' => $recipes,
-            'recipe' => $recipe,
-        ]);
-    }
+   
 
-    #[Route('/recette/modifier/{id}', name: 'app_bo_recipes_up')]
+    #[Route('/recette/modifier/{id}', name: 'app_bo_recipes_edit')]
     public function recipeUpdate($id, Request $request, ManagerRegistry $doctrine): Response
     {
         // On recupère le produit sélectionné avec l'ID
@@ -86,12 +86,12 @@ class BoRecipesController extends AbstractController
             // Etape 3.4 : redirection
             return $this->redirectToRoute('app_fo_home');
         }
-        return $this->render('bo_recipes/recipes.html.twig', [
+        return $this->render('pages/front/recipes.html.twig', [
             'formRecipe' => $formRecipe->createView()
         ]);
     }
 
-    #[Route('/recette/supprimé/{id}', name: 'app_bo_recipes_del')]
+    #[Route('/recette/supprimer/{id}', name: 'app_bo_recipes_del')]
     public function recipeDelete($id, ManagerRegistry $doctrine): RedirectResponse
     {
         // On recupère la recette sélectionnée avec l'ID
@@ -102,6 +102,7 @@ class BoRecipesController extends AbstractController
         $entityManager->flush();
         $this->addFlash('success_edit', 'La recette ' . $recipe->getTitle() . ' a été supprimée !');
 
-        return $this->redirectToRoute('app_fo_home');
+        return $this->redirectToRoute('pages/front/app_fo_home');
     }
 }
+
