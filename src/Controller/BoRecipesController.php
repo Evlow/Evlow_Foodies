@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Recipes;
 use App\Form\RecipeType;
 use Monolog\DateTimeImmutable;
+use App\Repository\RecipesRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Component\HttpFoundation\Request;
@@ -15,16 +16,15 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class BoRecipesController extends AbstractController
 {
-    #[Route('/recettes', name: 'app_recipe', methods: ['GET'])]
-    public function index(int $id, ManagerRegistry $doctrine): Response
+    #[Route('/recettes', name: 'app_recipe')]
+    public function index(ManagerRegistry $doctrine): Response
+    //On récupères toutes les recettes
     {
-        // On recupère toutes les recettes
         $recipes = $doctrine->getRepository(Recipes::class)->findAll();
-        // On recupère la recette sélectionnée
-        $recipe = $doctrine->getRepository(Recipes::class)->find($id);
-        return $this->render('pages/bo_recipes/recipes.html.twig', [
+
+        return $this->render('pages/back/recipes.html.twig', [
             'recipes' => $recipes,
-            'recipe' => $recipe,
+
         ]);
     }
 
@@ -51,19 +51,17 @@ class BoRecipesController extends AbstractController
             // Etape 3.3 : Affichage d'un message succès
             $this->addFlash('success_product', 'La recette ' . $recipe->getTitle() . ' a été ajoutée !');
             // Etape 3.4 : redirection
-            return $this->redirectToRoute('pages/app_fo_home');
+            return $this->redirectToRoute('app_recipe');
         }
 
-        return $this->render('pages/bo_recipes/recipes.html.twig', [
+        return $this->render('pages/back/dashboard.html.twig', [
             //Enevoi variables à la vue
             'form_title' => 'Ajouter une recette',
             'form_submit' => 'Ajoutez',
             'formRecipe' => $formRecipe->createView()
         ]);
-
-        
     }
-   
+
 
     #[Route('/recette/modifier/{id}', name: 'app_bo_recipes_edit')]
     public function recipeUpdate($id, Request $request, ManagerRegistry $doctrine): Response
@@ -84,9 +82,9 @@ class BoRecipesController extends AbstractController
             // Etape 3.3 : Affichage d'un message succès
             $this->addFlash('success_product', 'La recette ' . $recipe->getTitle() . ' a été modifiée !');
             // Etape 3.4 : redirection
-            return $this->redirectToRoute('app_fo_home');
+            return $this->redirectToRoute('app_recipe');
         }
-        return $this->render('pages/front/recipes.html.twig', [
+        return $this->render('pages/back/edit_recipes.html.twig', [
             'formRecipe' => $formRecipe->createView()
         ]);
     }
@@ -96,13 +94,12 @@ class BoRecipesController extends AbstractController
     {
         // On recupère la recette sélectionnée avec l'ID
         $recipe = $doctrine->getRepository(Recipes::class)->find($id);
-
+       
         $entityManager = $doctrine->getManager();
         $entityManager->remove($recipe);
         $entityManager->flush();
         $this->addFlash('success_edit', 'La recette ' . $recipe->getTitle() . ' a été supprimée !');
 
-        return $this->redirectToRoute('pages/front/app_fo_home');
+        return $this->redirectToRoute('app_recipe');
     }
 }
-

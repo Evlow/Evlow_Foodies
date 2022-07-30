@@ -127,4 +127,42 @@ textarea {
 
 .content-title {
   padding: 40px;
+}
+
+.recipe-img-home {
+  width: 200px;
+  height: 200px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: 50% 40%;
+     object-position: 50% 40%;
+  overflow: hidden;
+}
+
+.content-recipe-img {
+  width: 100%;
+  height: auto;
+}
+
+.carts {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.recipes-h3 {
+  padding: 20px;
+  font-size: 1.3em;
+  width: 100%;
+}
+
+.content-card {
+  width: 90%;
+  display: flex;
+  justify-content: center;
+}
+
+.card {
+  width: 20%;
+  border: #000 solid 3px;
+  text-align: center;
 }/*# sourceMappingURL=stylesBo.css.map */

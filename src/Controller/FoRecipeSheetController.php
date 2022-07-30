@@ -13,11 +13,11 @@ class FoRecipeSheetController extends AbstractController
     #[Route('/recette/fiche-recette/{id}', name: 'app_fo_recipe_sheet')]
     public function index( RecipesRepository $repository): Response
     {
-        
+        $recipes = $repository->findAll();
         return $this->render('pages/front/recipe_sheet.html.twig', [
-            'recipes'=>$repository->findBy(
+            'recipes'=>$recipes,
            
-            )
+            
         ]);
 
     

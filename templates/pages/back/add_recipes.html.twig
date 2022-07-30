@@ -2,13 +2,12 @@
 
 {% block body %}
 <main>     
-    <h2>Modification de la recette </h2>
-<!-- début formulaire -->
+    <h2>Ajouter une recette </h2>
 
     <article>
         {{ form_start(formRecipe)}} 
         {{ form_widget(formRecipe)}}
-        <input type="submit" value="Modifier" class="input btn sweet-button">
+        <input class = "btn btn-primary my-3" type="submit" value="Envoyer"/>
 
     {{ form_end(formRecipe)}}
     </article>    
