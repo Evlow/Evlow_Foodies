@@ -17,14 +17,13 @@ h1 {
   text-align: center;
 }
 
-h2{
-
-  font-size: $title-h2; 
-text-align: center;
-padding-bottom: 20px;
+h2 {
+  font-size: $title-h2;
+  text-align: center;
+  padding-bottom: 20px;
 }
 
-label{
+label {
   font-size: $label;
   font-weight: $weight;
 }
@@ -73,15 +72,15 @@ aside {
 }
 
 .nav-aside li {
-  border:#461f03 1px solid;
+  border: #461f03 1px solid;
   border-radius: 20px 0 20px;
   justify-content: center;
   color: black;
-  width:130px;
-margin-bottom: 20px;
-padding: 5px 0 5px 0;
-background-color: antiquewhite;
-font-size: $size-link;
+  width: 130px;
+  margin-bottom: 20px;
+  padding: 5px 0 5px 0;
+  background-color: antiquewhite;
+  font-size: $size-link;
 }
 
 .nav-aside ul {
@@ -91,12 +90,12 @@ font-size: $size-link;
   align-items: center;
 }
 
-.img-import{
+.img-import {
   width: 30px;
   margin-top: 20px;
 }
 
-.content-import{
+.content-import {
   display: flex;
   border: dotted black 2px;
   height: 200px;
@@ -105,7 +104,6 @@ font-size: $size-link;
   justify-content: center;
   align-items: center;
   margin: 0 auto;
-
 }
 
 article {
@@ -114,24 +112,21 @@ article {
   margin: auto;
 }
 
-#input-title{
+#input-title {
   width: 300px;
   border-radius: 10px;
   border-color: #f5b992;
 }
-textarea{
+textarea {
   border-radius: 10px;
   border-color: #f5b992;
   width: 500px;
   height: 200px;
 }
 
-.content-title{
+.content-title {
   padding: 40px;
 }
-
-
-
 
 //recetttes
 .recipe-img-home {
@@ -158,8 +153,7 @@ textarea{
 .content-card {
   width: 90%;
   display: flex;
-  justify-content: center
- ;
+  justify-content: center;
 }
 
 .card {

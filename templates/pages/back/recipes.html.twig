@@ -1,35 +1,38 @@
 {% extends '/bases/baseBo.html.twig' %}
 
 {% block body %}
-<section>
-    <h2>Les recettes</h2>
-    <div class="carts">
-        <div class="container mt-4">
-            {% for message in app.flashes('success') %}
-                <div class="alert alert-success mt-4">
-                    {{ message }}
-                </div>
-            {% endfor %}
-        <section class="content-card">
-            {% for recipe in recipes %}
-            <article class="card"> 
-                <h3 class="recipes-h3">{{recipe.title}}</h3>
-                <div class="content-recipe-img">
-                <img class="recipe-img-home" src="{{vich_uploader_asset(recipe, 'imageFile')}}" alt="image">
-            </div>
-                <a class="btn-recipe" href="{{ path('app_bo_recipes_edit', { id: recipe.id }) }}">Modifier</a>
-                <a class="btn-recipe" href="{{ path('app_bo_recipes_del', { id: recipe.id }) }}">Supprimer</a>
-            </article>
-            {% endfor %}
+	<article>
+		<h2>Les recettes</h2>
+		<div class="container mt-4">
+			{% for message in app.flashes('success') %}
+				<div class="alert alert-success mt-4">
+					{{ message }}
+				</div>
+        </div>
+			{% endfor %}
+			<section class="content-card">
+				{% for recipe in recipes %}
+					<div class="card">
+						<h3 class="recipes-h3">{{recipe.title}}</h3>
+						<div class="content-recipe-img">
+							<img class="recipe-img-home" src="{{vich_uploader_asset(recipe, 'imageFile')}}" alt="image">
+						</div>
+						<a class="btn-recipe" href="{{ path('app_bo_recipes_edit', { id: recipe.id }) }}">Modifier</a>
+						<a class="btn-recipe" href="{{ path('app_bo_recipes_del', { id: recipe.id }) }}">Supprimer</a>
+					</div>
+				{% endfor %}
+          
 
-            <article class="content-card">
-                    <div class="card">
-                        <a href="{{path('app_bo_recipes_add')}}">
-                            <h3>+
-                                <br>
-                                Ajouter un produit
-                            </h3>
-                        </a>
-        </article>
-        </section>     
-        {% endblock %}
+            {# //ADD RECIPES #}
+				
+					<div class="add-recipe">
+						<a href="{{path('app_bo_recipes_add')}}">
+							<h3>+
+								<br>
+								Ajouter une recette
+							</h3>
+						</a>
+					</div>
+                    </section>
+				</article>
+			{% endblock %}

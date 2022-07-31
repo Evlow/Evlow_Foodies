@@ -33,17 +33,17 @@
         <h3 class="home-h3"><span>Les dernières recettes !</span></h3>
         <p class="p-recipe">Vous retrouverez-ici les dernièrs recettes mises en ligne !</p>
         <div class="carts">
-            <section class="content-card">
+            <div class="content-card">
                 {% for recipe in recipes %}
-                <article class="card"> 
+                <div class="card"> 
                     <h3 class="recipes-h3">{{recipe.title}}</h3>
                     <div class="content-recipe-img">
                     <img class="recipe-img-home" src="{{vich_uploader_asset(recipe, 'imageFile')}}" alt="image">
                 </div>
                     <a class="btn-recipe" href="{{ path('app_fo_recipe_sheet', { id: recipe.id }) }}">Voir la recette</a>
-                </article>
+                </div>
                 {% endfor %}
-            </section>
+            </div>
         
         </div>
     </section>

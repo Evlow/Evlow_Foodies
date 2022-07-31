@@ -537,7 +537,7 @@ h3 {
 
 .card {
   width: 20%;
-  border: #000 solid 3px;
+  border: rgb(105, 9, 9) solid 3px;
   text-align: center;
 }
 

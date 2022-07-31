@@ -6,7 +6,7 @@
         <meta name="description" content="Site de recettes réalisé avec Symfony." />
         <meta name="author" content="" />
         <title>{% block title %}Evlow Foodies{% endblock %}</title>
-        <!-- Favicon-->
+  
             
         <link href="{{ asset('assets/css/reset.css') }}" rel="stylesheet">
         <link href="{{ asset('assets/css/stylesBo.css') }}" rel="stylesheet">
@@ -19,8 +19,6 @@
     {% block aside %}{% include 'includes/_asideBo.html.twig' %}{% endblock %}
      <!-- Body-->
     {% block body %}{% endblock %}
-    <!-- Core theme JS-->
-    {% block javascript %}{% endblock %}
-    <script src="js/scripts.js"></script>
+
     </body>
 </html>
