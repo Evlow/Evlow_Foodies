@@ -105,6 +105,9 @@ class Recipes
     #[ORM\JoinColumn(nullable: false)]
     private $category;
 
+    #[ORM\Column(type: 'boolean', nullable: true)]
+    private $basket= FALSE;
+
     
     public function getId(): ?int
     {
@@ -444,6 +447,18 @@ class Recipes
     public function setCategory(?category $category): self
     {
         $this->category = $category;
+
+        return $this;
+    }
+
+    public function isBasket(): ?bool
+    {
+        return $this->basket;
+    }
+
+    public function setBasket(?bool $basket): self
+    {
+        $this->basket = $basket;
 
         return $this;
     }

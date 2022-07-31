@@ -5,7 +5,6 @@ namespace App\Controller;
 use App\Entity\Recipes;
 use App\Form\RecipeType;
 use Monolog\DateTimeImmutable;
-use App\Repository\RecipesRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Component\HttpFoundation\Request;
@@ -54,7 +53,7 @@ class BoRecipesController extends AbstractController
             return $this->redirectToRoute('app_recipe');
         }
 
-        return $this->render('pages/back/dashboard.html.twig', [
+        return $this->render('pages/back/add_recipes.html.twig', [
             //Enevoi variables à la vue
             'form_title' => 'Ajouter une recette',
             'form_submit' => 'Ajoutez',

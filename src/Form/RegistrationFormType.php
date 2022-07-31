@@ -53,7 +53,7 @@ class RegistrationFormType extends AbstractType
             ])
 
 
-            ->add('password', RepeatedType::class, [
+            ->add('plainPassword', RepeatedType::class, [
                 'type' => PasswordType::class,
                 'label' => false,
                 'first_options'  => [
