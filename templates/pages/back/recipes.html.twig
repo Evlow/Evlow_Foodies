@@ -21,6 +21,7 @@
 					</a>
 				</div>
 				{% for recipe in recipes %}
+				<div class="inline-product"></div>
 					<div class="card">
 						<h3 class="recipes-h3">{{recipe.title}}</h3>
 						<div class="content-recipe-img">
@@ -30,9 +31,11 @@
 						<a class="btn-edit" href="{{ path('app_bo_recipes_edit', { id: recipe.id }) }}">MODIFIER</a>
 						<a class="btn-delete" href="{{ path('app_bo_recipes_del', { id: recipe.id }) }}">SUPPRIMER</a>
 					</div>
+				</div>
 				{% endfor %}
     
 			</section>
+			
 				</article>
 			
 			{% endblock %}

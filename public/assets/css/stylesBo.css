@@ -36,6 +36,7 @@ h2 {
 
 h3 {
   font-size: 1.8em;
+  color: black;
 }
 
 label {
@@ -164,18 +165,10 @@ textarea {
 }
 
 .recipe-img-home {
-  width: 200px;
-  height: 200px;
+  height: 230px;
+  width: 95%;
   -o-object-fit: cover;
      object-fit: cover;
-  -o-object-position: 50% 40%;
-     object-position: 50% 40%;
-  overflow: hidden;
-}
-
-.content-recipe-img {
-  width: 100%;
-  height: auto;
 }
 
 .recipes-h3 {
@@ -187,18 +180,13 @@ textarea {
 .content-card {
   width: 90%;
   display: flex;
-  flex-wrap: wrap;
   margin: 10px;
 }
 
 .card, .add-recipe {
-  width: 20%;
   background-color: white;
   text-align: center;
-  width: 250px;
-  height: 310px;
   border-radius: 5px;
-  opacity: 0.85;
   margin: 10px;
 }
 
