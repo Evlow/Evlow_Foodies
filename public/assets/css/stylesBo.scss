@@ -4,25 +4,38 @@
 * {
   font-family: $font;
 }
-
-main {
-  width: 85%;
-  position: absolute;
-  top: 50px;
-  right: 0;
-  padding: 20px;
+#page{
+  display: flex;
+  align-items: flex-end;
+  width: 100vw;
+  
 }
+main {
+  width: 90%;
+  position: absolute;
+  top: 40px;
+  right: 0;
 
+}
+article {
+  background-color: #fae7e9;
+  height: 100vh;
+}
 h1 {
-  text-align: center;
+  padding: $padding-top-bottom-10;
+  text-align: left;
+  font-weight: $weight;
+  color:white;
 }
 
 h2 {
-  font-size: $title-h2;
+  font-size:2em;
   text-align: center;
-  padding-bottom: 20px;
+ padding: 20px;
 }
-
+h3{
+  font-size: $title-h3;
+}
 label {
   font-size: $label;
   font-weight: $weight;
@@ -38,49 +51,71 @@ label {
   width: 20px;
 }
 
+.title{
+  width: 10%;
+  padding-left: 10px;
+  display: flex;
+align-items: center;
+}
+
+
+.nav-back{
+  width: 100%;
+}
 .nav-back ul {
   display: flex;
   justify-content: space-evenly;
+  align-items: center;
+
 }
 
 .nav-back a {
-  color: black;
+  color:white;
+  font-weight: $weight;
+font-size: $size-link;
 }
 header {
-  background-color: #ffa05c;
-  height: auto;
+  background-color: #B4172E;
   width: 100%;
   position: fixed;
   top: 0;
   z-index: 1;
   padding-bottom: 5px;
   font-size: $size-link;
+  align-content: center;
+  align-items: center;
+  display: flex;
 }
 
 aside {
-  background-color: #f5b992;
+  background-color: #f05665;
   height: 100vh;
+  width: 10vw;
   position: fixed;
   top: 0;
-  width: 150px;
+  font-weight: $weight;
+ 
 }
 .nav-aside a {
   color: black;
   display: flex;
   flex-direction: column;
   text-align: center;
+  font-size: $size-link;
 }
 
 .nav-aside li {
-  border: #461f03 1px solid;
+  border: none;
   border-radius: 20px 0 20px;
-  justify-content: center;
-  color: black;
+
   width: 130px;
   margin-bottom: 20px;
   padding: 5px 0 5px 0;
   background-color: antiquewhite;
   font-size: $size-link;
+  display: flex;
+
+flex-direction: column;
 }
 
 .nav-aside ul {
@@ -89,6 +124,10 @@ aside {
   flex-direction: column;
   align-items: center;
 }
+.img-aside 
+{ width: 25px;
+margin: 0 auto;}
+
 
 .img-import {
   width: 30px;
@@ -106,16 +145,10 @@ aside {
   margin: 0 auto;
 }
 
-article {
-  background-color: rgb(248, 238, 231);
-  border-radius: 10px;
-  margin: auto;
-}
-
 #input-title {
   width: 300px;
   border-radius: 10px;
-  border-color: #f5b992;
+  border-color: #f05665;
 }
 textarea {
   border-radius: 10px;
@@ -129,6 +162,7 @@ textarea {
 }
 
 //recetttes
+
 .recipe-img-home {
   width: 200px;
   height: 200px;
@@ -141,10 +175,7 @@ textarea {
   width: 100%;
   height: auto;
 }
-.carts {
-  width: 90%;
-  margin: 0 auto;
-}
+
 .recipes-h3 {
   padding: $padding-20;
   font-size: 1.3em;
@@ -153,11 +184,45 @@ textarea {
 .content-card {
   width: 90%;
   display: flex;
-  justify-content: center;
+  flex-wrap: wrap;
+  margin: $margin-10;
 }
 
 .card {
   width: 20%;
-  border: #000 solid 3px;
+ background-color: white;
   text-align: center;
+  width: 250px;
+  height: 310px;
+  border-radius: 5px;
+  opacity: 0.85;
+  margin: 10px;
+}
+
+.btn-card {
+  padding:$padding-5;
+
+}
+.btn-edit {
+  color:black;
+  padding:$padding-5;
+  border:2px solid #868484;
+  border-radius: 5px;
+  display: inline-block;
+width: 100px;
+}
+
+.btn-delete {
+  @extend .btn-edit;
+  border:2px solid #f05665;
+  width: 110px;
+}
+
+//ADD RECIPE
+
+.add-recipe {
+  @extend .card;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

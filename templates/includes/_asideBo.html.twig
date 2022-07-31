@@ -1,10 +1,16 @@
 <aside>
     <nav class="nav-aside">
         <ul>
-            <li><a href="{{path('app_bo_dashboard')}}">Dashboard</a></li>
-            <li><a href="{{path('app_recipe')}}">Recettes</a></li>
-            <li><a href="{{path('app_bo_favorites')}}">Favoris</a></li>
-            <li><a href="{{path('app_bo_basket')}}">Corbeille</a></li>
+            <li><a href="{{path('app_bo_dashboard')}}">Dashboard  </a>
+                <img class="img-aside" src="{{asset('assets/picture/dashboard.svg') }}" alt="icone dashboard">
+          </li>
+            <li><a href="{{path('app_recipe')}}">Recettes</a>
+                <img class="img-aside" src="{{asset('assets/picture/recipes.svg') }}" alt="icone recettes"></li>
+            <li><a href="{{path('app_bo_favorites')}}">Favoris</a>
+                <img class="img-aside" src="{{asset('assets/picture/favoris.svg') }}" alt="icone favoris"></li>
+            <li><a href="{{path('app_bo_basket')}}">Corbeille</a>
+                <img class="img-aside" src="{{asset('assets/picture/delete.svg') }}" alt="icone supprimer"></li>
         </ul>
     </nav>
 </aside>
+
