@@ -18,7 +18,6 @@ main {
 
 article {
   background-color: #fae7e9;
-  height: 100vh;
 }
 
 h1 {
@@ -42,6 +41,7 @@ h3 {
 label {
   font-size: 1.2em;
   font-weight: 600;
+  padding-bottom: 5px;
 }
 
 .img-aside {
@@ -155,13 +155,74 @@ aside {
 
 textarea {
   border-radius: 10px;
-  border-color: #f5b992;
-  width: 500px;
-  height: 200px;
+  border-color: #f05665;
+  width: 550px;
+  height: 90px;
+}
+
+.add-recipes {
+  padding-left: 50px;
+}
+
+.image-recipe {
+  border: dotted 3px #f05665;
+  width: 25%;
+  border-radius: 5px;
+  margin: 10px 0 10px 0;
+  padding: 5px;
+}
+
+input {
+  border-radius: 5px;
+  border-color: #f05665;
+  height: 25px;
+  margin: 5px 0 5px 0;
+}
+
+.content-ingredients, .content-preparation {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+  background-color: white;
+  padding: 10px;
 }
 
 .content-title {
-  padding: 40px;
+  background-color: white;
+  margin: 10px 0 10px 0;
+  text-align: center;
+}
+
+.title-recipe {
+  display: flex;
+  width: 50%;
+  justify-content: center;
+  margin: auto;
+}
+
+.bloc-ingredient, .bloc-preparation {
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+.bloc-preparation {
+  width: 50%;
+}
+
+.bloc-category {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 30px;
+}
+
+#recipe_category {
+  width: 10%;
+  margin-bottom: 5px;
+  background: white;
+  border-radius: 5px;
+  border: 2px solid #f05665;
 }
 
 .recipe-img-home {
@@ -181,13 +242,16 @@ textarea {
   width: 90%;
   display: flex;
   margin: 10px;
+  flex-wrap: wrap;
 }
 
 .card, .add-recipe {
+  margin: 0 auto;
   background-color: white;
   text-align: center;
   border-radius: 5px;
   margin: 10px;
+  width: 20%;
 }
 
 .btn-card {

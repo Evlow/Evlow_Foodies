@@ -19,7 +19,6 @@ main {
 }
 article {
   background-color: #fae7e9;
-  height: 100vh;
 }
 h1 {
   padding: $padding-top-bottom-10;
@@ -40,6 +39,7 @@ h3{
 label {
   font-size: $label;
   font-weight: $weight;
+  padding-bottom: 5px;
 }
 
 .img-aside {
@@ -153,18 +153,83 @@ margin: 0 auto;}
 }
 textarea {
   border-radius: 10px;
-  border-color: #f5b992;
-  width: 500px;
-  height: 200px;
+  border-color:  #f05665;;
+  width: 550px;
+  height: 90px;
 }
 
+
+
+//ADD RECIPES
+
+.add-recipes{
+  padding-left: 50px;
+}
+.image-recipe {
+  border:dotted 3px #f05665;
+  width: 25%;
+  border-radius: 5px;
+  margin :$margin-top-bottom-10;
+  padding:$padding-5;
+
+}
+input {
+  border-radius: 5px;
+  border-color :#f05665;
+  height: 25px;
+  margin:$margin-top-bottom-5;
+
+}
+.content-ingredients{
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom:$margin-bottom-30;
+  background-color: white;
+  padding: 10px;
+}
 .content-title {
-  padding: 40px;
+  background-color: white;
+  margin:$margin-top-bottom-10;
+  text-align: center;
 }
 
-//recetttes
+.title-recipe {
+  display: flex;
+  width: 50%;
+  justify-content: center;
+  margin: auto;
+}
+
+.bloc-ingredient{
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+padding: 10px;
+
+}
+.content-preparation {
+  @extend .content-ingredients;
+}
+.bloc-preparation {
+  @extend .bloc-ingredient;
+  width: 50%;
+}
 
 
+
+.bloc-category{
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 30px;
+}
+
+#recipe_category{
+  width: 10%;
+  margin-bottom:5px;
+  background: white;
+border-radius: 5px;
+border: 2px solid #f05665;
+}
 .recipe-img-home {
 
   height: 230px;
@@ -180,13 +245,16 @@ textarea {
   width: 90%;
   display: flex;
   margin: $margin-10;
+  flex-wrap: wrap;
 }
 
 .card {
+  margin: 0 auto;
  background-color: white;
   text-align: center;
   border-radius: 5px;
   margin: 10px;
+  width: 20%;
 }
 
 .btn-card {
@@ -208,7 +276,7 @@ width: 100px;
   width: 110px;
 }
 
-//ADD RECIPE
+//ADD RECIPE to ALL RECIPES
 
 .add-recipe {
   @extend .card;

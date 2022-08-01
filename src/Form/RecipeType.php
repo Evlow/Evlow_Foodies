@@ -21,72 +21,144 @@ class RecipeType extends AbstractType
     {
         $builder
             ->add('Title', TextType::class, [
-                'label'=>"Titre de la recette"
+                'label'=>"Titre de la recette :",
+                "attr" => [
+                    "class" => "title-recipe"
+                ]
+
             ])
             ->add('imageFile', VichImageType::class, [
-                'label' => 'Image de la recette',
+                'label' => 'Image de la recette :',
+                "attr" => [
+                    "class" => "image-recipe"
+                ],
+                'required' => false,
+                
                 
             ])
             ->add('ingredient_1', TextType::class, [
-                'label' => 'ingrédient n°1'
+                'label' => 'Ingrédient n°1 :',
+                "attr" => [
+                    "class" => "label-recipe"
+                ]
             ])
             ->add('ingredient_2', TextType::class, [
-                'label' => 'ingrédient n°2'
+                'label' => 'Ingrédient n°2 :',
+                "attr" => [
+                    "class" => "label-recipe"
+                ]
             ])
             ->add('ingredient_3', TextType::class, [
-                'label' => 'ingrédient n°3',
-                'required' => false
+                'label' => 'Ingrédient n°3 :',
+                'required' => false,
+                "attr" => [
+                    "class" => "label-recipe"
+                ]
+                
             ])
             ->add('ingredient_4', TextType::class, [
-                'label' => 'ingrédient n°4',
-                'required' => false
+                'label' => 'Ingrédient n°4 :',
+                'required' => false,
+                "attr" => [
+                    "class" => "label-recipe:"
+                ]
             ])
             ->add('ingredient_5', TextType::class, [
-                'label' => 'ingrédient n°5',
-                'required' => false
+                'label' => 'Ingrédient n°5 :',
+                'required' => false,
+                "attr" => [
+                    "class" => "label-recipe:"
+                ]
             ])
             ->add('ingredient_6', TextType::class, [
-                'label' => 'ingrédient n°6',
-                'required' => false
+                'label' => 'Ingrédient n°6 :',
+                'required' => false,
+                "attr" => [
+                    "class" => "label-recipe"
+                ]
             ])
             ->add('ingredient_7', TextType::class, [
-                'label' => 'ingrédient n°7',
-                'required' => false
+                'label' => 'Ingrédient n°7 :',
+                'required' => false,
+                "attr" => [
+                    "class" => "label-recipe"
+                ]
             ])
             ->add('ingredient_8', TextType::class, [
-                'label' => 'ingrédient n°8',
-                'required' => false
+                'label' => 'Ingrédient n°8 :',
+                'required' => false,
+                "attr" => [
+                    "class" => "label-recipe"
+                ]
             ])
             ->add('ingredient_9', TextType::class, [
-                'label' => 'ingrédient n°9',
-                'required' => false
+                'label' => 'Ingrédient n°9 :',
+                'required' => false,
+                "attr" => [
+                    "class" => "label-recipe"
+                ]
             ])
             ->add('ingredient_10', TextType::class, [
-                'label' => 'ingrédient n°10',
-                'required' => false
+                'label' => 'Ingrédient n°10 :',
+                'required' => false,
+                "attr" => [
+                    "class" => "label-recipe"
+                ]
+            ])
+            ->add('ingredient_11', TextType::class, [
+                'label' => 'Ingrédient n°11 :',
+                'required' => false,
+                "attr" => [
+                    "class" => "label-recipe"
+                ]
+            ])
+            ->add('ingredient_12', TextType::class, [
+                'label' => 'Ingrédient n°12 :',
+                'required' => false,
+                "attr" => [
+                    "class" => "label-recipe"
+                ]
             ])
 
             ->add('preparation_1', TextareaType::class, [
-                'label' => 'préparation n°1'
+                'label' => 'Préparation n°1 :',
+                "attr" => [
+                    "class" => "label-preparation"
+                ]
             ])
             ->add('preparation_2', TextareaType::class, [
-                'label' => 'préparation n°2'
+                'label' => 'Préparation n°2 :',
+                "attr" => [
+                    "class" => "label-preparation"
+                ]
             ])
             ->add('preparation_3', TextareaType::class, [
-                'label' => 'préparation n°3',
+                'label' => 'Préparation n°3 :',
+                "attr" => [
+                    "class" => "label-preparation"
+                ],
                 'required' => false
             ])
             ->add('preparation_4', TextareaType::class, [
-                'label' => 'préparation n°4',
-                'required' => false
+                'label' => 'Préparation n°4 :',
+                "attr" => [
+                    "class" => "label-preparation"
+                ],
+                'required' => false,
             ])
             ->add('preparation_5', TextareaType::class, [
-                'label' => 'préparation n°5',
-                'required' => false
+                'label' => 'Préparation n°5 :',
+                'required' => false,
+                "attr" => [
+                    "class" => "label-preparation"
+                ],
             ])
             ->add('category', EntityType::class, [
                 'class'  => Category::class,
-                'label' => 'Catégorie',
+                'label' => 'Catégorie :',
+                "attr" => [
+                    "class" => "label-preparation"
+                ],
                     
             ]);
     }
