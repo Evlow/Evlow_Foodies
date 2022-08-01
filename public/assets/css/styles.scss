@@ -259,6 +259,7 @@ input {
   border-bottom: solid 2px $secondary-color;
   background: transparent;
   width: 200px;
+  margin: 5px 80px 5px 0;
 }
 
 .label-comment {
@@ -432,7 +433,6 @@ h3 {
 
 //recipes//
 
-
 .recipe-img-home {
   width: 200px;
   height: 200px;
@@ -448,7 +448,6 @@ h3 {
 .carts {
   width: 90%;
   margin: 0 auto;
-
 }
 .recipes-h3 {
   padding: $padding-20;
@@ -464,7 +463,6 @@ h3 {
   width: 20%;
   border: rgb(105, 9, 9) solid 3px;
   text-align: center;
-
 }
 
 .p-recipe {
@@ -501,40 +499,50 @@ h3 {
 }
 
 //REGISTRATION
+
 .content-connect {
-  width: 700px;
+  background-color: #000;
   display: flex;
-  margin: auto;
-}
-.form-connect {
-  display: flex;
-  margin: auto;
-}
-.bloc-connect {
-  display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
   background-image: url(../picture/fond-connect.png);
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: cover;
   background-position: 50%;
-  height: 650px;
+  border-radius: 70px;
+  height: 600px;
   opacity: 0.8;
+  margin: auto;
+  width: 700px;
 }
-
-#registration_form {
-  padding-left: 130px;
+.form-registration {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  padding-left: 100px;
+}
+#registration_form_plainPassword_first,
+#registration_form_email {
+  text-align: center;
 }
 
+#registration_form_plainPassword {
+  display: flex;
+}
+#registration_form_agreeTerms {
+  margin-right: 10px;
+}
 .p-registration {
   @include flex-center;
   padding: $padding-10;
 }
 
-input {
-  margin: 5px 80px 5px 0;
+.bloc-agree {
+  width: 100%;
+  display: flex;
+  flex-direction: row-reverse;
+
 }
 
 //CONTACT//
@@ -544,10 +552,6 @@ input {
 }
 
 //LOGIN//
-
-.content-connect {
-  @extend .bloc-connect;
-}
 
 //SAVORY//
 
@@ -666,7 +670,7 @@ input {
 }
 
 //SHEET RECIPE//
-.content-img-sheet{
+.content-img-sheet {
   display: flex;
   justify-content: center;
 }

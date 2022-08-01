@@ -12,18 +12,48 @@ Contactez-moi | Evlow Foodies
                 <span>Inscrits-toi !</span>
             </h3>
         </section>
-    </article>
+ 
     {% for message in app.flashes('success') %}
     <div class="alert alert-success">
         {{ message }}
     </div>
     {% endfor %}
-    <div class="bloc-connect">
-        <div class="form-connect">
-            <div class="content-connect">
-                {{ form(FormRegistration) }}
+
+    <section class="content-connect">
+        <div class="form-registration">
+            <div class="bloc-connect">
+                {{ form_start(FormRegistration) }}
+                {{ form_label(FormRegistration.firstName) }}
+                {{ form_widget(FormRegistration.firstName) }}
+            </div>
+            <div class="bloc-connect">
+                {{ form_label(FormRegistration.lastName) }}
+                {{ form_widget(FormRegistration.lastName) }}
+            </div>
+            <div class="bloc-connect">
+                {{ form_label(FormRegistration.pseudo) }}
+                {{ form_widget(FormRegistration.pseudo) }}
+            </div>
+            <div class="bloc-connect">
+                {{ form_label(FormRegistration.email) }}
+                {{ form_widget(FormRegistration.email) }}
+            </div>
+            <div class="bloc-connect">
+                {{ form_label(FormRegistration.plainPassword) }}
+                {{ form_widget(FormRegistration.plainPassword) }}
             </div>
         </div>
-    </div>
+            <div class="bloc-input">
+                {{ form_label(FormRegistration.envoyer) }}
+                {{ form_widget(FormRegistration.envoyer) }}
+            </div>
+            <div class="bloc-agree">
+                {{ form_label(FormRegistration.agreeTerms) }}
+                {{ form_widget(FormRegistration.agreeTerms) }}
+                {{ form_end(FormRegistration) }}
+            </div>
+      
+    </section>
+    </article>
 </main>
 {% endblock %}

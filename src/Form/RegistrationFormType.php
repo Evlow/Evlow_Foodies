@@ -83,7 +83,7 @@ class RegistrationFormType extends AbstractType
                     ]),
                 ],
             ])
-            ->add('Envoyer', SubmitType::class, [
+            ->add('envoyer', SubmitType::class, [
                 "label" => "Envoyer le message",
                 "attr" => [
                     "class" => 'button-connect'
@@ -97,6 +97,7 @@ class RegistrationFormType extends AbstractType
                         'message' => 'Vous devez accepter nos conditions..',
                     ]),
                 ],
+      
 
             ]);
     }

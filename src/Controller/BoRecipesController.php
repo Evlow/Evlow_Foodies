@@ -11,6 +11,8 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\RedirectResponse;
+use Symfony\Component\Form\Extension\Core\Type\DateType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class BoRecipesController extends AbstractController
@@ -29,7 +31,8 @@ class BoRecipesController extends AbstractController
 
     #[Route('/recette/ajouter', name: 'app_bo_recipes_add')]
     public function RecipeAdd(Request $request, EntityManagerInterface $entityManager): Response
-    {
+    { 
+
         // On instancie notre objet produit
         $recipe = new Recipes();
 
