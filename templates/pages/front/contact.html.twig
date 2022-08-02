@@ -2,10 +2,18 @@
 
 {% block title %} Contactez-moi | Evlow Foodies{% endblock %} 
 {% block body %}
-<main>
-    <article class="article-contact">
-        <section class="section-contact">
+<article class="article-contact">
+    <section class="section-contact">
+        <p class="p-contact">Vous avez une question ?</p>
+        <p class="p-contact">Des suggestions à faire ?</p>
+        <h3 class="home-h3 ">
+            <span>Contactez-moi !</span>
+        </h3>
+    </section>
+
+        <section class="content-contact">
         <div class="form-contact">
+            <div class="bloc-name-contact">
             <div class="bloc-contact">
                 {{ form_start(formContact) }}
                 {{ form_label(formContact.firstName) }}
@@ -15,11 +23,13 @@
                 {{ form_label(formContact.lastName) }}
                 {{ form_widget(formContact.lastName) }}
             </div>
-            <div class="bloc-contact">
+        </div>
+            <div class="bloc-email">
                 {{ form_label(formContact.email) }}
                 {{ form_widget(formContact.email) }}
             </div>
-            <div class="bloc-contact">
+       
+            <div class="bloc-message">
                 {{ form_label(formContact.message) }}
                 {{ form_widget(formContact.message) }}
             </div>
@@ -27,6 +37,8 @@
                 {{ form_label(formContact.envoyer) }}
                 {{ form_widget(formContact.envoyer) }}
             </div>
-     
+            <span class="span-contact">*Champs obligatoires</span>
+        </div>
    </section>
+</article>
 {% endblock %}

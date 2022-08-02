@@ -572,18 +572,11 @@ h3 {
   color: #000;
 }
 
-.article-registration {
-  padding-bottom: 50px;
-}
-
 .section-registration {
   padding-top: 50px;
 }
 
-.content-registration, .content-connect {
-  border: solid #9ce7a9 2px;
-  border-top: none;
-  border-bottom: none;
+.content-registration, .content-connect, .content-contact {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -628,18 +621,22 @@ h3 {
   align-items: center;
 }
 
-span {
+.span-registration {
   padding-top: 10px;
   align-self: baseline;
   padding-left: 50px;
   font-size: 0.8em;
 }
 
+.article-contact {
+  margin: 50px 0 50px 0;
+}
+
 .button-connect {
   background-color: #9ce7a9;
-  width: 140px;
+  width: 180px;
   height: 32px;
-  font-size: 1.2em;
+  font-size: 1.1em;
   border: none;
   font-weight: 600;
   border-radius: 15px 0 15px;
@@ -650,10 +647,108 @@ span {
 }
 
 .form-contact {
+  flex-direction: column;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  padding-left: 100px;
+}
+
+.bloc-name-contact {
+  display: flex;
+  justify-content: space-between;
+}
+
+.bloc-name-contact {
+  width: 100%;
+}
+
+.bloc-email {
+  margin: 10px 0 10px 0;
+  padding: 10px 0 10px 0;
+}
+
+#contact_email {
+  width: 99%;
+}
+
+#contact_firstName::-moz-placeholder {
+  text-align: left;
+}
+
+#contact_firstName:-ms-input-placeholder {
+  text-align: left;
+}
+
+#contact_firstName::placeholder {
+  text-align: left;
+}
+
+#contact_lastName::-moz-placeholder {
+  text-align: left;
+}
+
+#contact_lastName:-ms-input-placeholder {
+  text-align: left;
+}
+
+#contact_lastName::placeholder {
+  text-align: left;
+}
+
+#contact_email::-moz-placeholder {
+  text-align: left;
+}
+
+#contact_email:-ms-input-placeholder {
+  text-align: left;
+}
+
+#contact_email::placeholder {
+  text-align: left;
+}
+
+#contact_message::-moz-placeholder {
+  text-align: left;
+  font-size: 1em;
+}
+
+#contact_message:-ms-input-placeholder {
+  text-align: left;
+  font-size: 1em;
+}
+
+#contact_message::placeholder {
+  text-align: left;
+  font-size: 1em;
+}
+
+.bloc-message {
+  justify-content: center;
+  display: flex;
+}
+
+#contact_message {
+  margin-top: 10px;
+  width: 485px;
+  height: 150px;
+  border-color: #9ce7a9;
+  border-radius: 5px;
+}
+
+.bloc-input {
+  display: flex;
+  justify-content: center;
+}
+
+#contact_firstName,
+#contact_lastName,
+#contact_email {
+  margin: 0;
+}
+
+.span-contact {
+  font-size: 0.8em;
+  margin-top: 10px;
 }
 
 .bloc-connect {

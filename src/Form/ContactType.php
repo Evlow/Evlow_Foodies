@@ -16,44 +16,46 @@ class ContactType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('firstName',TextType::class,[
-                "label" => "*Prénom:",
+            ->add('firstName', TextType::class, [
+                "label" => false,
                 "attr" => [
-                "class" => "label",
-            
-            ]
-            ])
-            ->add('lastName',TextType::class,[
-                "label" => "*Nom:",
-                "attr" => [
-                "class" => "label"
-            ]
-            ])
-            ->add('email',EmailType::class, [
-                "label" => "*Email:",
-                "attr" => [
-                "class" => "label"
-            ]
-            ])
-            ->add('message', TextareaType::class,[       "label" => "*Nom:",
-            "label" => "*Message:",
-            "attr" => [
-            "class" => 
-            "textarea"
-            ]
-        ])
-            ->add('envoyer', SubmitType::class, [
-                "label" => "Envoyer le message",
-                "attr" =>[
-                    "class" => 'button-connect'
+                    "placeholder" => "*Nom",
+                    "class" => "label",
+
                 ]
             ])
-        ;
+            ->add('lastName', TextType::class, [
+                "label" => false,
+                "attr" => [
+                    "placeholder" => "*Prénom",
+                    "class" => "label"
+                ]
+            ])
+            ->add('email', EmailType::class, [
+                "label" => false,
+                "attr" => [
+                    "placeholder" => "*Email",
+                    "class" => "label"
+                ]
+            ])
+            ->add('message', TextareaType::class, [
+             
+                "label" => false,
+                "attr" => [
+                    "placeholder"=> "*Veuillez écrire votre message",
+                    "class" =>
+                    "textarea"
+                ]
+            ])
+            ->add('envoyer', SubmitType::class, [
+                "label" => "Envoyer le message",
+                "attr" => [
+                    "class" => 'button-connect'
+                ]
+            ]);
     }
     public function configureOptions(OptionsResolver $resolver)
     {
-        $resolver->setDefaults([
-        ]);
+        $resolver->setDefaults([]);
     }
 }
-  

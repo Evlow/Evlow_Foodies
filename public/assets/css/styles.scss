@@ -187,7 +187,7 @@ footer {
 ::placeholder {
   text-align: center;
   font-style: italic;
-  color:rgb(18, 18, 18);
+  color: rgb(18, 18, 18);
   font-size: 1.2em;
   font-weight: 600;
 }
@@ -293,9 +293,9 @@ input {
 label {
   font-weight: 600;
   font-size: 1em;
-display: flex;
-width: 100%;
-text-align: justify;
+  display: flex;
+  width: 100%;
+  text-align: justify;
 }
 
 /* BUTTON */
@@ -462,7 +462,7 @@ h3 {
 .content-card {
   display: flex;
   justify-content: space-evenly;
-  padding:$padding-top-bottom-50;
+  padding: $padding-top-bottom-50;
 }
 
 .card {
@@ -481,26 +481,19 @@ h3 {
   color: #000;
 }
 
-
 //PAGE INSCRIPTION
 
-.article-registration {
-  padding-bottom: 50px;
+.section-registration {
+  padding-top: 50px;
 }
-.section-registration{
-  padding-top:50px;}
 
-.content-registration { 
-  border: solid #9ce7a9 2px;
-  border-top:none;
-  border-bottom:none;
+.content-registration {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 50%;
 }
 .form-registration {
-
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -517,7 +510,6 @@ h3 {
 #registration_form_agreeTerms {
   margin-right: 10px;
   flex-basis: content;
-  
 }
 .p-registration {
   @include flex-center;
@@ -525,51 +517,113 @@ h3 {
 }
 
 .bloc-agree {
-margin-top:$margin-top-30;
- padding-left: 50px;
+  margin-top: $margin-top-30;
+  padding-left: 50px;
   width: 100%;
   display: flex;
   flex-direction: row-reverse;
   align-items: center;
-
 }
-span{
-  padding-top:$padding-top-10;
+.span-registration {
+  padding-top: $padding-top-10;
   align-self: baseline;
   padding-left: 50px;
   font-size: 0.8em;
 }
 //PAGE CONTACT//
-.button-connect {
-  @include button($secondary-color, 140px, 32px, 1.2em);
-  margin-top:$margin-top-30;
-}
-.form-contact {
 
+.article-contact {
+  margin: $padding-top-bottom-50;
+}
+.button-connect {
+  @include button($secondary-color, 180px, 32px, 1.1em);
+  margin-top: $margin-top-30;
+}
+
+.form-contact {
+  flex-direction: column;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  padding-left: 100px;
 }
 .p-contact {
   @extend .p-registration;
 }
+.content-contact {
+  @extend .content-registration;
+}
 
+.bloc-name-contact {
+  display: flex;
+  justify-content: space-between;
+}
+.bloc-name-contact {
+  width: 100%;
+}
+.bloc-email {
+  margin: $margin-top-bottom-10;
+  padding:$padding-top-bottom-10;
+}
+#contact_email {
+  width: 99%;
+}
+#contact_firstName::placeholder {
+  text-align: left;
+}
+
+#contact_lastName::placeholder {
+  text-align: left;
+}
+
+#contact_email::placeholder {
+  text-align: left;
+}
+
+#contact_message::placeholder {
+  text-align: left;
+  font-size: 1em;
+}
+.bloc-message {
+  justify-content: center;
+  display: flex;
+}
+#contact_message {
+  margin-top: $margin-top-10;
+  width: 485px;
+  height: 150px;
+  border-color: #9ce7a9;
+  border-radius: 5px;
+}
+
+.bloc-input {
+  display: flex;
+  justify-content: center;
+}
+
+#contact_firstName,
+#contact_lastName,
+#contact_email {
+  margin: 0;
+}
+
+.span-contact{
+  font-size: 0.8em;
+  margin-top:$margin-top-10;
+}
 //LOGIN//
 .content-connect {
-@extend .content-registration;
+  @extend .content-registration;
 }
 
 .bloc-connect {
   display: flex;
   flex-direction: column;
-
 }
-.form-connect{
+.form-connect {
   display: flex;
 
-justify-content: center;
-padding-left: 100px;
+  justify-content: center;
+  padding-left: 100px;
 }
 //SAVORY//
 

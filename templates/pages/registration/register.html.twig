@@ -3,9 +3,8 @@
 Contactez-moi | Evlow Foodies
 {% endblock %}
 {% block body %}
-<main>
     <article class="article-registration">
-        <section class="article-registration">
+        <section class="section-registration">
             <p class="p-registration">Envie de partager tes recettes ?</p>
             <p class="p-registration">De retrouver tes recettes coup de coeur ?</p>
             <h3 class="home-h3 ">
@@ -51,12 +50,11 @@ Contactez-moi | Evlow Foodies
                 {{ form_label(FormRegistration.agreeTerms) }}
                 {{ form_widget(FormRegistration.agreeTerms) }}
                 {{ form_end(FormRegistration) }}
-                
             </div>
-            <span>*Champs obligatoires</span>
+            <span class="span-registration">*Champs obligatoires</span>
    
 
     </section>
     </article>
-</main>
+
 {% endblock %}

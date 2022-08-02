@@ -24,7 +24,7 @@ class RegistrationFormType extends AbstractType
             ->add('firstName', TextType::class, [
                 "label" => false,
                 "attr" => [
-                    "placeholder" => "*Nom :",
+                    "placeholder" => "*Nom",
                     "class" => "",
 
                 ]
@@ -32,7 +32,7 @@ class RegistrationFormType extends AbstractType
             ->add('lastName', TextType::class, [
                 "label" => false,
                 "attr" => [
-                    "placeholder" => "*Prénom :",
+                    "placeholder" => "*Prénom",
                     "class" => ""
                 ]
             ])
@@ -40,14 +40,14 @@ class RegistrationFormType extends AbstractType
             ->add('pseudo', TextType::class, [
                 "label" => false,
                 "attr" => [
-                    "placeholder" => "Pseudo :",
+                    "placeholder" => "Pseudo",
                     "class" => ""
                 ]
             ])
             ->add('email', EmailType::class, [
                 "label" => false,
                 "attr" => [
-                    "placeholder" => "*Email :",
+                    "placeholder" => "*Email",
                     "class" => ""
                 ]
             ])
@@ -59,13 +59,13 @@ class RegistrationFormType extends AbstractType
                 'first_options'  => [
                     'label' => false,
                     'attr' => [
-                        'placeholder' => '*Mot de passe :'
+                        'placeholder' => '*Mot de passe'
                     ]
                 ],
                 'second_options' => [
                     'label' => false,
                     'attr' => [
-                        'placeholder' => '*Confirmez votre mot de passe :'
+                        'placeholder' => '*Confirmez votre mot de passe'
                     ]
                 ],
                 'mapped' => false,
