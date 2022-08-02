@@ -42,7 +42,7 @@ class ContactType extends AbstractType
             "textarea"
             ]
         ])
-            ->add('Envoyer', SubmitType::class, [
+            ->add('envoyer', SubmitType::class, [
                 "label" => "Envoyer le message",
                 "attr" =>[
                     "class" => 'button-connect'

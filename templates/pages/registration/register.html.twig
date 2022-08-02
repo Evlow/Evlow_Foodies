@@ -6,8 +6,8 @@ Contactez-moi | Evlow Foodies
 <main>
     <article class="article-registration">
         <section class="article-registration">
-            <p class="p-registration">Partager tes recettes ?</p>
-            <p class="p-registration">Retrouver tes recettes favories ?</p>
+            <p class="p-registration">Envie de partager tes recettes ?</p>
+            <p class="p-registration">De retrouver tes recettes coup de coeur ?</p>
             <h3 class="home-h3 ">
                 <span>Inscrits-toi !</span>
             </h3>
@@ -19,26 +19,26 @@ Contactez-moi | Evlow Foodies
     </div>
     {% endfor %}
 
-    <section class="content-connect">
+    <section class="content-registration">
         <div class="form-registration">
-            <div class="bloc-connect">
+            <div class="bloc-registration">
                 {{ form_start(FormRegistration) }}
                 {{ form_label(FormRegistration.firstName) }}
                 {{ form_widget(FormRegistration.firstName) }}
             </div>
-            <div class="bloc-connect">
+            <div class="bloc-registration">
                 {{ form_label(FormRegistration.lastName) }}
                 {{ form_widget(FormRegistration.lastName) }}
             </div>
-            <div class="bloc-connect">
+            <div class="bloc-registration">
                 {{ form_label(FormRegistration.pseudo) }}
                 {{ form_widget(FormRegistration.pseudo) }}
             </div>
-            <div class="bloc-connect">
+            <div class="bloc-registration">
                 {{ form_label(FormRegistration.email) }}
                 {{ form_widget(FormRegistration.email) }}
             </div>
-            <div class="bloc-connect">
+            <div class="bloc-registration">
                 {{ form_label(FormRegistration.plainPassword) }}
                 {{ form_widget(FormRegistration.plainPassword) }}
             </div>
@@ -51,8 +51,11 @@ Contactez-moi | Evlow Foodies
                 {{ form_label(FormRegistration.agreeTerms) }}
                 {{ form_widget(FormRegistration.agreeTerms) }}
                 {{ form_end(FormRegistration) }}
+                
             </div>
-      
+            <span>*Champs obligatoires</span>
+   
+
     </section>
     </article>
 </main>

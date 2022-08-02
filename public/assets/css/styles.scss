@@ -160,7 +160,7 @@ nav a {
 //FOOTER
 footer {
   background-color: rgba(152, 228, 129, 0.0784313725);
-  margin-top: 100px;
+
   padding-top: 20px;
 }
 .logo-social img {
@@ -187,6 +187,9 @@ footer {
 ::placeholder {
   text-align: center;
   font-style: italic;
+  color:rgb(18, 18, 18);
+  font-size: 1.2em;
+  font-weight: 600;
 }
 
 .other a {
@@ -290,13 +293,15 @@ input {
 label {
   font-weight: 600;
   font-size: 1em;
+display: flex;
+width: 100%;
+text-align: justify;
 }
 
 /* BUTTON */
 
 // ACCUEIL
 .home-article {
-  padding: $padding-top-bottom-50;
   background-color: $primary-color;
 }
 .logo-social img {
@@ -457,6 +462,7 @@ h3 {
 .content-card {
   display: flex;
   justify-content: space-evenly;
+  padding:$padding-top-bottom-50;
 }
 
 .card {
@@ -466,7 +472,6 @@ h3 {
 }
 
 .p-recipe {
-  padding-bottom: 40px;
   text-align: center;
 }
 
@@ -476,47 +481,26 @@ h3 {
   color: #000;
 }
 
-//contact
 
-.button-connect {
-  @include button($secondary-color, 140px, 32px, 0.9em);
+//PAGE INSCRIPTION
+
+.article-registration {
+  padding-bottom: 50px;
 }
+.section-registration{
+  padding-top:50px;}
 
-.form-contact {
-  background-image: url(../picture/fond-contact.png);
-  display: flex;
-  background-repeat: no-repeat;
-  background-size: contain;
-  height: 700px;
-  width: 50%;
-  margin: auto;
-  justify-content: center;
-}
-
-.content-contact {
-  @include flex;
-  margin: auto;
-}
-
-//REGISTRATION
-
-.content-connect {
-  background-color: #000;
+.content-registration { 
+  border: solid #9ce7a9 2px;
+  border-top:none;
+  border-bottom:none;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  background-image: url(../picture/fond-connect.png);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: 50%;
-  border-radius: 70px;
-  height: 600px;
-  opacity: 0.8;
-  margin: auto;
-  width: 700px;
+  width: 50%;
 }
 .form-registration {
+
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -532,6 +516,8 @@ h3 {
 }
 #registration_form_agreeTerms {
   margin-right: 10px;
+  flex-basis: content;
+  
 }
 .p-registration {
   @include flex-center;
@@ -539,20 +525,52 @@ h3 {
 }
 
 .bloc-agree {
+margin-top:$margin-top-30;
+ padding-left: 50px;
   width: 100%;
   display: flex;
   flex-direction: row-reverse;
+  align-items: center;
 
 }
+span{
+  padding-top:$padding-top-10;
+  align-self: baseline;
+  padding-left: 50px;
+  font-size: 0.8em;
+}
+//PAGE CONTACT//
+.button-connect {
+  @include button($secondary-color, 140px, 32px, 1.2em);
+  margin-top:$margin-top-30;
+}
+.form-contact {
 
-//CONTACT//
-
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-left: 100px;
+}
 .p-contact {
   @extend .p-registration;
 }
 
 //LOGIN//
+.content-connect {
+@extend .content-registration;
+}
 
+.bloc-connect {
+  display: flex;
+  flex-direction: column;
+
+}
+.form-connect{
+  display: flex;
+
+justify-content: center;
+padding-left: 100px;
+}
 //SAVORY//
 
 .content-intro-savory {

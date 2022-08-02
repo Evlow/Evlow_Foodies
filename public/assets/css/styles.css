@@ -178,7 +178,6 @@ nav a {
 
 footer {
   background-color: rgba(152, 228, 129, 0.0784313725);
-  margin-top: 100px;
   padding-top: 20px;
 }
 
@@ -216,16 +215,25 @@ footer {
 ::-moz-placeholder {
   text-align: center;
   font-style: italic;
+  color: rgb(18, 18, 18);
+  font-size: 1.2em;
+  font-weight: 600;
 }
 
 :-ms-input-placeholder {
   text-align: center;
   font-style: italic;
+  color: rgb(18, 18, 18);
+  font-size: 1.2em;
+  font-weight: 600;
 }
 
 ::placeholder {
   text-align: center;
   font-style: italic;
+  color: rgb(18, 18, 18);
+  font-size: 1.2em;
+  font-weight: 600;
 }
 
 .other a {
@@ -337,11 +345,13 @@ input {
 label {
   font-weight: 600;
   font-size: 1em;
+  display: flex;
+  width: 100%;
+  text-align: justify;
 }
 
 /* BUTTON */
 .home-article {
-  padding: 50px 0 50px 0;
   background-color: white;
 }
 
@@ -534,6 +544,7 @@ h3 {
 .content-card {
   display: flex;
   justify-content: space-evenly;
+  padding: 50px 0 50px 0;
 }
 
 .card {
@@ -543,7 +554,6 @@ h3 {
 }
 
 .p-recipe {
-  padding-bottom: 40px;
   text-align: center;
 }
 
@@ -562,51 +572,22 @@ h3 {
   color: #000;
 }
 
-.button-connect {
-  background-color: #9ce7a9;
-  width: 140px;
-  height: 32px;
-  font-size: 0.9em;
-  border: none;
-  font-weight: 600;
-  border-radius: 15px 0 15px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.article-registration {
+  padding-bottom: 50px;
 }
 
-.form-contact {
-  background-image: url(../picture/fond-contact.png);
-  display: flex;
-  background-repeat: no-repeat;
-  background-size: contain;
-  height: 700px;
-  width: 50%;
-  margin: auto;
-  justify-content: center;
+.section-registration {
+  padding-top: 50px;
 }
 
-.content-contact {
-  display: flex;
-  text-align: center;
-  margin: auto;
-}
-
-.content-connect {
-  background-color: #000;
+.content-registration, .content-connect {
+  border: solid #9ce7a9 2px;
+  border-top: none;
+  border-bottom: none;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  background-image: url(../picture/fond-connect.png);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: 50%;
-  border-radius: 70px;
-  height: 600px;
-  opacity: 0.8;
-  margin: auto;
-  width: 700px;
+  width: 50%;
 }
 
 .form-registration {
@@ -627,6 +608,7 @@ h3 {
 
 #registration_form_agreeTerms {
   margin-right: 10px;
+  flex-basis: content;
 }
 
 .p-registration, .p-contact {
@@ -638,9 +620,51 @@ h3 {
 }
 
 .bloc-agree {
+  margin-top: 30px;
+  padding-left: 50px;
   width: 100%;
   display: flex;
   flex-direction: row-reverse;
+  align-items: center;
+}
+
+span {
+  padding-top: 10px;
+  align-self: baseline;
+  padding-left: 50px;
+  font-size: 0.8em;
+}
+
+.button-connect {
+  background-color: #9ce7a9;
+  width: 140px;
+  height: 32px;
+  font-size: 1.2em;
+  border: none;
+  font-weight: 600;
+  border-radius: 15px 0 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.form-contact {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-left: 100px;
+}
+
+.bloc-connect {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-connect {
+  display: flex;
+  justify-content: center;
+  padding-left: 100px;
 }
 
 .content-intro-savory {

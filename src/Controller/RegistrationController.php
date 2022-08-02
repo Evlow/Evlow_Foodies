@@ -30,8 +30,9 @@ class RegistrationController extends AbstractController
                     $user,
                     $form->get('plainPassword')->getData()
                 )
+                
             );
-
+           
             $entityManager->persist($user);
             $entityManager->flush();
             // do anything else you need here, like send an email
@@ -39,12 +40,14 @@ class RegistrationController extends AbstractController
             return $userAuthenticator->authenticateUser(
                 $user,
                 $authenticator,
-                $request
+                $request,
             );
             return $this->redirectToRoute('app_bo_dashboard');
         }
         return $this->render('pages/registration/register.html.twig', [
             'FormRegistration' => $form->createView(),
+           
         ]);
+        
     }
 }

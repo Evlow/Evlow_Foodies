@@ -59,13 +59,13 @@ class RegistrationFormType extends AbstractType
                 'first_options'  => [
                     'label' => false,
                     'attr' => [
-                        'placeholder' => '*Mot de passe'
+                        'placeholder' => '*Mot de passe :'
                     ]
                 ],
                 'second_options' => [
                     'label' => false,
                     'attr' => [
-                        'placeholder' => '*Confirmer votre mot de passe'
+                        'placeholder' => '*Confirmez votre mot de passe :'
                     ]
                 ],
                 'mapped' => false,
@@ -84,7 +84,7 @@ class RegistrationFormType extends AbstractType
                 ],
             ])
             ->add('envoyer', SubmitType::class, [
-                "label" => "Envoyer le message",
+                "label" => "M'inscrire",
                 "attr" => [
                     "class" => 'button-connect'
                 ]
