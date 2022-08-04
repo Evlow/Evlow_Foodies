@@ -34,12 +34,13 @@
             <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
 
         </div>
+        <div class="bloc-input">
+            <button class="button-connect" type="submit">
+                Se connecter
+            </button>
+        </div>
     </form>
-    <div class="bloc-input">
-        <button class="button-connect" type="submit">
-            Se connecter
-        </button>
-    </div>
+  
 </article>
 
 {% endblock %}
