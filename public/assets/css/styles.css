@@ -576,7 +576,7 @@ h3 {
   padding-top: 50px;
 }
 
-.content-registration, .content-connect, .content-contact {
+.content-registration, .content-contact {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -751,15 +751,48 @@ h3 {
   margin-top: 10px;
 }
 
-.bloc-connect {
+.form-connect {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
+  text-align: right;
+  width: 20%;
+}
+
+#inputEmail, #inputPassword {
+  margin: 0;
+  width: 100%;
+}
+
+.bloc-email-connect, .bloc-password-connect {
+  margin-bottom: 50px;
   display: flex;
   flex-direction: column;
 }
 
-.form-connect {
-  display: flex;
-  justify-content: center;
-  padding-left: 100px;
+#inputEmail::-moz-placeholder {
+  text-align: left;
+}
+
+#inputEmail:-ms-input-placeholder {
+  text-align: left;
+}
+
+#inputEmail::placeholder {
+  text-align: left;
+}
+
+#inputPassword::-moz-placeholder {
+  text-align: left;
+}
+
+#inputPassword:-ms-input-placeholder {
+  text-align: left;
+}
+
+#inputPassword::placeholder {
+  text-align: left;
 }
 
 .content-intro-savory {

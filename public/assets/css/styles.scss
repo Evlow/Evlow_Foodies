@@ -611,19 +611,36 @@ h3 {
   margin-top:$margin-top-10;
 }
 //LOGIN//
-.content-connect {
-  @extend .content-registration;
+.form-connect{
+ 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
+  text-align: right;
+width: 20%;}
+
+#inputEmail, #inputPassword{
+  margin: 0;
+  width: 100%;
 }
 
-.bloc-connect {
+.bloc-email-connect{
+  margin-bottom: 50px;
   display: flex;
   flex-direction: column;
 }
-.form-connect {
-  display: flex;
 
-  justify-content: center;
-  padding-left: 100px;
+.bloc-password-connect{
+  @extend .bloc-email-connect;
+}
+
+#inputEmail::placeholder {
+  text-align: left;
+}
+
+#inputPassword::placeholder {
+  text-align: left;
 }
 //SAVORY//
 

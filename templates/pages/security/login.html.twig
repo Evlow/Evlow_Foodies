@@ -6,23 +6,40 @@
 {% if error %}
 <div class="error">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
 {% endif %}
-<form method="post">
+
+<article class="article-connect">
+    <section class="section-connect">
+        <p class="p-registration">Envie de partager tes recettes ?</p>
+        <p class="p-registration">De retrouver tes recettes coup de coeur ?</p>
+        <h3 class="home-h3 ">
+            <span>Connecte-toi !</span>
+        </h3>
+    </section>
+    <form method="post">
         <div class="content-connect">
-            <div class="form-connect" >
-                <div class="bloc-connect">
-            <input type="email" value="{{ last_username }}" placeholder="Votre email" name="email" id="inputEmail" class="form-control"
-                autocomplete="email" required autofocus>
+            <div class="form-connect">
+                <div class="bloc-email-connect">
+                    <input type="email" value="{{ last_username }}" placeholder="Votre email" name="email"
+                        id="inputEmail" class="form-control" autocomplete="email" required autofocus>
+                        <a href=""><span class="span-email-lost">Identifiant oublié ?</span></a>
                 </div>
-                <div class="bloc-connect">
-            <input type="password" placeholder="Mot de passe"name="password" id="inputPassword" class="form-control"
-                autocomplete="current-password" required>
-            </div>
+
+                <div class="bloc-password-connect">
+                    <input type="password" placeholder="Mot de passe" name="password" id="inputPassword"
+                        class="form-control" autocomplete="current-password" required>
+                        <a href="{{path ("app_forgot_password_request")}}"><span class="span-email-lost">Mot de passe oublié ?</span></a>
+            
+                </div>
             </div>
             <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
-            <button class="btn btn-lg btn-primary" type="submit">
-                Se connecter
-                </input>
+
         </div>
-</form>
+    </form>
+    <div class="bloc-input">
+        <button class="button-connect" type="submit">
+            Se connecter
+        </button>
+    </div>
+</article>
 
 {% endblock %}

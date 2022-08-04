@@ -1,0 +1,27 @@
+{% extends '/bases/baseFo.html.twig' %}
+
+{% block title %}Reset your password{% endblock %}
+
+{% block body %}
+    {% for flash_error in app.flashes('reset_password_error') %}
+        <div class="alert alert-danger" role="alert">{{ flash_error }}</div>
+    {% endfor %}
+    <article class="article-registration">
+        <section class="section-registration">
+            <p class="p-registration">Mot de passe oublié?</p>
+            <p class="p-registration">Pas de panique !</p>
+            <h3 class="home-h3 ">
+                <span>Inscris ton e-mail !</span>
+            </h3>
+        </section>
+    {{ form_start(requestForm) }}
+    {{ form_label(requestForm.email) }}
+        {{ form_widget(requestForm.email) }}
+        {{ form_end(requestForm) }}
+        <div>
+   <p>Un lien te sera envoyé pour réinitialiser tonmot de passe.</p>
+        </div>
+
+        <button class="btn btn-primary">Send password reset email</button>
+    {{ form_end(requestForm) }}
+{% endblock %}

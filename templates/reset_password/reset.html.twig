@@ -1,0 +1,22 @@
+{% extends '/bases/baseFo.html.twig' %}
+
+{% block title %}{% endblock %}
+
+{% block body %}
+<article class="article-registration">
+    <section class="section-registration">
+        <p class="p-registration">Mot de passe oublié?</p>
+        <p class="p-registration">Pas de panique !</p>
+        <h3 class="home-h3 ">
+            <span>Entre ton nouveau mot de passe !</span>
+        </h3>
+    </section>
+
+    <div class="bloc-registration">
+        {{ form_start(resetForm) }}
+        {{ form_label(resetForm.plainPassword) }}
+        {{ form_widget(resetForm.plainPassword) }}
+    </div>
+        <button class="btn btn-primary">Reset password</button>
+    {{ form_end(resetForm) }}
+{% endblock %}
