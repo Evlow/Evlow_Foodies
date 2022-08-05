@@ -1,0 +1,51 @@
+{% extends '/bases/baseFo.html.twig' %}
+
+{% block body %}
+<!--INTRODUCTION-->
+<div class="content-intro">
+    <div class="paragraphe">
+        <p>En manque d’inspiration ? Vous retrouverez-ici des idées de recettes.</p>
+        <p>Envie de partager vos recettes ? Connectez-vous et à vous de concocter !</p>
+        <div>
+            <a class="btn-login-home" href="{{path('app_fo_login')}}">Se connecter</a>
+        </div>
+    </div>
+</div>
+
+
+<!--FOOD ?-->
+<article class="home-article">
+    <section class="home-section">
+        <h3 class="home-h3"><span>Qu’est ce qu’on mange ?</span></h3>
+        <p class="p-home">Qu'est ce qu'on mange ? Cette question est posée une multitude de fois ! Il est parfois diffcile de trouver
+            une idée de repas ! Avec Evlow Foodies, vous trouverez des recettes, pour tous les goûts et facile à faire.
+        </p>
+    </section>
+    <!--SHARE RECIPES ?-->
+    <section class="home-section">
+        <h3 class="home-h3" ><span>Envie de partager vos recettes ?</span></h3>
+        <p class="p-home">Vous souhaitez partager vos succulentes recettes et en faire profiter à un maximum de personnes ? Cela est
+            possible ! il suffit de t'inscrire, de te connecter, de te laisser guider et le tour est joué ! Rien de plus
+            facile, crois-moi </p>
+    </section>
+    <!--LAST RECIPES ?-->
+    <section class="home-section">
+        <h3 class="home-h3"><span>Les dernières recettes !</span></h3>
+        <p class="p-recipe">Vous retrouverez-ici les dernièrs recettes mises en ligne !</p>
+        <div class="carts">
+            <div class="content-card">
+                {% for recipe in recipes %}
+                <div class="card"> 
+                    <h3 class="recipes-h3">{{recipe.title}}</h3>
+                    <div class="content-recipe-img">
+                    <img class="recipe-img-home" src="{{vich_uploader_asset(recipe, 'imageFile')}}" alt="image">
+                </div>
+                    <a class="btn-recipe" href="{{ path('app_fo_recipe_sheet', { id: recipe.id }) }}">Voir la recette</a>
+                </div>
+                {% endfor %}
+            </div>
+        
+        </div>
+    </section>
+</article>
+{% endblock %}

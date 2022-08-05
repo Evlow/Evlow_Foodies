@@ -3,28 +3,45 @@
   font-family: "Advent Pro", sans-serif;
 }
 
+#page {
+  display: flex;
+  align-items: flex-end;
+  width: 100vw;
+}
+
 main {
-  width: 85%;
+  width: 90%;
   position: absolute;
-  top: 50px;
+  top: 40px;
   right: 0;
-  padding: 20px;
+}
+
+article {
+  background-color: #fae7e9;
 }
 
 h1 {
-  font-size: 1em;
-  text-align: center;
+  padding: 10px 0 10px 0;
+  text-align: left;
+  font-weight: 600;
+  color: white;
 }
 
 h2 {
-  font-size: 1.5em;
+  font-size: 2em;
   text-align: center;
-  padding-bottom: 20px;
+  padding: 20px;
+}
+
+h3 {
+  font-size: 1.8em;
+  color: black;
 }
 
 label {
-  font-size: 1.3em;
+  font-size: 1.2em;
   font-weight: 600;
+  padding-bottom: 5px;
 }
 
 .img-aside {
@@ -37,32 +54,49 @@ label {
   width: 20px;
 }
 
+.title {
+  width: 10%;
+  padding-left: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.nav-back {
+  width: 100%;
+}
+
 .nav-back ul {
   display: flex;
   justify-content: space-evenly;
+  align-items: center;
 }
 
 .nav-back a {
-  color: black;
+  color: white;
+  font-weight: 600;
+  font-size: 1em;
 }
 
 header {
-  background-color: #ffa05c;
-  height: auto;
+  background-color: #B4172E;
   width: 100%;
   position: fixed;
   top: 0;
   z-index: 1;
   padding-bottom: 5px;
-  font-size: 1.2em;
+  font-size: 1em;
+  align-content: center;
+  align-items: center;
+  display: flex;
 }
 
 aside {
-  background-color: #f5b992;
+  background-color: #f05665;
   height: 100vh;
+  width: 10vw;
   position: fixed;
   top: 0;
-  width: 150px;
+  font-weight: 600;
 }
 
 .nav-aside a {
@@ -70,18 +104,19 @@ aside {
   display: flex;
   flex-direction: column;
   text-align: center;
+  font-size: 1em;
 }
 
 .nav-aside li {
-  border: #461f03 1px solid;
+  border: none;
   border-radius: 20px 0 20px;
-  justify-content: center;
-  color: black;
   width: 130px;
   margin-bottom: 20px;
   padding: 5px 0 5px 0;
   background-color: antiquewhite;
-  font-size: 1.2em;
+  font-size: 1em;
+  display: flex;
+  flex-direction: column;
 }
 
 .nav-aside ul {
@@ -89,6 +124,11 @@ aside {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.img-aside {
+  width: 25px;
+  margin: 0 auto;
 }
 
 .img-import {
@@ -107,25 +147,133 @@ aside {
   margin: 0 auto;
 }
 
-article {
-  background-color: rgb(248, 238, 231);
-  border-radius: 10px;
-  margin: auto;
-}
-
 #input-title {
   width: 300px;
   border-radius: 10px;
-  border-color: #f5b992;
+  border-color: #f05665;
 }
 
 textarea {
   border-radius: 10px;
-  border-color: #f5b992;
-  width: 500px;
-  height: 200px;
+  border-color: #f05665;
+  width: 550px;
+  height: 90px;
+}
+
+.add-recipes {
+  padding-left: 50px;
+}
+
+.image-recipe {
+  border: dotted 3px #f05665;
+  width: 25%;
+  border-radius: 5px;
+  margin: 10px 0 10px 0;
+  padding: 5px;
+}
+
+input {
+  border-radius: 5px;
+  border-color: #f05665;
+  height: 25px;
+  margin: 5px 0 5px 0;
+}
+
+.content-ingredients, .content-preparation {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+  background-color: white;
+  padding: 10px;
 }
 
 .content-title {
-  padding: 40px;
-}/*# sourceMappingURL=styles.css.map */
+  background-color: white;
+  margin: 10px 0 10px 0;
+  text-align: center;
+}
+
+.title-recipe {
+  display: flex;
+  width: 50%;
+  justify-content: center;
+  margin: auto;
+}
+
+.bloc-ingredient, .bloc-preparation {
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+.bloc-preparation {
+  width: 50%;
+}
+
+.bloc-category {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 30px;
+}
+
+#recipe_category {
+  width: 10%;
+  margin-bottom: 5px;
+  background: white;
+  border-radius: 5px;
+  border: 2px solid #f05665;
+}
+
+.recipe-img-home {
+  height: 230px;
+  width: 95%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.recipes-h3 {
+  padding: 20px;
+  font-size: 1.3em;
+  width: 100%;
+}
+
+.content-card {
+  width: 90%;
+  display: flex;
+  margin: 10px;
+  flex-wrap: wrap;
+}
+
+.card, .add-recipe {
+  margin: 0 auto;
+  background-color: white;
+  text-align: center;
+  border-radius: 5px;
+  margin: 10px;
+  width: 20%;
+}
+
+.btn-card {
+  padding: 5px;
+}
+
+.btn-edit, .btn-delete {
+  color: black;
+  padding: 5px;
+  border: 2px solid #868484;
+  border-radius: 5px;
+  display: inline-block;
+  width: 100px;
+}
+
+.btn-delete {
+  border: 2px solid #f05665;
+  width: 110px;
+}
+
+.add-recipe {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}/*# sourceMappingURL=stylesBo.css.map */

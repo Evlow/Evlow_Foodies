@@ -1,0 +1,18 @@
+{% extends '/bases/baseBo.html.twig' %}
+
+{% block body %}
+<main>     
+    <h2>Modification de la recette </h2>
+<!-- début formulaire -->
+
+    <article>
+        {{ form_start(formRecipe)}} 
+        {{ form_widget(formRecipe)}}
+        <input type="submit" value="Modifier" class="input btn sweet-button">
+
+    {{ form_end(formRecipe)}}
+    </article>    
+
+</main>
+
+{% endblock %}

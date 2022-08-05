@@ -12,10 +12,18 @@ class FoSavoryRecipesController extends AbstractController
     #[Route('/recettes-salées', name: 'app_fo_savory_recipes')]
     public function index(RecipesRepository $repository): Response
     {
-       
-        return $this->render('fo_savory_recipes/savory_recipes.html.twig', 
+        $recipe = $repository->findBy([
+            'category' => 1,
+        ]);
+    
+        return $this->render('pages/front/savory_recipes.html.twig', 
         [
-           'recipes'=>$repository->findAll()
+           'recipes'=>$recipe,
+           
         ]);
     } 
 }
+
+
+
+

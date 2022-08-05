@@ -1,0 +1,44 @@
+{% extends '/bases/baseFo.html.twig' %}
+
+{% block title %} Contactez-moi | Evlow Foodies{% endblock %} 
+{% block body %}
+<article class="article-contact">
+    <section class="section-contact">
+        <p class="p-contact">Vous avez une question ?</p>
+        <p class="p-contact">Des suggestions à faire ?</p>
+        <h3 class="home-h3 ">
+            <span>Contactez-moi !</span>
+        </h3>
+    </section>
+
+        <section class="content-contact">
+        <div class="form-contact">
+            <div class="bloc-name-contact">
+            <div class="bloc-contact">
+                {{ form_start(formContact) }}
+                {{ form_label(formContact.firstName) }}
+                {{ form_widget(formContact.firstName) }}
+            </div>
+            <div class="bloc-contact">
+                {{ form_label(formContact.lastName) }}
+                {{ form_widget(formContact.lastName) }}
+            </div>
+        </div>
+            <div class="bloc-email">
+                {{ form_label(formContact.email) }}
+                {{ form_widget(formContact.email) }}
+            </div>
+       
+            <div class="bloc-message">
+                {{ form_label(formContact.message) }}
+                {{ form_widget(formContact.message) }}
+            </div>
+            <div class="bloc-input">
+                {{ form_label(formContact.envoyer) }}
+                {{ form_widget(formContact.envoyer) }}
+            </div>
+            <span class="span-contact">*Champs obligatoires</span>
+        </div>
+   </section>
+</article>
+{% endblock %}

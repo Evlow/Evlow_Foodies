@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="Site de recettes réalisé avec Symfony." />
+    <meta name="author" content="" />
+    <title>{% block title %}Evlow Foodies{% endblock %}</title>
+
+
+    <link href="{{ asset('assets/css/reset.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/css/stylesBo.css') }}" rel="stylesheet">
+
+</head>
+
+<body>
+    <div id="page">
+        <!-- Navbar-->
+        {% block navbar %}{% include 'includes/_navBarBo.html.twig' %}{% endblock %}
+        <!-- Header-->
+        {% block aside %}{% include 'includes/_asideBo.html.twig' %}{% endblock %}
+        <!-- Body-->
+        <main>
+            {% block body %}{% endblock %}
+    </div>
+</body>
+
+</html>

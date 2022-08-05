@@ -1,0 +1,110 @@
+{% extends '/bases/baseBo.html.twig' %}
+
+{% block body %}
+
+<article class="add-recipes">
+    <h2>Ajouter une recette </h2>
+    <section class="content-card">
+        <div class="content-add-recipe">
+
+            <div class="content-title">
+                {{ form_start(formRecipe) }}
+                {{ form_label(formRecipe.Title) }}
+                {{ form_widget(formRecipe.Title) }}
+            </div>
+
+            <div class="content-image">
+                {{ form_label(formRecipe.imageFile) }}
+                {{ form_widget(formRecipe.imageFile) }}
+            </div>
+            <div class="content-ingredients">
+                <div class="bloc-ingredient">
+                    {{ form_label(formRecipe.ingredient_1) }}
+                    {{ form_widget(formRecipe.ingredient_1) }}
+                </div>
+                <div class="bloc-ingredient">
+                    {{ form_label(formRecipe.ingredient_2) }}
+                    {{ form_widget(formRecipe.ingredient_2) }}
+                </div>
+                <div class="bloc-ingredient">
+
+                    {{ form_label(formRecipe.ingredient_3) }}
+                    {{ form_widget(formRecipe.ingredient_3) }}
+                </div>
+                <div class="bloc-ingredient">
+
+                    {{ form_label(formRecipe.ingredient_4) }}
+                    {{ form_widget(formRecipe.ingredient_4) }}
+                </div>
+                <div class="bloc-ingredient">
+
+                    {{ form_label(formRecipe.ingredient_5) }}
+                    {{ form_widget(formRecipe.ingredient_5) }}
+                </div>
+                <div class="bloc-ingredient">
+
+                    {{ form_label(formRecipe.ingredient_6) }}
+                    {{ form_widget(formRecipe.ingredient_6) }}
+                </div>
+                <div class="bloc-ingredient">
+
+                    {{ form_label(formRecipe.ingredient_7) }}
+                    {{ form_widget(formRecipe.ingredient_7) }}
+                </div>
+                <div class="bloc-ingredient">
+                    {{ form_label(formRecipe.ingredient_8) }}
+                    {{ form_widget(formRecipe.ingredient_8) }}
+                </div>
+                <div class="bloc-ingredient">
+                    {{ form_label(formRecipe.ingredient_9) }}
+                    {{ form_widget(formRecipe.ingredient_9) }}
+                </div>
+                <div class="bloc-ingredient">
+                    {{ form_label(formRecipe.ingredient_10) }}
+                    {{ form_widget(formRecipe.ingredient_10) }}
+                </div>
+                <div class="bloc-ingredient">
+                    {{ form_label(formRecipe.ingredient_11) }}
+                    {{ form_widget(formRecipe.ingredient_11) }}
+                </div>
+                <div class="bloc-ingredient">
+                    {{ form_label(formRecipe.ingredient_12) }}
+                    {{ form_widget(formRecipe.ingredient_12) }}
+                </div>
+            </div>
+
+            <div class="content-preparation">
+                <div class="bloc-preparation">
+                    {{ form_label(formRecipe.preparation_1) }}
+                    {{ form_widget(formRecipe.preparation_1) }}
+                </div>
+                <div class="bloc-preparation">
+                    {{ form_label(formRecipe.preparation_2) }}
+                    {{ form_widget(formRecipe.preparation_2) }}
+                </div>
+                <div class="bloc-preparation">
+                    {{ form_label(formRecipe.preparation_3) }}
+                    {{ form_widget(formRecipe.preparation_3) }}
+                </div>
+                <div class="bloc-preparation">
+                    {{ form_label(formRecipe.preparation_4) }}
+                    {{ form_widget(formRecipe.preparation_4) }}
+                </div>
+                <div class="bloc-preparation">
+                    {{ form_label(formRecipe.preparation_5) }}
+                    {{ form_widget(formRecipe.preparation_5) }}
+                </div>
+            </div>
+            <div class="content-category">
+                <div class="bloc-category">
+                    {{ form_label(formRecipe.category) }}
+                    {{ form_widget(formRecipe.category) }}
+
+                </div>
+            </div>
+        </div>
+        <input class="btn btn-primary my-3" type="submit" value="Envoyer" />
+        {{ form_end(formRecipe) }}
+    </section>
+</article>
+{% endblock %}

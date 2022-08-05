@@ -15,7 +15,7 @@ header {
 h1 {
   font-size: $title-h1;
   text-align: center;
- 
+  color: #000;
 }
 h2 {
   padding: $padding-top-bottom-30;
@@ -23,11 +23,7 @@ h2 {
   text-align: center;
   color: $third-color;
 }
-h3 {
-  padding-bottom: 60px;
-  padding-top: 50px;
-  font-size: $title-h3;
-}
+
 .title-recipe {
   color: black;
   padding: $padding-40;
@@ -45,7 +41,7 @@ h4 {
 p {
   font-size: $p-size;
 }
-.p-intro{
+.p-intro {
   padding: 30px 0 30px 0;
 }
 .separation {
@@ -63,51 +59,61 @@ nav ul {
   @include separation-header;
   justify-content: space-around;
   height: 80px;
-  position: relative;
   list-style-type: none;
 }
 
 nav a {
   color: $link-color;
   font-size: $size-link;
-  display: block;
   font-weight: $weight;
 }
-
-.connect {
-  width: 100px;
-  height: 25px;
-  font-weight: 600;
-  border-radius: 15px 0 15px;
-  border-color: $third-color;
-  border: none;
-  background-color: $third-color;
-}
-
-/* MENU DEROULANT */
-
-#unrolling {
-  text-align: center;
-}
-
-#unrolling ul {
-  padding: 20px;
-  display: block;
-  position: absolute;
-  /* on cache les sous menus complètement sur la gauche */
-  left: -999em;
-}
-#unrolling li:hover ul {
-  /* Au survol des li du menu on replace les sous menus */
-  left: auto;
-  border: none;
-}
-#unrolling a {
-  padding-top: 10px;
-  text-decoration: none;
-  display: block;
+.btn-registration {
+  @include button($third-color, 120px, 30px, 1em);
   color: #000;
 }
+
+.btn-login {
+  @include button($third-color, 130px, 30px, 1em);
+  color: #000;
+}
+
+.btn-login-home {
+  @include button($third-color, 170px, 35px, 1em);
+  margin: 0 auto;
+  color: #000;
+}
+
+.btn-article {
+  background-color: $secondary-color;
+  width: 100px;
+  height: 30px;
+  font-size: 1.2em;
+  border: none;
+  font-weight: $weight;
+  border-radius: 15px 0 15px;
+  margin: $padding-top-bottom-30;
+}
+/* MENU DEROULANT */
+
+// #unrolling {
+//   text-align: center;
+// }
+
+// #unrolling ul {
+//   position: absolute;
+//   /* on cache les sous menus complètement sur la gauche */
+//   left: -999em;
+// }
+// #unrolling li:hover ul {
+//   /* Au survol des li du menu on replace les sous menus */
+//   left: auto;
+//   border: none;
+// }
+// #unrolling a {
+//   text-decoration: none;
+//   display: block;
+//   color: #000;
+// }
 //article
 
 .logo-social img {
@@ -119,10 +125,9 @@ nav a {
   border-radius: 50px;
   margin-left: 100px;
 }
-.content-recipe{
-width: 60%;
-margin: auto;
-
+.content-recipe {
+  width: 60%;
+  margin: auto;
 }
 
 .section-ingredients li::before {
@@ -143,7 +148,7 @@ margin: auto;
   width: 100px;
   height: 60px;
   border-radius: 100px / 60px;
-  background:  #ffa05c;
+  background: #ffa05c;
   position: relative;
   display: flex;
   align-items: center;
@@ -155,7 +160,7 @@ margin: auto;
 //FOOTER
 footer {
   background-color: rgba(152, 228, 129, 0.0784313725);
-  margin-top: 100px;
+
   padding-top: 20px;
 }
 .logo-social img {
@@ -182,6 +187,9 @@ footer {
 ::placeholder {
   text-align: center;
   font-style: italic;
+  color: rgb(18, 18, 18);
+  font-size: 1.2em;
+  font-weight: 600;
 }
 
 .other a {
@@ -222,7 +230,6 @@ footer {
 }
 .preparations {
   @extend .ingredients;
-
 }
 .section-ingredients {
   font-size: $p-size;
@@ -241,7 +248,7 @@ footer {
   display: flex;
   flex-direction: column;
   margin: 0 auto;
-@include separation-header;
+  @include separation-header;
 }
 
 .comment {
@@ -255,6 +262,7 @@ input {
   border-bottom: solid 2px $secondary-color;
   background: transparent;
   width: 200px;
+  margin: 5px 80px 5px 0;
 }
 
 .label-comment {
@@ -284,36 +292,16 @@ input {
 }
 label {
   font-weight: 600;
-  font-size: 1.2em;
-}
-
-.intro-contact {
-  padding: 20px;
+  font-size: 1em;
+  display: flex;
+  width: 100%;
+  text-align: justify;
 }
 
 /* BUTTON */
-.btn-contact {
-  display: flex;
-  justify-content: flex-end;
-}
 
-.btn-send {
-  font-weight: 600;
-  font-size: 1em;
-  background-color: #9ce7a9;
-  border: none;
-  width: 160px;
-  height: 30px;
-  margin: 30px 0 60px 0;
-}
-
-.btn-send {
-  @include button-connect($secondary-color, 125px, 30px, 1.2em);
-}
-
-
-//ACCUEIL//
-article {
+// ACCUEIL
+.home-article {
   background-color: $primary-color;
 }
 .logo-social img {
@@ -321,22 +309,22 @@ article {
 }
 
 .connect {
-  @include button-connect($third-color, 100px, 25px, 1em);
+  @include button($third-color, 110px, 25px, 1em);
 }
 .connect-intro {
-  @include button-connect($third-color, 140px, 32px, 0.9em);
+  @include button($third-color, 140px, 32px, 0.9em);
 }
 
-  .content-intro {
-    align-items: center;
-    justify-content: center;
-    display: flex;
-    text-align: center;
-    height: 400px;
-    position: relative;
-    font-size: 1.5em;
-    font-weight: 600;
-  }
+.content-intro {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  text-align: center;
+  height: 400px;
+  position: relative;
+  font-size: 1.5em;
+  font-weight: 600;
+}
 
 .paragraphe {
   line-height: 80px;
@@ -362,23 +350,21 @@ section {
 
 //ARTICLE
 
-article {
-  padding: $padding-top-bottom-50;
-  background-color: $primary-color;
-}
 section {
   width: 90%;
   margin: 0 auto;
 }
 
 h3 {
+  font-size: $title-h3;
+  width: 60%;
+  padding: 40px 0 40px 0;
   text-align: center;
   position: relative;
-  width: 60%;
   margin: 0 auto;
 }
 
-.homeh3:before {
+.home-h3:before {
   content: "";
   left: 0;
   right: 0;
@@ -388,7 +374,7 @@ h3 {
   top: calc(50% - 1px);
 }
 
-.homeh3 span {
+.home-h3 span {
   display: inline-block;
   padding: 0 10px;
   background: $primary-color;
@@ -396,9 +382,12 @@ h3 {
   z-index: 1;
 }
 
-article section p {
+.article-home .section-home {
   padding: $padding-top-bottom-30;
   @include flex-center;
+}
+.p-home {
+  text-align: center;
 }
 
 //recettes//
@@ -411,10 +400,9 @@ article section p {
   border-radius: 50px;
   margin-left: 100px;
 }
-.content-recipe{
-width: 60%;
-margin: auto;
-
+.content-recipe {
+  width: 60%;
+  margin: auto;
 }
 
 .section-ingredients li::before {
@@ -435,7 +423,7 @@ margin: auto;
   width: 100px;
   height: 60px;
   border-radius: 100px / 60px;
-  background:  #ffa05c;
+  background: #ffa05c;
   position: relative;
   display: flex;
   align-items: center;
@@ -450,20 +438,340 @@ margin: auto;
 
 //recipes//
 
+.recipe-img-home {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  object-position: 50% 40%;
+  overflow: hidden;
+}
 
+.content-recipe-img {
+  width: 100%;
+  height: auto;
+}
 .carts {
   width: 90%;
   margin: 0 auto;
 }
-
-.content-card{
+.recipes-h3 {
+  padding: $padding-20;
+  font-size: 1.3em;
+  width: 100%;
+}
+.content-card {
   display: flex;
   justify-content: space-evenly;
-}  
+  padding: $padding-top-bottom-50;
+}
 
-.card{
+.card {
   width: 20%;
-  border: #000 solid 3px;
+  border: rgb(105, 9, 9) solid 3px;
   text-align: center;
 }
 
+.p-recipe {
+  text-align: center;
+}
+
+.btn-recipe {
+  @include button($secondary-color, 130px, 30px, 1.1em);
+  margin: 20px auto;
+  color: #000;
+}
+
+//PAGE INSCRIPTION
+
+.section-registration {
+  padding-top: 50px;
+}
+
+.content-registration {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50%;
+}
+.form-registration {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-left: 100px;
+}
+#registration_form_plainPassword_first,
+#registration_form_email {
+  text-align: center;
+}
+
+#registration_form_plainPassword {
+  display: flex;
+}
+#registration_form_agreeTerms {
+  margin-right: 10px;
+  flex-basis: content;
+}
+.p-registration {
+  @include flex-center;
+  padding: $padding-10;
+}
+
+.bloc-agree {
+  margin-top: $margin-top-30;
+  padding-left: 50px;
+  width: 100%;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+}
+.span-registration {
+  padding-top: $padding-top-10;
+  align-self: baseline;
+  padding-left: 50px;
+  font-size: 0.8em;
+}
+//PAGE CONTACT//
+
+.article-contact {
+  margin: $padding-top-bottom-50;
+}
+.button-connect {
+  @include button($secondary-color, 180px, 32px, 1.1em);
+  margin-top: $margin-top-30;
+}
+
+.form-contact {
+  flex-direction: column;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.p-contact {
+  @extend .p-registration;
+}
+.content-contact {
+  @extend .content-registration;
+}
+
+.bloc-name-contact {
+  display: flex;
+  justify-content: space-between;
+}
+.bloc-name-contact {
+  width: 100%;
+}
+.bloc-email {
+  margin: $margin-top-bottom-10;
+  padding:$padding-top-bottom-10;
+}
+#contact_email {
+  width: 99%;
+}
+#contact_firstName::placeholder {
+  text-align: left;
+}
+
+#contact_lastName::placeholder {
+  text-align: left;
+}
+
+#contact_email::placeholder {
+  text-align: left;
+}
+
+#contact_message::placeholder {
+  text-align: left;
+  font-size: 1em;
+}
+.bloc-message {
+  justify-content: center;
+  display: flex;
+}
+#contact_message {
+  margin-top: $margin-top-10;
+  width: 485px;
+  height: 150px;
+  border-color: #9ce7a9;
+  border-radius: 5px;
+}
+
+.bloc-input {
+  display: flex;
+  justify-content: center;
+}
+
+#contact_firstName,
+#contact_lastName,
+#contact_email {
+  margin: 0;
+}
+
+.span-contact{
+  font-size: 0.8em;
+  margin-top:$margin-top-10;
+}
+//LOGIN//
+.form-connect{
+ 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
+  text-align: right;
+width: 20%;}
+
+#inputEmail, #inputPassword{
+  margin: 0;
+  width: 100%;
+}
+
+.bloc-email-connect{
+  margin-bottom: 50px;
+  display: flex;
+  flex-direction: column;
+}
+
+.bloc-password-connect{
+  @extend .bloc-email-connect;
+}
+
+#inputEmail::placeholder {
+  text-align: left;
+}
+
+#inputPassword::placeholder {
+  text-align: left;
+}
+//SAVORY//
+
+.content-intro-savory {
+  align-items: center;
+  justify-content: right;
+  display: flex;
+  text-align: center;
+  height: 400px;
+  position: relative;
+  font-size: 1.5em;
+  font-weight: 600;
+}
+
+.content-intro-savory::after {
+  @include positon-absolute;
+  background: url(../picture/savory.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  text-align: center;
+  width: 100%;
+  content: "";
+  z-index: -1;
+}
+
+.paragraphe-savory {
+  padding: 80px;
+  font-size: 2em;
+}
+
+//SWEET//
+
+.content-intro-sweet {
+  align-items: center;
+  justify-content: left;
+  display: flex;
+  text-align: center;
+  height: 400px;
+  position: relative;
+  font-size: 1.5em;
+  font-weight: 600;
+}
+
+.content-intro-sweet::after {
+  @include positon-absolute;
+  background: url(../picture/sweet.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  text-align: center;
+  width: 100%;
+  content: "";
+  z-index: -1;
+}
+
+.paragraphe-sweet {
+  @extend .paragraphe-savory;
+}
+
+//GONES//
+
+.content-intro-gones {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  text-align: center;
+  height: 400px;
+  position: relative;
+  font-size: 1.5em;
+  font-weight: 600;
+}
+
+.content-intro-gones::after {
+  @include positon-absolute;
+  background: url(../picture/gones.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  text-align: center;
+  width: 100%;
+  content: "";
+  z-index: -1;
+}
+
+.paragraphe-gones {
+  @extend .paragraphe-savory;
+}
+//SPECIFIC//
+
+.content-intro-specific {
+  align-items: center;
+  justify-content: left;
+  display: flex;
+  text-align: center;
+  height: 400px;
+  position: relative;
+  font-size: 1.5em;
+  font-weight: 600;
+}
+
+.content-intro-specific::after {
+  @include positon-absolute;
+  background: url(../picture/sweet.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  text-align: center;
+  width: 100%;
+  content: "";
+  z-index: -1;
+}
+
+.paragraphe-specific {
+  @extend .paragraphe-savory;
+}
+
+//SHEET RECIPE//
+.content-img-sheet {
+  display: flex;
+  justify-content: center;
+}
+.recipe-sheet-img {
+  width: 600px;
+  height: 550px;
+  border-radius: 50px;
+  object-fit: cover;
+  object-position: 50% 30%;
+  overflow: hidden;
+}
+
+.paragraphe-recipe-sheet {
+  font-size: 2em;
+}
