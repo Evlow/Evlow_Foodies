@@ -1,22 +1,20 @@
-<body>
-    <div id="page">
-        <header>
-            <h1><a href="{{ path('app_fo_home') }}">EVLOW FOODIES</a></h1>
-            <h2>| Des recettes pour tous les goûts |</h2>
-            <!--NAV-->
-            <nav>
-                <ul id="unrolling">
-                    <li><a href="{{ path('app_fo_savory_recipes') }}">Recettes salées</a>
-                    </li>
-                    <li><a href="{{ path('app_fo_sweet_recipes') }}">Recettes sucrées</a>
-                    </li>
-                    <li><a href="{{ path('app_fo_little_gones_recipes') }}">Recettes p'tits gônes</a>
-                    </li>
-                    <li><a href="{{ path('app_fo_specific_recipes') }}">Régimes spécifiques</a>
-                    </li>
-                    <li><a href="{{ path('app_fo_contact') }}" target="_blank">Contact</a></li>
-                    <a href="{{path('app_fo_registration')}}"><button class="connect">S'inscrire</button></a>
-                       <a href="{{path('app_login')}}"><button class="connect">Se connecter</button></a> 
-                </ul>
-            </nav>
-        </header>
+<header>
+    <a href="{{path('app_fo_home')}}"> <h1>EVLOW FOODIES</h1></a>
+    <h2>| Des recettes pour tous les goûts |</h2>
+    <!--NAV-->
+    <nav>
+        <ul id="unrolling">
+            <li><a href="{{path('app_fo_savory_recipes')}}">Recettes salées</a>    
+            </li>
+            <li><a href="{{path('app_fo_sweet_recipes')}}">Recettes sucrées</a>    
+            </li>
+            <li><a href="{{path('app_fo_little_gones_recipes')}}">Recettes p'tits gônes</a>    
+            </li>
+            <li><a href="{{path('app_fo_specific_recipes')}}">Régimes spécifiques</a>
+            </li>
+            <li><a href="{{path('app_fo_contact')}}">Contact</a></li>
+            <li ><a class="btn-registration" href="{{path('app_fo_registration')}}">S'inscrire</a></li>
+            <li ><a class="btn-login" href="{{path('app_fo_login')}}">Se connecter</a></li>
+        </ul>
+    </nav>
+</header>
