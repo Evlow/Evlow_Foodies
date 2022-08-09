@@ -15,10 +15,12 @@ class BoBasketController extends AbstractController
     #[Route('/corbeille', name: 'app_bo_basket')]
     public function index(RecipesRepository $repository): Response
     {
-        $recipes = $repository->getBasket(1);
+        $recipe = $repository->findBy([
+            'basket' =>1 ,
+        ]);
         return $this->render('pages/back/corbeille.html.twig', [
             'controller_name' => 'BoBasketController',
-            'recipes'=> $recipes,
+            'recipes'=> $recipe,
         ]);
     }
     #[Route('/corbeille/{id}', name: 'recipes_delete')]
@@ -27,13 +29,12 @@ class BoBasketController extends AbstractController
         if ($this->isCsrfTokenValid("SUP" . $recipe->getId(), $request->get('_token'))) {
         }
         $title = $recipe->getTitle();
-        $category =$recipe->getCategory()->getTitle();
         //Prepare la requete de suppression
         $entityManager->remove($recipe);
         //Modification en bdd
         $entityManager->flush();
 
-        $this->addFlash("success", "La Supression du $category : ' $title ' a été effectuée");
+        $this->addFlash("success", "La supression de la $recipe: ' $title ' a été effectuée");
         return $this->redirectToRoute("bo_basket");
     }
 
@@ -45,12 +46,11 @@ class BoBasketController extends AbstractController
         if ($this->isCsrfTokenValid("ON" . $recipe->getId(), $request->get('_token'))) {
         }
         $title = $recipe->getTitle();
-        $category =$recipe->getCategory()->getTitle();
         $recipe->setBasket(0);
         $entityManager->persist($recipe);
         $entityManager->flush();
 
-        $this->addFlash("success", "Le $category : ' $title ' est disponible");
+        $this->addFlash("success", "La  $recipe : ' $title ' est disponible");
         return $this->redirectToRoute("app_bo_dashboard");
     }
 }
