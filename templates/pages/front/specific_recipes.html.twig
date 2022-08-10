@@ -19,6 +19,10 @@ Evlow Foodies | Régimes spécifiques
             <h3 class="recipes-h3">{{recipe.title}}</h3>
             <p>{{recipe.description}}</p>
             <a class="btn-recipe" href="{{ path('app_fo_recipe_sheet', { id: recipe.id }) }}">Voir la recette</a>
+
+            <div>
+                <i class="far fa-heart"></i>
+               </div>
         </article>
         {% endfor %}
     </section>   

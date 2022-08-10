@@ -27,6 +27,7 @@ class RecipeType extends AbstractType
                 ]
 
             ])
+            
             ->add('imageFile', VichImageType::class, [
                 'label' => 'Image de la recette :',
                 "attr" => [

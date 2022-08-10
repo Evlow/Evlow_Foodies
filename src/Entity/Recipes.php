@@ -2,6 +2,8 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use App\Repository\RecipesRepository;
 use Symfony\Component\HttpFoundation\File\File;
@@ -110,6 +112,15 @@ class Recipes
 
     #[ORM\Column(type: 'string', length: 255, nullable: true)]
     private $preparation_6;
+
+    #[ORM\ManyToMany(targetEntity: Users::class, inversedBy: 'recipes')]
+    private $favoris;
+
+
+    public function __construct()
+    {
+        $this->favoris = new ArrayCollection();
+    }
 
     
     public function getId(): ?int
@@ -477,6 +488,32 @@ class Recipes
 
         return $this;
     }
+
+    /**
+     * @return Collection<int, Users>
+     */
+    public function getFavoris(): Collection
+    {
+        return $this->favoris;
+    }
+
+    public function addFavori(Users $favori): self
+    {
+        if (!$this->favoris->contains($favori)) {
+            $this->favoris[] = $favori;
+        }
+
+        return $this;
+    }
+
+    public function removeFavori(Users $favori): self
+    {
+        $this->favoris->removeElement($favori);
+
+        return $this;
+    }
+
+    
 
     
 }

@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\UsersRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
@@ -11,7 +13,7 @@ use Symfony\Component\Security\Core\User\UserInterface;
 #[ORM\Entity(repositoryClass: UsersRepository::class)]
 #[UniqueEntity(fields: ['email'], message: 'Il existe déjà un compte avec cet email')]
 #[UniqueEntity(fields: ['pseudo'], message: 'Ce pseudo est déjà utilisé')]
-#[UniqueEntity(fields: ['email'], message: 'There is already an account with this email')]
+
 class Users implements UserInterface, PasswordAuthenticatedUserInterface
 {
     #[ORM\Id]
@@ -39,6 +41,16 @@ class Users implements UserInterface, PasswordAuthenticatedUserInterface
 
     #[ORM\Column(type: 'boolean')]
     private $isVerified = false;
+
+    #[ORM\ManyToMany(targetEntity: Recipes::class, mappedBy: 'favoris')]
+    private $recipes;
+
+
+    public function __construct()
+    {
+        $this->favoris = new ArrayCollection();
+        $this->recipes = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -157,4 +169,33 @@ class Users implements UserInterface, PasswordAuthenticatedUserInterface
 
         return $this;
     }
+
+    /**
+     * @return Collection<int, Recipes>
+     */
+    public function getRecipes(): Collection
+    {
+        return $this->recipes;
+    }
+
+    public function addRecipe(Recipes $recipe): self
+    {
+        if (!$this->recipes->contains($recipe)) {
+            $this->recipes[] = $recipe;
+            $recipe->addFavori($this);
+        }
+
+        return $this;
+    }
+
+    public function removeRecipe(Recipes $recipe): self
+    {
+        if ($this->recipes->removeElement($recipe)) {
+            $recipe->removeFavori($this);
+        }
+
+        return $this;
+    }
+
+
 }

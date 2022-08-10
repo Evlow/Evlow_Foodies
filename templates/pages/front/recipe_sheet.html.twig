@@ -4,61 +4,63 @@
 {{recipe.title}}
 {% endblock %}
 
+
 {% block body %}
 
-    <div class="content-intro-recipe-sheet">
-        <div class="paragraphe-recipe-sheet">
-            <h3 class="h3-recipe-sheet">{{recipe.title}}</h3>
-        </div>
-        <div class="content-img-sheet">
-            <img class="recipe-sheet-img" src="{{vich_uploader_asset(recipe, 'imageFile')}}" alt="image">
-        </div>
-        <p>{{recipe.description}}</p>
+<div class="content-intro-recipe-sheet">
+    <div class="paragraphe-recipe-sheet">
+        <h3 class="h3-recipe-sheet">{{recipe.title}}</h3>
     </div>
+    <div class="content-img-sheet">
+        <img class="recipe-sheet-img" src="{{vich_uploader_asset(recipe, 'imageFile')}}" alt="image">
+    </div>
+    <p>{{recipe.description}}</p>
+</div>
 
-    <article class="content-article">
-   
-            <section class="section-ingredients">
-                <div class="bloc-title">
-                    <div class="ovale">
-                        <h4 class="title-flex"><img class="ingredients"
-                                src="{{ asset('assets/picture/ingredient.svg') }}" alt="image ingrédients" />Ingédients
-                        </h4>
-                    </div>
-                </div>
-                <ul>
-                    <li>{{recipe.ingredient1}}</li>
-                    <li>{{recipe.ingredient2}}</li>
-                    <li>{{recipe.ingredient3}}</li>
-                    <li>{{recipe.ingredient4}}</li>
-                    <li>{{recipe.ingredient5}}</li>
-                    <li>{{recipe.ingredient6}}</li>
-                    <li>{{recipe.ingredient7}}</li>
-                    <li>{{recipe.ingredient8}}</li>
+<article class="content-article">
 
-                </ul>
-            </section>
+    <section class="section-ingredients">
+        <div class="bloc-title">
+            <div class="ovale">
+                <h4 class="title-flex"><img class="ingredients" src="{{ asset('assets/picture/ingredient.svg') }}"
+                        alt="image ingrédients" />Ingédients
+                </h4>
+            
+            </div>
+        </div>
 
-            <section class="section-preparations">
-                <div class="bloc-title">
-                    <div class="ovale">
-                        <h4 class="title-flex"><img class="preparations"
-                                src="{{ asset('assets/picture/preparation.svg') }}"
-                                alt="image préparation" />Préparations
-                        </h4>
-                    </div>
-                </div>
-                <ul>
-                    <li>{{recipe.preparation1}}</li>
-                    <li>{{recipe.preparation2}}</li>
-                    <li>{{recipe.preparation3}}</li>
-                    <li>{{recipe.preparation4}}</li>
-                    <li>{{recipe.preparation5}}</li>
-                </ul>
-            </section>
-            <span class="span-created">Date de publication : {{ recipe.createdAt|date("d/m/Y") }}</span>
-        
-    </article>
+        <ul>
+            <li>{{recipe.ingredient1}}</li>
+            <li>{{recipe.ingredient2}}</li>
+            <li>{{recipe.ingredient3}}</li>
+            <li>{{recipe.ingredient4}}</li>
+            <li>{{recipe.ingredient5}}</li>
+            <li>{{recipe.ingredient6}}</li>
+            <li>{{recipe.ingredient7}}</li>
+            <li>{{recipe.ingredient8}}</li>
+
+        </ul>
+    </section>
+
+    <section class="section-preparations">
+        <div class="bloc-title">
+            <div class="ovale">
+                <h4 class="title-flex"><img class="preparations" src="{{ asset('assets/picture/preparation.svg') }}"
+                        alt="image préparation" />Préparations
+                </h4>
+            </div>
+        </div>
+        <ul>
+            <li>{{recipe.preparation1}}</li>
+            <li>{{recipe.preparation2}}</li>
+            <li>{{recipe.preparation3}}</li>
+            <li>{{recipe.preparation4}}</li>
+            <li>{{recipe.preparation5}}</li>
+        </ul>
+    </section>
+    <span class="span-created">Date de publication : {{ recipe.createdAt|date("d/m/Y") }}</span>
+
+</article>
 
 
 

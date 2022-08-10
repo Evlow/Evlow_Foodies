@@ -7,6 +7,12 @@
 <div class="error">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
 {% endif %}
 
+{% if app.user %}
+<div>
+    Vous êtes connecté(e) comme {{ app.user.UserIdentifier }}.
+</div>
+{% endif %}
+
 <article class="article-connect">
     <section class="section-connect">
         <p class="p-registration">Envie de partager tes recettes ?</p>
@@ -19,27 +25,29 @@
         <div class="content-connect">
             <div class="form-connect">
                 <div class="bloc-email-connect">
-                    <input type="email" value="{{ last_username }}" placeholder="Votre email" name="email"
+                    <input type="email" value="{{ last_username}}" placeholder="Votre email" name="email"
                         id="inputEmail" class="form-control" autocomplete="email" required autofocus>
-                        <a href=""><span class="span-email-lost">Identifiant oublié ?</span></a>
+                    <a href=""><span class="span-email-lost">Identifiant oublié ?</span></a>
                 </div>
 
                 <div class="bloc-password-connect">
                     <input type="password" placeholder="Mot de passe" name="password" id="inputPassword"
                         class="form-control" autocomplete="current-password" required>
-                        <a href="{{path ("app_forgot_password_request")}}"><span class="span-email-lost">Mot de passe oublié ?</span></a>
-            
+                    <a href="{{ path('app_forgot_password') }}"><span class="span-email-lost">Mot de passe
+                            oublié ?</span></a>
+
                 </div>
             </div>
             <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
 
         </div>
+        <div class="bloc-input">
+            <button class="button-connect" type="submit">
+                Se connecter
+            </button>
+        </div>
     </form>
-    <div class="bloc-input">
-        <button class="button-connect" type="submit">
-            Se connecter
-        </button>
-    </div>
+  
 </article>
 
 {% endblock %}

@@ -749,6 +749,17 @@ h3 {
   margin-top: 10px;
 }
 
+.error {
+  background-color: red;
+  width: 200px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px auto 10px;
+  font-weight: 600;
+}
+
 .form-connect {
   display: flex;
   flex-direction: column;
@@ -758,7 +769,8 @@ h3 {
   width: 20%;
 }
 
-#inputEmail, #inputPassword {
+#inputEmail,
+#inputPassword {
   margin: 0;
   width: 100%;
 }
@@ -930,4 +942,8 @@ h3 {
   margin-left: 50px;
   font-size: 1.3em;
   font-weight: 100;
+}
+
+.img-favoris {
+  width: 40px;
 }/*# sourceMappingURL=styles.css.map */
