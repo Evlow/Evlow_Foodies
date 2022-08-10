@@ -166,7 +166,7 @@ textarea {
   padding-left: 50px;
 }
 .image-recipe {
-  border:dotted 3px #f05665;
+  border:dotted 2px #f05665;
   width: 25%;
   border-radius: 5px;
   margin :$margin-top-bottom-10;
@@ -191,13 +191,14 @@ input {
   background-color: white;
   margin:$margin-top-bottom-10;
   text-align: center;
+  padding: 10px;
 }
 
 .title-recipe {
   display: flex;
   width: 50%;
   justify-content: center;
-  margin: auto;
+  margin: 5px auto 5px;
 }
 
 .bloc-ingredient{
@@ -215,6 +216,19 @@ padding: 10px;
   width: 50%;
 }
 
+.btn-bo{
+  background-color: white;
+  width: 120px;
+  height: 30px;
+  font-size:1em;
+  border-color:#B4172E;
+  font-weight: $weight;
+  border-radius: 15px 0 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ 
+}
 
 
 .bloc-category{
@@ -283,4 +297,11 @@ width: 100px;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+
+//EDIT RECIPE
+.content-image img{
+  width: 200px;
+  height: 230px;
 }

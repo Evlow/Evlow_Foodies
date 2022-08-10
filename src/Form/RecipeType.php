@@ -21,7 +21,7 @@ class RecipeType extends AbstractType
     {
         $builder
             ->add('Title', TextType::class, [
-                'label'=>"Titre de la recette :",
+                'label' => "Titre de la recette :",
                 "attr" => [
                     "class" => "title-recipe"
                 ]
@@ -32,9 +32,11 @@ class RecipeType extends AbstractType
                 "attr" => [
                     "class" => "image-recipe"
                 ],
+                'allow_delete' => false,
+                'download_label' => false,
                 'required' => false,
-                
-                
+
+
             ])
             ->add('ingredient_1', TextType::class, [
                 'label' => 'Ingrédient n°1 :',
@@ -54,7 +56,7 @@ class RecipeType extends AbstractType
                 "attr" => [
                     "class" => "label-recipe"
                 ]
-                
+
             ])
             ->add('ingredient_4', TextType::class, [
                 'label' => 'Ingrédient n°4 :',
@@ -152,14 +154,23 @@ class RecipeType extends AbstractType
                 "attr" => [
                     "class" => "label-preparation"
                 ],
+
             ])
+            ->add('preparation_6', TextareaType::class, [
+                'label' => 'Préparation n°6 :',
+                'required' => false,
+                "attr" => [
+                    "class" => "label-preparation"
+                ],
+            ])
+
             ->add('category', EntityType::class, [
                 'class'  => Category::class,
                 'label' => 'Catégorie :',
                 "attr" => [
                     "class" => "label-preparation"
                 ],
-                    
+
             ]);
     }
 

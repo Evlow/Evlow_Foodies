@@ -16,7 +16,7 @@ class BoBasketController extends AbstractController
     public function index(RecipesRepository $repository): Response
     {
         $recipe = $repository->findBy([
-            'basket' =>1 ,
+            'basket' =>0 ,
         ]);
         return $this->render('pages/back/corbeille.html.twig', [
             'controller_name' => 'BoBasketController',

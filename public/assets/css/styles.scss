@@ -243,12 +243,14 @@ footer {
   text-align: center;
 }
 
-.content-articles {
+.content-article {
   width: 50%;
   display: flex;
   flex-direction: column;
   margin: 0 auto;
-  @include separation-header;
+  @include separation-top ;
+  padding: 50px 0 50px 0;
+
 }
 
 .comment {
@@ -442,7 +444,6 @@ h3 {
   width: 200px;
   height: 200px;
   object-fit: cover;
-  object-position: 50% 40%;
   overflow: hidden;
 }
 
@@ -762,16 +763,23 @@ width: 20%;}
 .content-img-sheet {
   display: flex;
   justify-content: center;
+  padding-bottom: 50px;
 }
 .recipe-sheet-img {
-  width: 600px;
-  height: 550px;
+  width: 500px;
+  height: 450px;
   border-radius: 50px;
   object-fit: cover;
-  object-position: 50% 30%;
   overflow: hidden;
 }
 
 .paragraphe-recipe-sheet {
   font-size: 2em;
+}
+
+.h3-recipe-sheet{
+  text-align: left;
+  margin-left: 50px;
+  font-size:$title-h3-recipe;
+ font-weight: 100;
 }

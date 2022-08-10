@@ -2,11 +2,11 @@
 
 namespace App\Entity;
 
-use App\Repository\RecipesRepository;
 use Doctrine\ORM\Mapping as ORM;
-use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+use App\Repository\RecipesRepository;
 use Symfony\Component\HttpFoundation\File\File;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 #[UniqueEntity('Title')]
 #[ORM\Entity(repositoryClass: RecipesRepository::class)]
@@ -107,6 +107,9 @@ class Recipes
 
     #[ORM\Column(type: 'boolean', nullable: true)]
     private $basket= FALSE;
+
+    #[ORM\Column(type: 'string', length: 255, nullable: true)]
+    private $preparation_6;
 
     
     public function getId(): ?int
@@ -459,6 +462,18 @@ class Recipes
     public function setBasket(?bool $basket): self
     {
         $this->basket = $basket;
+
+        return $this;
+    }
+
+    public function getPreparation6(): ?string
+    {
+        return $this->preparation_6;
+    }
+
+    public function setPreparation6(?string $preparation_6): self
+    {
+        $this->preparation_6 = $preparation_6;
 
         return $this;
     }

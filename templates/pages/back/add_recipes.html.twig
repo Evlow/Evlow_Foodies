@@ -94,6 +94,11 @@
                     {{ form_label(formRecipe.preparation_5) }}
                     {{ form_widget(formRecipe.preparation_5) }}
                 </div>
+                <div class="bloc-preparation">
+                    {{ form_label(formRecipe.preparation_6) }}
+                    {{ form_widget(formRecipe.preparation_6) }}
+                </div>
+                
             </div>
             <div class="content-category">
                 <div class="bloc-category">
@@ -103,7 +108,7 @@
                 </div>
             </div>
         </div>
-        <input class="btn btn-primary my-3" type="submit" value="Envoyer" />
+        <input class="btn-bo" type="submit" value="Envoyer" />
         {{ form_end(formRecipe) }}
     </section>
 </article>

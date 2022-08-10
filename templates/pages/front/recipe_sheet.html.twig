@@ -1,25 +1,29 @@
 {% extends '/bases/baseFo.html.twig' %}
 
+{% block title %}
+{{recipe.title}}
+{% endblock %}
+
 {% block body %}
-<main>
-    {% for recipe in recipes %}
+
     <div class="content-intro-recipe-sheet">
         <div class="paragraphe-recipe-sheet">
-            <p>{{recipe.title}}</p>
+            <h3 class="h3-recipe-sheet">{{recipe.title}}</h3>
         </div>
         <div class="content-img-sheet">
-        <img class="recipe-sheet-img" src="{{vich_uploader_asset(recipe, 'imageFile')}}" alt="image">
-    </div>
+            <img class="recipe-sheet-img" src="{{vich_uploader_asset(recipe, 'imageFile')}}" alt="image">
+        </div>
         <p>{{recipe.description}}</p>
     </div>
-    <article>
-        <div class="content-articles">
+
+    <article class="content-article">
+   
             <section class="section-ingredients">
                 <div class="bloc-title">
                     <div class="ovale">
-                        <h3 class="title-flex"><img class="ingredients" src="{{ asset('assets/picture/ingredient.svg') }}"
-                                alt="image ingrédients" />Ingédients
-                        </h3>
+                        <h4 class="title-flex"><img class="ingredients"
+                                src="{{ asset('assets/picture/ingredient.svg') }}" alt="image ingrédients" />Ingédients
+                        </h4>
                     </div>
                 </div>
                 <ul>
@@ -38,9 +42,10 @@
             <section class="section-preparations">
                 <div class="bloc-title">
                     <div class="ovale">
-                        <h3 class="title-flex"><img class="preparations" src="{{ asset('assets/picture/preparation.svg') }}"
+                        <h4 class="title-flex"><img class="preparations"
+                                src="{{ asset('assets/picture/preparation.svg') }}"
                                 alt="image préparation" />Préparations
-                        </h3>
+                        </h4>
                     </div>
                 </div>
                 <ul>
@@ -51,10 +56,10 @@
                     <li>{{recipe.preparation5}}</li>
                 </ul>
             </section>
-            {% endfor %}
-        </div>
+            <span class="span-created">Date de publication : {{ recipe.createdAt|date("d/m/Y") }}</span>
+        
     </article>
-</main>
+
 
 
 {% endblock %}
