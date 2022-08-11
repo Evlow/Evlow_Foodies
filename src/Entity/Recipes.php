@@ -99,6 +99,9 @@ class Recipes
     #[ORM\Column(type: 'string', length: 255, nullable: true)]
     private $preparation_5;
 
+    #[ORM\Column(type: 'string', length: 255, nullable: true)]
+    private $preparation_6;
+
     #[ORM\ManyToOne(targetEntity: Category::class, inversedBy: 'recipes')]
     #[ORM\JoinColumn(nullable: false)]
     private $Category;
@@ -110,11 +113,10 @@ class Recipes
     #[ORM\Column(type: 'boolean', nullable: true)]
     private $basket= FALSE;
 
-    #[ORM\Column(type: 'string', length: 255, nullable: true)]
-    private $preparation_6;
-
     #[ORM\ManyToMany(targetEntity: Users::class, inversedBy: 'recipes')]
     private $favoris;
+
+
 
 
     public function __construct()
@@ -453,6 +455,18 @@ class Recipes
         return $this;
     }
 
+    public function getPreparation6(): ?string
+    {
+        return $this->preparation_6;
+    }
+    
+    public function setPreparation6(?string $preparation_6): self
+    {
+        $this->preparation_6 = $preparation_6;
+
+        return $this;
+    }
+
     public function getCategory(): ?category
     {
         return $this->category;
@@ -477,17 +491,6 @@ class Recipes
         return $this;
     }
 
-    public function getPreparation6(): ?string
-    {
-        return $this->preparation_6;
-    }
-
-    public function setPreparation6(?string $preparation_6): self
-    {
-        $this->preparation_6 = $preparation_6;
-
-        return $this;
-    }
 
     /**
      * @return Collection<int, Users>
@@ -512,6 +515,8 @@ class Recipes
 
         return $this;
     }
+
+
 
     
 
