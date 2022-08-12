@@ -41,7 +41,10 @@ class ChangePasswordFormType extends AbstractType
                     'placeholder' => 'Confirmez votre nouveau mot de passe'],
     
                 ],
-                'invalid_message' => 'Les mots de passe ne sont pas identique.',
+                'invalid_message' => 'Les mots de passe ne sont pas identiques.',
+                "attr" => [
+                    "class" => "error-password"
+                ],
                 // Instead of being set onto the object directly,
                 // this is read and encoded in the controller
                 'mapped' => false,

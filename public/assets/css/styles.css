@@ -826,13 +826,12 @@ h3 {
 
 .section-bloc-email {
   text-align: center;
-  margin: 0 auto;
+  margin: 10px auto 10px;
 }
 
 #change_password_form_plainPassword_first, #change_password_form_plainPassword_second {
   width: 300px !important;
-  margin: 0;
-  padding: 10px 0 10px 0;
+  margin: 10px auto 10px;
 }
 
 .button-reinitialization {
@@ -846,6 +845,12 @@ h3 {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 30px;
+}
+
+.error-password {
+  color: red;
+  text-align: center;
 }
 
 .content-intro-savory {

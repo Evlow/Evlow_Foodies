@@ -10,8 +10,10 @@
         <h3 class="home-h3 ">
             <span>Entrez votre nouveau mot de passe !</span>
         </h3>
+       
+            {{ form_errors(resetForm.plainPassword) }}
+    
     </section>
-
     <section class="content-contact">
     <div class="bloc-registration">
         {{ form_start(resetForm) }}

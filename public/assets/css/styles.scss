@@ -690,18 +690,24 @@ color:red;
 
 .section-bloc-email{
 text-align: center;
-margin: 0 auto;
+margin: 10px auto 10px;
 }
 
 #change_password_form_plainPassword_first, #change_password_form_plainPassword_second {
   width: 300px !important;
-  margin: 0;
-  padding:$padding-top-bottom-10;
+  margin: 10px auto 10px;
+ 
 }
 
 
 .button-reinitialization{
   @include button($secondary-color, 250px, 30px, 1.1em);
+  margin-top: $margin-top-30;
+
+}
+.error-password{
+  color:red;
+  text-align:center;
 
 }
 //SAVORY//

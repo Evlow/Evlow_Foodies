@@ -9,21 +9,21 @@ Contactez-moi | Evlow Foodies
     {{ message }}
 </div>
 {% endfor %}
-    <article class="article-registration">
-        <section class="section-registration">
-            <p class="p-registration">Envie de partager vos recettes ?</p>
-            <p class="p-registration">De retrouver vos recettes coup de coeur ?</p>
-            <h3 class="home-h3 ">
-                <span>Inscrivez-vous !</span>
-            </h3>
-            <div class="form-error">
-                <div>
-                {{ form_errors(registrationForm.email) }}
-                {{ form_errors(registrationForm.pseudo) }}
-                {{ form_errors(registrationForm.plainPassword.first) }}
-                {{ form_errors(registrationForm.plainPassword.second) }}
-            </div>
-        </section>
+<article class="article-registration">
+    <section class="section-registration">
+        <p class="p-registration">Envie de partager vos recettes ?</p>
+        <p class="p-registration">De retrouver vos recettes coup de coeur ?</p>
+        <h3 class="home-h3 ">
+            <span>Inscrivez-vous !</span>
+        </h3>
+
+        <div class="form-error">
+            {{ form_errors(registrationForm.email) }}
+            {{ form_errors(registrationForm.pseudo) }}
+            {{ form_errors(registrationForm.plainPassword.first) }}
+            {{ form_errors(registrationForm.plainPassword.second) }}
+        </div>
+    </section>
 
     <section class="content-registration">
         <div class="form-registration">
@@ -41,31 +41,31 @@ Contactez-moi | Evlow Foodies
                 {{ form_widget(registrationForm.pseudo) }}
             </div>
             <div class="bloc-registration">
-               
+
                 {{ form_label(registrationForm.email) }}
                 {{ form_widget(registrationForm.email) }}
-              
+
             </div>
             <div class="bloc-registration">
                 {{ form_label(registrationForm.plainPassword) }}
                 {{ form_widget(registrationForm.plainPassword) }}
             </div>
         </div>
-            <div class="bloc-input">
-                {{ form_label(registrationForm.envoyer) }}
-                {{ form_widget(registrationForm.envoyer) }}
-             
-            </div>
-            <div class="bloc-agree">
-                {{ form_label(registrationForm.agreeTerms) }}
-                {{ form_widget(registrationForm.agreeTerms) }}
-               
-            </div>
-            {{ form_end(registrationForm) }}
-            <span class="span-registration">*Champs obligatoires</span>
-   
+        <div class="bloc-input">
+            {{ form_label(registrationForm.envoyer) }}
+            {{ form_widget(registrationForm.envoyer) }}
+
+        </div>
+        <div class="bloc-agree">
+            {{ form_label(registrationForm.agreeTerms) }}
+            {{ form_widget(registrationForm.agreeTerms) }}
+
+        </div>
+        {{ form_end(registrationForm) }}
+        <span class="span-registration">*Champs obligatoires</span>
+
 
     </section>
-    </article>
+</article>
 
 {% endblock %}
