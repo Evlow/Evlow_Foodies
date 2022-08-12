@@ -3,20 +3,27 @@
 Contactez-moi | Evlow Foodies
 {% endblock %}
 {% block body %}
+
+{% for message in app.flashes('inscription') %}
+<div class="alert-inscription">
+    {{ message }}
+</div>
+{% endfor %}
     <article class="article-registration">
         <section class="section-registration">
-            <p class="p-registration">Envie de partager tes recettes ?</p>
-            <p class="p-registration">De retrouver tes recettes coup de coeur ?</p>
+            <p class="p-registration">Envie de partager vos recettes ?</p>
+            <p class="p-registration">De retrouver vos recettes coup de coeur ?</p>
             <h3 class="home-h3 ">
-                <span>Inscris-toi !</span>
+                <span>Inscrivez-vous !</span>
             </h3>
+            <div class="form-error">
+                <div>
+                {{ form_errors(registrationForm.email) }}
+                {{ form_errors(registrationForm.pseudo) }}
+                {{ form_errors(registrationForm.plainPassword.first) }}
+                {{ form_errors(registrationForm.plainPassword.second) }}
+            </div>
         </section>
- 
-    {% for message in app.flashes('success') %}
-    <div class="alert alert-success">
-        {{ message }}
-    </div>
-    {% endfor %}
 
     <section class="content-registration">
         <div class="form-registration">
@@ -34,8 +41,10 @@ Contactez-moi | Evlow Foodies
                 {{ form_widget(registrationForm.pseudo) }}
             </div>
             <div class="bloc-registration">
+               
                 {{ form_label(registrationForm.email) }}
                 {{ form_widget(registrationForm.email) }}
+              
             </div>
             <div class="bloc-registration">
                 {{ form_label(registrationForm.plainPassword) }}

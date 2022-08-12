@@ -43,6 +43,7 @@ class RegistrationController extends AbstractController
 
             $entityManager->persist($user);
             $entityManager->flush();
+            $this->addFlash('inscription', 'Un mail vous a éte envoyé pour confirmer votre inscription');
 
             // generate a signed url and email it to the user
             $this->emailVerifier->sendEmailConfirmation('app_verify_email', $user,
@@ -54,7 +55,6 @@ class RegistrationController extends AbstractController
             );
             // do anything else you need here, like send an email
 
-            return $this->redirectToRoute('app_fo_login');
         }
 
         return $this->render('/pages/registration/register.html.twig', [

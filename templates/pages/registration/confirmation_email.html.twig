@@ -5,15 +5,19 @@ Evlow Foodies | Confirmation email
 {% endblock %}
 
 {% block body %}
-<h1>Bonjour,!</h1>
+<article class="article-registration">
+<section class="section-registration">
+    <p class="p-registration">Mot de passe oublié?</p>
+    <p class="p-registration">Pas de panique !</p>
+    <h3 class="home-h3 ">
+        <span>Entre ton nouveau mot de passe !</span>
+    </h3>
+</section>
 
 <p>
-    Please confirm your email address by clicking the following link: <br><br>
-    <a href="{{ signedUrl }}">Confirm my Email</a>.
-    This link will expire in {{ expiresAtMessageKey|trans(expiresAtMessageData, 'VerifyEmailBundle') }}.
+    Veuillez confirmer votre adresse e-mail en cliquant sur le lien suivant: <br><br>
+    <a href="{{ signedUrl }}">Confirmer mon email</a>.
+    Ce lien expirera dans {{ expiresAtMessageKey|trans(expiresAtMessageData, 'VerifyEmailBundle') }}.
 </p>
-
-<p>
-    Cheers!
-</p>
+</article>
 {% endblock %}

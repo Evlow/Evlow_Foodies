@@ -1,11 +1,22 @@
 {% extends '/bases/baseFo.html.twig' %}
 
-{% block title %}Password Reset Email Sent{% endblock %}
+{% block title %}Evlow Foodies | Réinitialisation mot de passe{% endblock %}
 
 {% block body %}
+<article class="article-registration">
+    <section class="section-registration">
+        <p class="p-registration">Mot de passe oublié?</p>
+        <p class="p-registration">Pas de panique !</p>
+        <h3 class="home-h3 ">
+            <span>Un email de réinitialisation vous a été envoyé !</span>
+        </h3>
+    </section>
+    <section class ="section-bloc-email">
     <p>
-        If an account matching your email exists, then an email was just sent that contains a link that you can use to reset your password.
-        This link will expire in {{ resetToken.expirationMessageKey|trans(resetToken.expirationMessageData, 'ResetPasswordBundle') }}.
+    Un email vient d'être envoyé contenant un lien que vous pouvez utiliser pour réinitialiser votre mot de passe. {{ resetToken.expirationMessageKey|trans(resetToken.expirationMessageData, 'ResetPasswordBundle') }}.
     </p>
-    <p>If you don't receive an email please check your spam folder or <a href="{{ path('app_forgot_password_request') }}">try again</a>.</p>
-{% endblock %}
+    <br>    
+    <p>Si vous ne recevez pas d'email, veuillez vérifier vos emails indésirables ou <a href="{{ path('app_forgot_password_request') }}">Réessayer</a>.</p>
+</section>
+</article>
+    {% endblock %}

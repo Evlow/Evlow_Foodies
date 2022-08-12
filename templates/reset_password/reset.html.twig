@@ -1,6 +1,6 @@
 {% extends '/bases/baseFo.html.twig' %}
 
-{% block title %}{% endblock %}
+{% block title %}Evlow Foodies | Réinitialisation mot de passe{% endblock %}
 
 {% block body %}
 <article class="article-registration">
@@ -8,15 +8,21 @@
         <p class="p-registration">Mot de passe oublié?</p>
         <p class="p-registration">Pas de panique !</p>
         <h3 class="home-h3 ">
-            <span>Entre ton nouveau mot de passe !</span>
+            <span>Entrez votre nouveau mot de passe !</span>
         </h3>
     </section>
 
+    <section class="content-contact">
     <div class="bloc-registration">
         {{ form_start(resetForm) }}
         {{ form_label(resetForm.plainPassword) }}
         {{ form_widget(resetForm.plainPassword) }}
     </div>
-        <button class="btn btn-primary">Reset password</button>
+    <div class="bloc-input">
+        <button class="button-reinitialization">Réinitialiser mon mot de passe</button>
     {{ form_end(resetForm) }}
+</div>
+</section>
+    </article>
+
 {% endblock %}

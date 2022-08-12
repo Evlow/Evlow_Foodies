@@ -29,10 +29,13 @@ class FoContactController extends AbstractController
 
             $email = (new Email())
                 ->from($contact->getEmail())
-                ->to('admin@evlowfoodies.com');              
+                ->to('mathilde.peauger@gmail.com') 
+                ->subject('Message concernant Evlow Foodies')
+                ->text($contact->getMessage());
+                
             $mailer->send($email);
 
-            $this->addFlash('success', 'Votre message a bien été envoyé');
+            $this->addFlash('contact', 'Votre message a bien été envoyé ! Je vous répondrai dans les plus brefs délais. ');
         }
 
         return $this->render('pages/front/contact.html.twig', [

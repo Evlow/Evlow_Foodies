@@ -2,6 +2,13 @@
 
 {% block title %} Contactez-moi | Evlow Foodies{% endblock %} 
 {% block body %}
+
+{% for message in app.flashes('contact') %}
+<div class="alert-contact">
+    {{ message }}
+</div>
+{% endfor %}
+
 <article class="article-contact">
     <section class="section-contact">
         <p class="p-contact">Vous avez une question ?</p>
@@ -36,6 +43,7 @@
             <div class="bloc-input">
                 {{ form_label(formContact.envoyer) }}
                 {{ form_widget(formContact.envoyer) }}
+                {{ form_end(formContact) }}
             </div>
             <span class="span-contact">*Champs obligatoires</span>
         </div>

@@ -483,10 +483,9 @@ h3 {
 
 //PAGE INSCRIPTION
 
-.section-registration {
-  padding-top: 50px;
+.article-registration{
+  @extend .article-contact;
 }
-
 .content-registration {
   display: flex;
   flex-direction: column;
@@ -530,6 +529,25 @@ h3 {
   padding-left: 50px;
   font-size: 0.8em;
 }
+
+
+.alert-inscription{ 
+  @extend .alert-contact;
+}
+
+.form-error{
+color:red;
+  width: 450px;
+  font-weight: $weight;
+  margin: 0 auto;
+ align-items: center;
+ display:flex;
+ justify-content: center;
+ padding-bottom: $padding-bottom-10;
+ text-align: center;
+}
+
+
 //PAGE CONTACT//
 
 .article-contact {
@@ -610,7 +628,19 @@ h3 {
   font-size: 0.8em;
   margin-top: $margin-top-10;
 }
-//LOGIN//
+
+
+.alert-contact{
+  background-color: $secondary-color;
+  width: 550px;
+  padding:$padding-top-bottom-10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px auto 10px;
+  font-weight: $weight;
+}
+//PAGE LOGIN//
 
 .error {
   background-color: red;
@@ -654,6 +684,25 @@ h3 {
 
 #inputPassword::placeholder {
   text-align: left;
+}
+
+// password forgot//
+
+.section-bloc-email{
+text-align: center;
+margin: 0 auto;
+}
+
+#change_password_form_plainPassword_first, #change_password_form_plainPassword_second {
+  width: 300px !important;
+  margin: 0;
+  padding:$padding-top-bottom-10;
+}
+
+
+.button-reinitialization{
+  @include button($secondary-color, 250px, 30px, 1.1em);
+
 }
 //SAVORY//
 
