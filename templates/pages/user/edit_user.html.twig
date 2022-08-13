@@ -1,0 +1,22 @@
+{% extends '/bases/baseFo.html.twig' %}
+
+{% block title %}Edition Utilisateur | Evlow Foodies{% endblock %}
+
+{% block body %}
+<article>
+    <section class="section-connect">
+        <p class="p-registration">Vous souhaitez modifier votre profil ?</p>
+        <h3 class="home-h3 ">
+            <span>LOREM!</span>
+        </h3>
+        <section class="content-edit-user">
+            <div class="form-edit-user">
+                {{ form_start(UserForm) }}
+                {{ form_label(UserForm.pseudo) }}
+                {{ form_widget(UserForm.pseudo) }} 
+                {{ form_end(UserForm) }}
+            </div>
+        </section>
+</article>
+
+{% endblock %}

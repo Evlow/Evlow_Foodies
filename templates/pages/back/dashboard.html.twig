@@ -1,8 +1,45 @@
 {% extends '/bases/baseBo.html.twig' %}
 
+{% block title %}Dashboard | Evlow Foodies{% endblock %}
+
 {% block body %}
 
-<h2>DASHBOARD</h2>
+<article class="dashboard">
+    <h2>Bienvenue {{ app.user.lastname }} !</h2>
+    
+
+    <section class="edit-profil">
+<h3> Mon profil </h3>
+<div>
+
+{{ app.user.firstname }}
+
+</div>
+<div>
+{{ app.user.lastname }}
+</div>
+<div>
+{{ app.user.pseudo }}
+</div>
+<div>
+{{ app.user.email }}
+</div>
 
 
-{% endblock %}
+<div>
+    <a class="btn-login-home" href="{{path('app_user_edit_password',{ id:  app.user.id  }) }})}}">Modifier mon mot de passe</a>
+</div>
+
+    </section>
+    
+    
+    
+    
+    
+    
+    
+    </article>
+
+
+        
+    {% endblock %}

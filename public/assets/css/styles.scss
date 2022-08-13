@@ -535,6 +535,17 @@ h3 {
   @extend .alert-contact;
 }
 
+.alert-edit{
+  background-color: $secondary-color;
+  width: 300px;
+  padding:$padding-top-bottom-10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px auto 10px;
+  font-weight: $weight;
+}
+
 .form-error{
 color:red;
   width: 450px;
@@ -873,3 +884,20 @@ font-size: 0.7em;
 .img-favoris {
   width: 40px;
 }
+
+
+//EDIT USER// 
+
+.content-edit-user{
+  @extend .content-reinitialization;
+}
+
+#user_password_plainPassword_first, #user_password_plainPassword_second, #user_password_newPassword {
+margin:10px 0 10px;
+
+}
+
+// .button-edit {
+//   @include button($secondary-color, 210px, 30px, 1em);
+// }
+

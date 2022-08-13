@@ -7,11 +7,6 @@
 <div class="error">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
 {% endif %}
 
-{% if app.user %}
-<div>
-    Vous êtes connecté(e) comme {{ app.user.UserIdentifier }}.
-</div>
-{% endif %}
 
 <article class="article-connect">
     <section class="section-connect">

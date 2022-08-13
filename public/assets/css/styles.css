@@ -622,6 +622,17 @@ h3 {
   font-size: 0.8em;
 }
 
+.alert-edit {
+  background-color: #9ce7a9;
+  width: 300px;
+  padding: 10px 0 10px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px auto 10px;
+  font-weight: 600;
+}
+
 .form-error {
   color: red;
   width: 450px;
@@ -859,7 +870,7 @@ h3 {
   font-size: 0.7em;
 }
 
-.content-reinitialization {
+.content-reinitialization, .content-edit-user {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1012,4 +1023,8 @@ h3 {
 
 .img-favoris {
   width: 40px;
+}
+
+#user_password_plainPassword_first, #user_password_plainPassword_second, #user_password_newPassword {
+  margin: 10px 0 10px;
 }/*# sourceMappingURL=styles.css.map */
