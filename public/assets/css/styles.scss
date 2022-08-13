@@ -669,7 +669,7 @@ color:red;
 }
 
 .bloc-email-connect {
-  margin-bottom: 50px;
+  margin-bottom:$margin-bottom-30;
   display: flex;
   flex-direction: column;
 }
@@ -699,15 +699,34 @@ margin: 10px auto 10px;
  
 }
 
-
 .button-reinitialization{
   @include button($secondary-color, 250px, 30px, 1.1em);
-  margin-top: $margin-top-30;
+ margin: 30px auto 0;
 
 }
 .error-password{
   color:red;
   text-align:center;
+
+}
+
+.p-reinitialization{
+font-style: italic;
+padding-top: $padding-top-10;
+font-size: 0.7em;
+}
+//email reinitialiazation//
+
+.content-reinitialization{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50%;
+  text-align:center;
+}
+
+#reset_password_request_form_email{
+  margin: auto !important;
 
 }
 //SAVORY//

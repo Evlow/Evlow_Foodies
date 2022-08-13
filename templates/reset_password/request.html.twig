@@ -10,18 +10,19 @@
     <article class="article-registration">
         <section class="section-registration">
             <p class="p-registration">Mot de passe oublié?</p>
-            <p class="p-registration">Pas de panique !</p>
+            <p class="p-registration">Un lien vous sera envoyé pour réinitialiser votre mot de passe !</p>
             <h3 class="home-h3 ">
                 <span>Inscrivez votre email !</span>
             </h3>
         </section>
+
+        <section class="content-reinitialization">
     {{ form_start(requestForm) }}
     {{ form_label(requestForm.email) }}
-        {{ form_widget(requestForm.email) }}
-        <div>
-   <p>Un lien vous sera envoyé pour réinitialiser votre mot de passe.</p>
-        </div>
+    {{ form_widget(requestForm.email) }}
 
-        <button class="button-connect">Réinitialiser mon mot de passe</button>
+        <button class="button-reinitialization">Réinitialiser mon mot de passe</button>
     {{ form_end(requestForm) }}
+    </section>
+    </article>
 {% endblock %}

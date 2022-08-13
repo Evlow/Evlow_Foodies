@@ -795,7 +795,7 @@ h3 {
 }
 
 .bloc-email-connect, .bloc-password-connect {
-  margin-bottom: 50px;
+  margin-bottom: 30px;
   display: flex;
   flex-direction: column;
 }
@@ -845,12 +845,30 @@ h3 {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 30px;
+  margin: 30px auto 0;
 }
 
 .error-password {
   color: red;
   text-align: center;
+}
+
+.p-reinitialization {
+  font-style: italic;
+  padding-top: 10px;
+  font-size: 0.7em;
+}
+
+.content-reinitialization {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50%;
+  text-align: center;
+}
+
+#reset_password_request_form_email {
+  margin: auto !important;
 }
 
 .content-intro-savory {
