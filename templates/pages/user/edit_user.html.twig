@@ -3,17 +3,23 @@
 {% block title %}Edition Utilisateur | Evlow Foodies{% endblock %}
 
 {% block body %}
-<article>
+<article class="article-edit-email">
     <section class="section-connect">
-        <p class="p-registration">Vous souhaitez modifier votre profil ?</p>
+        <p class="p-registration">Vous souhaitez modifier votre email ?</p>
+        <p class="p-registration">Rien de plus facile !</p>
         <h3 class="home-h3 ">
-            <span>LOREM!</span>
+            <span>Renseignez le champ ci-dessous !</span>
         </h3>
+        {% for message in app.flashes('success-edit') %}
+        <div class="succes-edit">
+            {{ message }}
+        </div>
+        {% endfor %}
         <section class="content-edit-user">
             <div class="form-edit-user">
                 {{ form_start(UserForm) }}
-                {{ form_label(UserForm.pseudo) }}
-                {{ form_widget(UserForm.pseudo) }} 
+                {{ form_label(UserForm.email) }}
+                {{ form_widget(UserForm.email) }}
                 {{ form_end(UserForm) }}
             </div>
         </section>

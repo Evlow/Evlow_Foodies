@@ -45,6 +45,10 @@ label {
   padding-bottom: 5px;
 }
 
+p {
+  font-size: 1.1em;
+}
+
 .img-aside {
   width: 30px;
   margin: 0 auto;
@@ -161,6 +165,24 @@ textarea {
   height: 90px;
 }
 
+.edit-profil {
+  background-color: white;
+  width: 20%;
+  margin: 10px;
+  padding-bottom: 10px;
+  border-radius: 5px;
+}
+
+.profil {
+  padding-left: 20px;
+}
+
+.h3-profil {
+  text-align: center;
+  padding: 20px 0 20px 0;
+  color: #B4172E;
+}
+
 .add-recipes {
   padding-left: 50px;
 }
@@ -261,20 +283,18 @@ input {
 }
 
 .card, .add-recipe {
-  margin: 0 auto;
   background-color: white;
   text-align: center;
   border-radius: 5px;
   margin: 10px;
   width: 20%;
-  height: 300px;
 }
 
 .btn-card {
   padding: 5px;
 }
 
-.btn-edit, .btn-delete {
+.btn-edit, .btn-edit-password, .btn-edit-email, .btn-delete {
   color: black;
   padding: 5px;
   border: 2px solid #868484;
@@ -292,6 +312,20 @@ input {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.buttons-edit {
+  text-align: center;
+}
+
+.btn-edit-password, .btn-edit-email {
+  width: 200px;
+  text-align: center;
+  font-weight: 600;
+}
+
+.btn-edit-email {
+  margin-top: 20px;
 }
 
 .content-image img {

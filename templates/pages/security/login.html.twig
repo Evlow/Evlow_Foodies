@@ -15,6 +15,7 @@
         <h3 class="home-h3 ">
             <span>Connectez-vous !</span>
         </h3>
+        
     </section>
     <form method="post">
         <div class="content-connect">
@@ -28,7 +29,7 @@
                     <input type="password" placeholder="Mot de passe" name="password" id="inputPassword"
                         class="form-control" autocomplete="current-password" required>
                     <a href="{{ path('app_forgot_password_request') }}"><span class="span-email-lost">Mot de passe
-                            oublié ?</span></a>
+                            perdu?</span></a>
 
                 </div>
             </div>
@@ -41,7 +42,5 @@
             </button>
         </div>
     </form>
-  
 </article>
-
 {% endblock %}

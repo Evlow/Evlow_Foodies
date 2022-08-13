@@ -653,6 +653,10 @@ color:red;
 }
 //PAGE LOGIN//
 
+
+.article-connect{
+  @extend .article-contact;
+}
 .error {
   background-color: red;
   width: 200px;
@@ -739,6 +743,27 @@ font-size: 0.7em;
 #reset_password_request_form_email{
   margin: auto !important;
 
+}
+
+
+// MODIF PROFIL
+
+.succes-edit {
+  @extend .alert-inscription;
+  width: 200px;}
+
+ #user_email{ margin: auto !important;
+text-align: center;}
+
+
+ .button-edit-email{
+
+  @include button($secondary-color, 180px, 32px, 1.1em);
+  margin: 30px auto 0;
+}
+
+.article-edit-email{
+  @extend .article-edit
 }
 //SAVORY//
 
@@ -886,18 +911,23 @@ font-size: 0.7em;
 }
 
 
-//EDIT USER// 
+//EDIT USER & PASSWORD// 
 
 .content-edit-user{
   @extend .content-reinitialization;
 }
 
 #user_password_plainPassword_first, #user_password_plainPassword_second, #user_password_newPassword {
-margin:10px 0 10px;
+margin:15px 0 15px;
+width: 250px;
 
 }
 
-// .button-edit {
-//   @include button($secondary-color, 210px, 30px, 1em);
-// }
+.button-edit {
+  @include button($secondary-color, 210px, 30px, 1em);
+  margin: 30px auto 0;
+}
 
+.article-edit{
+  @extend .article-registration;
+}

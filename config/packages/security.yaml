@@ -22,7 +22,7 @@ security:
             logout:
                 path: app_fo_logout
                 # where to redirect after logout
-                target: app_fo_home
+                # target: app_fo_home
          
          
             # activate different ways to authenticate

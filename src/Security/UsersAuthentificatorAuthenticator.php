@@ -50,7 +50,7 @@ class UsersAuthentificatorAuthenticator extends AbstractLoginFormAuthenticator
         }
 
         // For example:
-         return new RedirectResponse($this->urlGenerator->generate('app_fo_home'));
+         return new RedirectResponse($this->urlGenerator->generate('app_bo_dashboard'));
     
     }
 

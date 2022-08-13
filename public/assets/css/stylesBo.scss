@@ -3,6 +3,7 @@
 @use "mixins" as *;
 
 * {
+  
   font-family: $font;
 }
 #page{
@@ -45,6 +46,7 @@ label {
   padding-bottom: 5px;
 }
 
+p{font-size:$p-size;}
 .img-aside {
   width: 30px;
   margin: 0 auto;
@@ -156,10 +158,32 @@ margin: 0 auto;}
 }
 textarea {
   border-radius: 10px;
-  border-color:  #f05665;;
+  border-color:  #f05665;
   width: 550px;
   height: 90px;
 }
+
+//DASHBOARD
+
+.edit-profil{
+  background-color: white;
+width: 20%;
+margin: $margin-10;
+padding-bottom: $padding-bottom-10;
+border-radius: 5px;
+}
+
+.profil {
+
+  padding-left: 20px;
+}
+
+.h3-profil {
+  text-align: center;
+  padding:$padding-top-bottom-20;
+ color: #B4172E;
+}
+
 
 
 
@@ -266,13 +290,13 @@ border: 2px solid #f05665;
 }
 
 .card {
-  margin: 0 auto;
+
  background-color: white;
   text-align: center;
   border-radius: 5px;
   margin: 10px;
   width: 20%;
-  height: 300px;
+
 }
 
 .btn-card {
@@ -303,7 +327,21 @@ width: 100px;
   justify-content: center;
 }
 
+.buttons-edit{
+  text-align: center
+}
 
+.btn-edit-password {
+  @extend .btn-edit;
+  width: 200px;
+  text-align: center;
+  font-weight: $weight;
+}
+
+.btn-edit-email{
+  @extend .btn-edit-password;
+  margin-top: $margin-top-20;
+}
 //EDIT RECIPE
 .content-image img{
   width: 200px;

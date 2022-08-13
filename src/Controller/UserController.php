@@ -16,7 +16,7 @@ use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 class UserController extends AbstractController
 {
     #[Route('/utilisateur/edition/{id}', name: 'app_user_edit')]
-    public function editUser(Users $user, Request $request, EntityManagerInterface $manager, UserPasswordHasherInterface $userPasswordHasher,): Response
+    public function editUser(Users $user, Request $request, EntityManagerInterface $manager): Response
     {
 
         if (!$this->getUser()) {
@@ -31,19 +31,15 @@ class UserController extends AbstractController
 
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
-            if ($userPasswordHasher->isPasswordValid($user, $form->getData()->getPlainPassword()))
                 $user = $form->getData();
             $manager->persist($user);
             $manager->flush();
 
-            $this->addFlash('success_user', 'Les informations ont bien été modifiées!');
-            return $this->redirectToRoute('app_bo_dashboard');
-        } else {
-            $this->addFlash(
-                'error-edit',
-                'Le mot de passe est incorrect'
-            );
+            $this->addFlash('success-edit', 'L\'email a bien été modifié. ');
+
+ 
         }
+
         return $this->render('pages/user/edit_user.html.twig', [
             'UserForm' => $form->createView(),
         ]);

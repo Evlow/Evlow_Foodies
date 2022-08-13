@@ -6,40 +6,39 @@
 
 <article class="dashboard">
     <h2>Bienvenue {{ app.user.lastname }} !</h2>
-    
+
 
     <section class="edit-profil">
-<h3> Mon profil </h3>
-<div>
+        <h3 class="h3-profil"> Mes infos personnelles </h3>
+        <div class="profil">
 
-{{ app.user.firstname }}
+            <p><strong>Nom :</strong> {{ app.user.firstname }}</p>
+            <br>
 
-</div>
-<div>
-{{ app.user.lastname }}
-</div>
-<div>
-{{ app.user.pseudo }}
-</div>
-<div>
-{{ app.user.email }}
-</div>
+            <p><strong>Prénom :</strong>{{ app.user.lastname }}</p>
+            <br>
 
+            <p><strong>Pseudo :</strong> {{ app.user.pseudo }}</p>
 
-<div>
-    <a class="btn-login-home" href="{{path('app_user_edit_password',{ id:  app.user.id  }) }})}}">Modifier mon mot de passe</a>
-</div>
+            <br>
+            <p><strong>Email : </strong> {{ app.user.email }}</p>
+            <br>
+        </div>
+            <div class="buttons-edit">
+                <div class="edit-password">
+                    <a class="btn-edit-password"
+                        href="{{path('app_user_edit_password',{ id:  app.user.id  }) }})}}">Modifier mon mot de
+                        passe</a>
+                </div>
 
+                <div class="edit-email">
+                    <a class="btn-edit-email" href="{{path('app_user_edit',{ id:  app.user.id  }) }})}}">Modifier mon
+                        email</a>
+                </div>
+            </div>
     </section>
-    
-    
-    
-    
-    
-    
-    
-    </article>
+</article>
 
 
-        
-    {% endblock %}
+
+{% endblock %}
