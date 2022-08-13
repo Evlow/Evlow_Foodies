@@ -20,7 +20,9 @@ main {
 }
 article {
   background-color: #fae7e9;
+  height: 100vh;
 }
+  
 h1 {
   padding: $padding-top-bottom-10;
   text-align: left;
@@ -270,6 +272,7 @@ border: 2px solid #f05665;
   border-radius: 5px;
   margin: 10px;
   width: 20%;
+  height: 300px;
 }
 
 .btn-card {

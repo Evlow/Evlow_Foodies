@@ -18,6 +18,7 @@ main {
 
 article {
   background-color: #fae7e9;
+  height: 100vh;
 }
 
 h1 {
@@ -266,6 +267,7 @@ input {
   border-radius: 5px;
   margin: 10px;
   width: 20%;
+  height: 300px;
 }
 
 .btn-card {

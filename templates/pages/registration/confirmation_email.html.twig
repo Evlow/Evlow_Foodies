@@ -1,22 +1,9 @@
-{% extends '/bases/baseFo.html.twig' %}
+<h1>Evlow Foodies | Confirmation email</h1>
 
-{% block title %} Confirmation email | Evlow Foodies 
-{% endblock %}
+<h2>Bonjour,</h2>
+    <p>
+        Veuillez confirmer votre adresse e-mail en cliquant sur le lien suivant: <br><br>
+        <a href="{{ signedUrl }}">Confirmer mon email</a>.
+    <p> Attention ! Ce lien expirera dans 1 heure.</p>
 
-{% block body %}
-<article class="article-registration">
-<section class="section-registration">
-    <p class="p-registration">Mot de passe oublié?</p>
-    <p class="p-registration">Pas de panique !</p>
-    <h3 class="home-h3 ">
-        <span>Entre ton nouveau mot de passe !</span>
-    </h3>
-</section>
-
-<p>
-    Veuillez confirmer votre adresse e-mail en cliquant sur le lien suivant: <br><br>
-    <a href="{{ signedUrl }}">Confirmer mon email</a>.
-    Ce lien expirera dans {{ expiresAtMessageKey|trans(expiresAtMessageData, 'VerifyEmailBundle') }}.
-</p>
-</article>
-{% endblock %}
+    <h3>Evlow Foodies</h3>

@@ -1,10 +1,13 @@
-
 <h1>Evlow Foodies | Réinitialisation mot de passe</h1>
 
-<p>Pour réinitialiser votre mot de passe, il suffit de cliquer sur le lien suivant</p>
+<h2>Bonjour,</h2>
+
+<p>Vous avez demandé la réinitialisation de votre passe.</p>
+<p>Pour ce faire, il vous suffit de cliquer sur le lien suivant :</p>
 
 <a href="{{ url('app_reset_password', {token: resetToken.token}) }}">{{ url('app_reset_password', {token: resetToken.token}) }}</a>
 
-<p> Ce lien expirera dans{{ resetToken.expirationMessageKey|trans(resetToken.expirationMessageData, 'ResetPasswordBundle') }}.</p>
+<p> Attention ! Ce lien expirera dans 1 heure.</p>
 
+<h3>Evlow Foodies</h3>
 
