@@ -113,11 +113,8 @@ class Recipes
     #[ORM\Column(type: 'boolean', nullable: true)]
     private $basket= FALSE;
 
-    #[ORM\ManyToMany(targetEntity: Users::class, inversedBy: 'recipes')]
+    #[ORM\ManyToMany(targetEntity: Users::class, inversedBy: 'favoris')]
     private $favoris;
-
-
-
 
     public function __construct()
     {
@@ -491,16 +488,15 @@ class Recipes
         return $this;
     }
 
-
     /**
-     * @return Collection<int, Users>
+     * @return Collection<int, users>
      */
     public function getFavoris(): Collection
     {
         return $this->favoris;
     }
 
-    public function addFavori(Users $favori): self
+    public function addFavori(users $favori): self
     {
         if (!$this->favoris->contains($favori)) {
             $this->favoris[] = $favori;
@@ -509,12 +505,15 @@ class Recipes
         return $this;
     }
 
-    public function removeFavori(Users $favori): self
+    public function removeFavori(users $favori): self
     {
         $this->favoris->removeElement($favori);
 
         return $this;
     }
+
+
+
 
 
 

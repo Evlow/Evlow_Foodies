@@ -1,44 +1,48 @@
 {% extends '/bases/baseFo.html.twig' %}
 
 {% block title %}
-Recettes p'tits gônes | Evlow Foodies 
+Recettes p'tits gônes | Evlow Foodies
 {% endblock %}
 
 {% block body %}
- <!--INTRODUCTION-->
- <div class="content-intro-gones">
-     <div class="paragraphe-gones">
-         <p>Les recettes P'tits Gônes</p>
-     </div>
- </div>
- <div class="carts">
+<!--INTRODUCTION-->
+<div class="content-intro-gones">
+    <div class="paragraphe-gones">
+        <p>Les recettes P'tits Gônes</p>
+    </div>
+</div>
+<div class="carts">
     <section class="content-card">
         {% for recipe in recipes %}
-        <article class="card"> 
+        <article class="card">
             <img class="recipe-img-home" src="{{vich_uploader_asset(recipe, 'imageFile')}}" alt="image">
             <h3 class="recipes-h3">{{recipe.title}}</h3>
             <p>{{recipe.description}}</p>
             <a class="btn-recipe" href="{{ path('app_fo_recipe_sheet', { id: recipe.id }) }}">Voir la recette</a>
-            {% if is_granted("ROLE_USER") %}
-            {% for favoris in recipe.favoris %}
-           {% if favoris.id == app.user.id %}
-           <img class="img-favoris" src="{{asset('assets/picture/red-favoris.svg') }}" alt="icone favoris"></li>
-           {% else %}
-           <img class="img-favoris" src="{{asset('assets/picture/black-favoris.svg') }}" alt="icone favoris"></li>
-           {% endif %}
-           {% else %}
-           <img class="img-favoris" src="{{asset('assets/picture/black-favoris.svg') }}" alt="icone favoris"></li>
-           {% endfor %}
-           {% else %}
-           <img class="img-favoris" src="{{asset('assets/picture/black-favoris.svg') }}" alt="icone favoris"></li>
 
-            {% endif %}        
-
-            <img class="img-favoris" src="{{asset('assets/picture/red-favoris.svg') }}" alt="icone favoris"></li>
-       
+<div>
+    
         </article>
         {% endfor %}
-    </section>   
+    </section>
 </div>
 
 {% endblock %}
+
+
+
+
+
+{% else %}
+<img class="img-favoris" src="{{asset('assets/picture/black-favoris.svg') }}" alt="icone favoris"></li>
+{% endif %}
+{% else %}
+<img class="img-favoris" src="{{asset('assets/picture/black-favoris.svg') }}" alt="icone favoris"></li>
+
+{% else %}
+<img class="img-favoris" src="{{asset('assets/picture/black-favoris.svg') }}" alt="icone favoris"></li>
+
+
+
+<img class="img-favoris" src="{{asset('assets/picture/red-favoris.svg') }}" alt="icone favoris"></li>
+</div>

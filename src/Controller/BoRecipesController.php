@@ -31,7 +31,7 @@ class BoRecipesController extends AbstractController
 
     #[Route('/recette/ajouter', name: 'app_bo_recipes_add')]
     public function RecipeAdd(Request $request, EntityManagerInterface $entityManager): Response
-    { 
+    {
 
         // On instancie notre objet produit
         $recipe = new Recipes();
@@ -96,7 +96,7 @@ class BoRecipesController extends AbstractController
     {
         // On recupère la recette sélectionnée avec l'ID
         $recipe = $doctrine->getRepository(Recipes::class)->find($id);
-       
+
         $entityManager = $doctrine->getManager();
         $entityManager->remove($recipe);
         $entityManager->flush();
@@ -104,4 +104,25 @@ class BoRecipesController extends AbstractController
 
         return $this->redirectToRoute('app_recipe');
     }
+
+    // #[Route('/recette/ajout-favoris/{id}', name: 'app_add_favoris')]
+    // public function addFavoris(Recipes $recipes, EntityManagerInterface $entityManager): Response
+    // {
+    //     $recipes->addFavori($this->getUser());
+    //     $entityManager->getDoctrine()->getManager();
+    //     $entityManager->persist($recipes);
+    //     $entityManager->flush();
+    //     return $this->redirectToRoute('app_recipe');
+    // }
+
+
+    // #[Route('/recette/supprimer-favoris/{id}', name: 'app_remove_favoris')]
+    // public function removeFavoris(Recipes $recipes, EntityManagerInterface $entityManager): Response
+    // {
+    //     $recipes->removeFavori($this->getUser());
+    //     $entityManager->getDoctrine()->getManager();
+    //     $entityManager->persist($recipes);
+    //     $entityManager->flush();
+    //     return $this->redirectToRoute('app_recipe');
+    // }
 }
