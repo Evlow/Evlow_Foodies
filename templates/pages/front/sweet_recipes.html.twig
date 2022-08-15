@@ -32,13 +32,13 @@ Recettes sucrées | Evlow Foodies
                 {% endif %}    
             {% endfor %}
             {% if isFavorite %}
-            <a href="{{ path('add_bo_favorites', {id: recipe.id}) }}"><img class="img-favoris" src="{{asset('assets/picture/black-favoris.svg') }}" alt="icone favoris"></a>
+            <a href="{{ path('remove_bo_favorites', {id: recipe.id}) }}"><img class="img-favoris" src="{{asset('assets/picture/red-favoris.svg') }}" alt="icone favoris"></a>
             {% else %}
             <a href="{{ path('add_bo_favorites', {id: recipe.id}) }}"><img class="img-favoris" src="{{asset('assets/picture/black-favoris.svg') }}" alt="icone favoris"></a>
             {% endif %}
 
         {% else %}
-        <img class="img-favoris" src="{{asset('assets/picture/red-favoris.svg') }}" alt="icone favoris"></li>        
+        <img class="img-favoris" src="{{asset('assets/picture/black-favoris.svg') }}" alt="icone favoris"></li>        
         {% endif %}
 </article>
 {% endfor %}

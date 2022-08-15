@@ -6,13 +6,15 @@
 
 <article class="dashboard">
     <h2>Bienvenue {{ app.user.lastname }} !</h2>
+    
+  
 
 
     <section class="edit-profil">
         <h3 class="h3-profil"> Mes infos personnelles </h3>
         <div class="profil">
 
-            <p><strong>Nom :</strong> {{ app.user.firstname }}</p>
+            <p><strong>Nom : <i class="fab fa-android"></i></strong> {{ app.user.firstname }}</p>
             <br>
 
             <p><strong>Prénom :</strong>{{ app.user.lastname }}</p>

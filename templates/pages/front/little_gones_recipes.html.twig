@@ -19,30 +19,29 @@ Recettes p'tits gônes | Evlow Foodies
             <h3 class="recipes-h3">{{recipe.title}}</h3>
             <p>{{recipe.description}}</p>
             <a class="btn-recipe" href="{{ path('app_fo_recipe_sheet', { id: recipe.id }) }}">Voir la recette</a>
+            {% if is_granted("ROLE_USER") %}
+            {% set isFavorite = false %}
+            {% for favoris in recipe.favoris %}
+                {% if favoris.id == app.user.id %}
+                    {% set isFavorite = true %}
+                {% endif %}    
+            {% endfor %}
+            {% if isFavorite %}
+            <a href="{{ path('add_bo_favorites', {id: recipe.id}) }}"><img class="img-favoris" src="{{asset('assets/picture/black-favoris.svg') }}" alt="icone coeur vide"></a>
+            {% else %}
+            <a href="{{ path('add_bo_favorites', {id: recipe.id}) }}"><img class="img-favoris" src="{{asset('assets/picture/black-favoris.svg') }}" alt="icone coeur plein"></a>
+            {% endif %}
 
-<div>
-    
-        </article>
-        {% endfor %}
-    </section>
+        {% else %}
+        <img class="img-favoris" src="{{asset('assets/picture/black-favoris.svg') }}" alt="icone coeur vide"></li>        
+        {% endif %}
+</article>
+{% endfor %}
+</section>
 </div>
-
 {% endblock %}
 
 
 
 
 
-{% else %}
-<img class="img-favoris" src="{{asset('assets/picture/black-favoris.svg') }}" alt="icone favoris"></li>
-{% endif %}
-{% else %}
-<img class="img-favoris" src="{{asset('assets/picture/black-favoris.svg') }}" alt="icone favoris"></li>
-
-{% else %}
-<img class="img-favoris" src="{{asset('assets/picture/black-favoris.svg') }}" alt="icone favoris"></li>
-
-
-
-<img class="img-favoris" src="{{asset('assets/picture/red-favoris.svg') }}" alt="icone favoris"></li>
-</div>

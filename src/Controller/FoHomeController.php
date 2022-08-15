@@ -12,9 +12,9 @@ class FoHomeController extends AbstractController
     #[Route('/', name: 'app_fo_home')]
     public function recipesAll(ManagerRegistry $doctrine)
     {
-        $recipes = $doctrine->getRepository(Recipes::class)->findBy([],['id' => 'DESC'], 4);
+        $recipe = $doctrine->getRepository(Recipes::class)->findBy([],['id' => 'DESC'], 4);
         return $this->render('pages/front/home.html.twig', [
-            'recipes' => $recipes,
+            'recipes' => $recipe,
         ]);
     }
 }

@@ -4,4 +4,19 @@
 
 <article class="add-recipes">
     <h2>Mes favoris </h2>
-{% endblock %}
+    {% for recipe in recipes.id %}
+    <div class="inline-product"></div>
+        <div class="card">
+            <h3 class="recipes-h3">{{recipe.title}}</h3>
+            <div class="content-recipe-img">
+                <img class="recipe-img-home" src="{{vich_uploader_asset(recipe, 'imageFile')}}" alt="image">
+            </div>
+            
+    </div>
+    {% endfor %}
+    {% endblock %}
+
+
+
+
+    

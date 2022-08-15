@@ -7,9 +7,9 @@
         <meta name="author" content="" />
         <title>{% block title %}Evlow Foodies{% endblock %}</title>
         <!-- Favicon-->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <link href="{{ asset('assets/css/reset.css') }}" rel="stylesheet">
         <link href="{{ asset('assets/css/styles.css') }}" rel="stylesheet">
+        <link href="{{ asset('node_modules/@fortawesome/fontawesome-free/css/all.css') }}" rel="stylesheet">
       
        
            
@@ -23,6 +23,7 @@
     {% block footer %}{% include 'includes/_footerFo.html.twig' %}{% endblock %}
     <!-- Core theme JS-->
     {% block javascript %}{% endblock %}
-    <script src="js/scripts.js"></script>
+    <link href="{{ asset('node_modules/@fortawesome/fontawesome-free/css/all.js') }}" rel="stylesheet">
+
     </body>
 </html>
