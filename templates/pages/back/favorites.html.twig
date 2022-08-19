@@ -4,7 +4,7 @@
 
 <article class="add-recipes">
     <h2>Mes favoris </h2>
-    {% for recipe in recipes.id %}
+    {% for favoris in app.user.recipes  %}
     <div class="inline-product"></div>
         <div class="card">
             <h3 class="recipes-h3">{{recipe.title}}</h3>

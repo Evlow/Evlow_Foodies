@@ -5,7 +5,7 @@
 {% block body %}
 
 <article class="dashboard">
-    <h2>Bienvenue {{ app.user.lastname }} !</h2>
+    <h2>Bienvenue {{ app.user.firstname }} !</h2>
     
   
 
@@ -14,7 +14,7 @@
         <h3 class="h3-profil"> Mes infos personnelles </h3>
         <div class="profil">
 
-            <p><strong>Nom : <i class="fab fa-android"></i></strong> {{ app.user.firstname }}</p>
+            <p><strong>Nom :</strong> {{ app.user.firstname }}</p>
             <br>
 
             <p><strong>Prénom :</strong>{{ app.user.lastname }}</p>
@@ -38,6 +38,21 @@
                         email</a>
                 </div>
             </div>
+    </section>
+
+
+    <section class="edit-profil">
+        <h3 class="h3-profil"> Mes recettes publiées ({{ app.user.recipes|length }}) </h3>
+        <div class="profil">
+
+        	{% for recipe in app.user.recipes %}
+            <div class="profil">
+
+                <p><strong>Titre: </strong> {{ recipe.title }}</p><p><strong>Catégorie : </strong>{{ recipe.category }}</p>
+                <br>
+            </div>
+				{% endfor %}
+        </div>  
     </section>
 </article>
 

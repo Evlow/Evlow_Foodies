@@ -20,7 +20,8 @@
 						</h3>
 					</a>
 				</div>
-				{% for recipe in recipes %}
+				
+				{% for recipe in app.user.recipes %}
 				<div class="inline-product"></div>
 					<div class="card">
 						<h3 class="recipes-h3">{{recipe.title}}</h3>

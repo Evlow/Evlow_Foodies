@@ -14,7 +14,12 @@
             </li>
             <li><a href="{{path('app_fo_contact')}}">Contact</a></li>
             <li ><a class="btn-registration" href="{{path('app_fo_registration')}}">S'inscrire</a></li>
-            <li ><a class="btn-login" href="{{path('app_fo_login')}}">Se connecter</a></li>
+            {% if not is_granted('IS_AUTHENTICATED_FULLY') %}
+            <li><a class="btn-login" href="{{path('app_fo_login')}}">Se connecter</a></li>
+            {% else %}
+            <li><a class="btn-login" href="{{path('app_fo_logout')}}">Se deconnecter</a></li>
+            {% endif %}
+      
         </ul>
     </nav>
 </header>
