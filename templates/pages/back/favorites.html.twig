@@ -3,19 +3,25 @@
 {% block body %}
 
 <article class="add-recipes">
-    <h2>Mes favoris </h2>
-    {% for favoris in app.user.recipes  %}
-    <div class="inline-product"></div>
-        <div class="card">
-            <h3 class="recipes-h3">{{recipe.title}}</h3>
-            <div class="content-recipe-img">
-                <img class="recipe-img-home" src="{{vich_uploader_asset(recipe, 'imageFile')}}" alt="image">
-            </div>
-            
-    </div>
-    {% endfor %}
-    {% endblock %}
+    <section class="edit-profil">
+        <h3 class="h3-profil"> Mes favoris ({{ app.user.recipes|length }}) </h3>
+       
 
+        {% for recipe in app.user.recipes %}
+        <div class="inline-product"></div>
+            <div class="card">
+                <h3 class="recipes-h3">{{recipe.title}}</h3>
+                <div class="content-recipe-img">
+                    <img class="recipe-img-home" src="{{vich_uploader_asset(recipe, 'imageFile')}}" alt="image">
+                </div>
+        </div>
+        {% endfor %}
+
+    </section>
+    
+        </article>
+    
+    {% endblock %}
 
 
 

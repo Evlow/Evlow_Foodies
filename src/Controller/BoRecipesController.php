@@ -11,8 +11,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\RedirectResponse;
-use Symfony\Component\Form\Extension\Core\Type\DateType;
-use Symfony\Component\Form\Extension\Core\Type\TextType;
+
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class BoRecipesController extends AbstractController
@@ -20,7 +19,7 @@ class BoRecipesController extends AbstractController
     #[Route('/recettes', name: 'app_recipe')]
     public function index(ManagerRegistry $doctrine): Response
     //On récupères toutes les recettes
-    {
+    { 
         $recipes = $doctrine->getRepository(Recipes::class)->findAll();
 
         return $this->render('pages/back/recipes.html.twig', [

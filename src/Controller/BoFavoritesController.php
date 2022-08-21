@@ -15,11 +15,9 @@ class BoFavoritesController extends AbstractController
     #[Route('/mes-favoris', name: 'app_bo_favorites')]
     public function index(ManagerRegistry $doctrine): Response
     {
-        $recipes = $doctrine->getRepository(Recipes::class)->findAll;
-        
 
         return $this->render('pages/back/favorites.html.twig', [
-            'recipes' => $recipes,
+       
         ]);
     }
 
