@@ -46,14 +46,19 @@ class Users implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\ManyToMany(targetEntity: Recipes::class, mappedBy: 'favoris')]
     private $recipes;
 
-    #[ORM\ManyToMany(targetEntity: Recipes::class, mappedBy: 'favoris')]
+    #[ORM\OneToMany(mappedBy: 'users', targetEntity: Recipes::class)]
+    private $recipe;
+
+    #[ORM\OneToMany(mappedBy: 'users', targetEntity: Favoris::class)]
     private $favoris;
 
 
     public function __construct()
     {
-        $this->favoris = new ArrayCollection();
         $this->recipes = new ArrayCollection();
+        $this->recipe = new ArrayCollection();
+        $this->favoris = new ArrayCollection();
+  
     }
 
     public function getId(): ?int
@@ -226,6 +231,14 @@ class Users implements UserInterface, PasswordAuthenticatedUserInterface
         }
 
         return $this;
+    }
+
+    /**
+     * @return Collection<int, Recipes>
+     */
+    public function getRecipe(): Collection
+    {
+        return $this->recipe;
     }
 
 

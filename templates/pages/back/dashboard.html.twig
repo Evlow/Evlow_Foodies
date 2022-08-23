@@ -6,9 +6,6 @@
 
 <article class="dashboard">
     <h2>Bienvenue {{ app.user.firstname }} !</h2>
-    
-  
-
 
     <section class="edit-profil">
         <h3 class="h3-profil"> Mes infos personnelles </h3>
@@ -42,10 +39,10 @@
 
 
     <section class="edit-profil">
-        <h3 class="h3-profil"> Mes recettes publiées ({{ app.user.recipes|length }}) </h3>
+        <h3 class="h3-profil"> Mes recettes publiées ({{ app.user.recipe|length }}) </h3>
         <div class="profil">
 
-        	{% for recipe in app.user.recipes %}
+        	{% for recipe in app.user.recipe %}
             <div class="profil">
                 <p><strong>Titre: </strong> {{ recipe.title }}</p><p><strong>Catégorie : </strong>{{ recipe.category }}</p>
                 <br>

@@ -4,10 +4,10 @@
 
 <article class="add-recipes">
     <section class="edit-profil">
-        <h3 class="h3-profil"> Mes favoris ({{ app.user.recipes|length }}) </h3>
+        <h3 class="h3-profil"> Mes favoris ({{ app.user.recipe|length }}) </h3>
        
 
-        {% for recipe in app.user.recipes %}
+        {% for recipe in app.user.recipe %}
         <div class="inline-product"></div>
             <div class="card">
                 <h3 class="recipes-h3">{{recipe.title}}</h3>

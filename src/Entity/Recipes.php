@@ -113,8 +113,13 @@ class Recipes
     #[ORM\Column(type: 'boolean', nullable: true)]
     private $basket= FALSE;
 
-    #[ORM\ManyToMany(targetEntity: Users::class, inversedBy: 'favoris')]
+    #[ORM\ManyToOne(targetEntity: Users::class, inversedBy: 'recipe')]
+    #[ORM\JoinColumn(nullable: false)]
+    private $users;
+
+    #[ORM\OneToMany(mappedBy: 'recipe', targetEntity: Favoris::class)]
     private $favoris;
+
 
     public function __construct()
     {
@@ -512,12 +517,16 @@ class Recipes
         return $this;
     }
 
+    public function getUsers(): ?Users
+    {
+        return $this->users;
+    }
 
+    public function setUsers(?Users $users): self
+    {
+        $this->users = $users;
 
+        return $this;
+    }
 
-
-
-    
-
-    
 }

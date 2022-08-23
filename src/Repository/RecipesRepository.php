@@ -54,13 +54,14 @@ class RecipesRepository extends ServiceEntityRepository
 //        ;
 //    }
 
-//    public function findOneBySomeField($value): ?Recipes
-//    {
-//        return $this->createQueryBuilder('r')
-//            ->andWhere('r.exampleField = :val')
-//            ->setParameter('val', $value)
-//            ->getQuery()
-//            ->getOneOrNullResult()
-//        ;
-//    }
+   public function findByFavoris($value): ?Recipes
+   {
+       return $this->createQueryBuilder('r')
+           ->andWhere('r.exampleField = :val')
+           ->setParameter('val', $value)
+           ->getQuery()
+           ->getOneOrNullResult()
+       ;
+   }
+
 }

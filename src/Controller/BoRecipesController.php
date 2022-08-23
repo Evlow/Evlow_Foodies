@@ -20,7 +20,7 @@ class BoRecipesController extends AbstractController
     public function index(ManagerRegistry $doctrine): Response
     //On récupères toutes les recettes
     { 
-        $recipes = $doctrine->getRepository(Recipes::class)->findAll();
+        $recipes = $doctrine->getRepository(Recipes::class)->findBy(['users'=>$this->getUser()]);
 
         return $this->render('pages/back/recipes.html.twig', [
             'recipes' => $recipes,
@@ -30,13 +30,16 @@ class BoRecipesController extends AbstractController
 
     #[Route('/recette/ajouter', name: 'app_bo_recipes_add')]
     public function RecipeAdd(Request $request, EntityManagerInterface $entityManager): Response
-    {
+    
+    {   $user = $this->getUser(); //recupère le user connecté
 
         // On instancie notre objet produit
         $recipe = new Recipes();
 
         // On initialise nos champs dates avec la date d'aujourd'hui
         $recipe->setCreatedAt(new DateTimeImmutable('now'));
+
+        $recipe->setUsers($user); 
 
         // Etape 01 : Crée une instance de la classe Form à partir de la classe Recipes
         $formRecipe = $this->createForm(RecipeType::class, $recipe);
