@@ -51,11 +51,11 @@ class BoFavoritesController extends AbstractController
     #[Route('/retrait-favoris/{id}', name: 'remove_bo_favorites')]
 
 
-    public function removeFavoris(Recipes $recipe, EntityManagerInterface $entityManager)
+    public function removeFavoris(Recipes $recipe, EntityManagerInterface $entityManager, $favoris)
     {
 
-        $recipe->removeFavori($this->getUser());
-        $entityManager->persist($recipe);
+        $favoris->removeFavori($this->getUser());
+        $entityManager->persist($favoris);
         $entityManager->flush();
         return $this->render('pages/front/home.html.twig', [
             'recipes' => $recipe,

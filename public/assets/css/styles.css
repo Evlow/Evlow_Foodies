@@ -77,23 +77,9 @@ nav a {
   font-weight: 600;
 }
 
-.btn-registration {
+.btn-nav {
   background-color: #ffa05c;
   width: 120px;
-  height: 30px;
-  font-size: 1em;
-  border: none;
-  font-weight: 600;
-  border-radius: 15px 0 15px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: #000;
-}
-
-.btn-login {
-  background-color: #ffa05c;
-  width: 130px;
   height: 30px;
   font-size: 1em;
   border: none;
@@ -177,7 +163,7 @@ nav a {
 }
 
 footer {
-  background-color: rgba(152, 228, 129, 0.0784313725);
+  background-color: #F7FDF5;
   padding-top: 20px;
 }
 

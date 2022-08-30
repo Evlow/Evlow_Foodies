@@ -1,42 +1,38 @@
-
 @use "variables" as *;
 @use "mixins" as *;
 
 * {
-  
   font-family: $font;
 }
-#page{
+#page {
   display: flex;
   align-items: flex-end;
   width: 100vw;
-  
 }
 main {
   width: 90%;
   position: absolute;
   top: 40px;
   right: 0;
-
 }
 article {
-  background-color: #fae7e9;
   height: 100vh;
+  background-color: #fae9dc;
 }
-  
+
 h1 {
   padding: $padding-top-bottom-10;
   text-align: left;
   font-weight: $weight;
-  color:white;
+  color: white;
 }
 
 h2 {
-  font-size:2em;
+  font-size: 2em;
   text-align: center;
- padding: 20px;
+  padding: 20px;
 }
-h3{
+h3 {
   font-size: $title-h3;
   color: black;
 }
@@ -46,7 +42,9 @@ label {
   padding-bottom: 5px;
 }
 
-p{font-size:$p-size;}
+p {
+  font-size: $p-size;
+}
 .img-aside {
   width: 30px;
   margin: 0 auto;
@@ -57,31 +55,29 @@ p{font-size:$p-size;}
   width: 20px;
 }
 
-.title{
+.title {
   width: 10%;
   padding-left: 10px;
   display: flex;
-align-items: center;
+  align-items: center;
 }
 
-
-.nav-back{
+.nav-back {
   width: 100%;
 }
 .nav-back ul {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-
 }
 
 .nav-back a {
-  color:white;
+  color: white;
   font-weight: $weight;
-font-size: $size-link;
+  font-size: $size-link;
 }
 header {
-  background-color: #B4172E;
+  background-color: #ffa05c;
   width: 100%;
   position: fixed;
   top: 0;
@@ -94,13 +90,12 @@ header {
 }
 
 aside {
-  background-color: #f05665;
+  background-color:#FFC296;
   height: 100vh;
   width: 10vw;
   position: fixed;
   top: 0;
   font-weight: $weight;
- 
 }
 .nav-aside a {
   color: black;
@@ -113,7 +108,6 @@ aside {
 .nav-aside li {
   border: none;
   border-radius: 20px 0 20px;
-
   width: 130px;
   margin-bottom: 20px;
   padding: 5px 0 5px 0;
@@ -121,7 +115,7 @@ aside {
   font-size: $size-link;
   display: flex;
 
-flex-direction: column;
+  flex-direction: column;
 }
 
 .nav-aside ul {
@@ -130,10 +124,10 @@ flex-direction: column;
   flex-direction: column;
   align-items: center;
 }
-.img-aside 
-{ width: 25px;
-margin: 0 auto;}
-
+.img-aside {
+  width: 25px;
+  margin: 0 auto;
+}
 
 .img-import {
   width: 30px;
@@ -158,65 +152,73 @@ margin: 0 auto;}
 }
 textarea {
   border-radius: 10px;
-  border-color:  #f05665;
+  border-color: #f05665;
   width: 550px;
   height: 90px;
 }
 
 //DASHBOARD
 
-.edit-profil{
+.edit-profil {
   background-color: white;
-width: 20%;
-margin: $margin-10;
-padding-bottom: $padding-bottom-10;
-border-radius: 5px;
-}
-
-.profil {
-
-  padding-left: 20px;
-}
-
-.h3-profil {
+  @include width90-auto;
   text-align: center;
-  padding:$padding-top-bottom-20;
- color: #B4172E;
+  border-radius: 5px;
+  margin-bottom: $margin-bottom-20;}
+
+.edit-recipe {
+  background-color: white;
+width: 30%;
+border-radius: 5px;
+padding-left: $padding-left-30;
+margin-left: $margin-left-70;
+margin-bottom: 20px;
 }
 
+.profil-recipe{
 
+  padding-left: $padding-left-30;
+}
+.h3-profil {
+
+  padding: $padding-top-bottom-20;
+  color: #b4172e;
+  
+}
+
+.buttons-edit{
+  padding:$padding-top-bottom-20;
+}
 
 
 //ADD RECIPES
 
-.add-recipes{
+.add-recipes {
   padding-left: 50px;
 }
 .image-recipe {
-  border:dotted 2px #f05665;
+  border: dotted 2px #f05665;
   width: 25%;
   border-radius: 5px;
-  margin :$margin-top-bottom-10;
-  padding:$padding-5;
-
+  margin: $margin-top-bottom-10;
+  padding: $padding-5;
 }
 input {
   border-radius: 5px;
-  border-color :#f05665;
+  border-color: #f05665;
   height: 25px;
-  margin:$margin-top-bottom-5;
-
+  margin: $margin-top-bottom-5;
 }
-.content-ingredients{
+.content-ingredients {
   display: flex;
   flex-wrap: wrap;
-  margin-bottom:$margin-bottom-30;
+  margin-bottom: $margin-bottom-30;
   background-color: white;
   padding: 10px;
 }
 .content-title {
   background-color: white;
-  margin:$margin-top-bottom-10;
+  margin: $margin-top-bottom-10;
   text-align: center;
   padding: 10px;
 }
@@ -228,12 +230,11 @@ input {
   margin: 5px auto 5px;
 }
 
-.bloc-ingredient{
+.bloc-ingredient {
   width: 25%;
   display: flex;
   flex-direction: column;
-padding: 10px;
-
+  padding: 10px;
 }
 .content-preparation {
   @extend .content-ingredients;
@@ -243,36 +244,33 @@ padding: 10px;
   width: 50%;
 }
 
-.btn-bo{
+.btn-bo {
   background-color: white;
   width: 120px;
   height: 30px;
-  font-size:1em;
-  border-color:#B4172E;
+  font-size: 1em;
+  border-color: #b4172e;
   font-weight: $weight;
   border-radius: 15px 0 15px;
   display: flex;
   justify-content: center;
   align-items: center;
- 
 }
 
-
-.bloc-category{
+.bloc-category {
   display: flex;
   flex-direction: column;
   margin-bottom: 30px;
 }
 
-#recipe_category{
+#recipe_category {
   width: 10%;
-  margin-bottom:5px;
+  margin-bottom: 5px;
   background: white;
-border-radius: 5px;
-border: 2px solid #f05665;
+  border-radius: 5px;
+  border: 2px solid #f05665;
 }
 .recipe-img-home {
-
   height: 230px;
   width: 95%;
   object-fit: cover;
@@ -290,31 +288,28 @@ border: 2px solid #f05665;
 }
 
 .card {
-
- background-color: white;
+  background-color: white;
   text-align: center;
   border-radius: 5px;
   margin: 10px;
   width: 20%;
-
 }
 
 .btn-card {
-  padding:$padding-5;
-
+  padding: $padding-5;
 }
 .btn-edit {
-  color:black;
-  padding:$padding-5;
-  border:2px solid #868484;
+  color: black;
+  padding: $padding-5;
+  border: 2px solid #868484;
   border-radius: 5px;
   display: inline-block;
-width: 100px;
+  width: 100px;
 }
 
 .btn-delete {
   @extend .btn-edit;
-  border:2px solid #f05665;
+  border: 2px solid #f05665;
   width: 110px;
 }
 
@@ -327,8 +322,8 @@ width: 100px;
   justify-content: center;
 }
 
-.buttons-edit{
-  text-align: center
+.buttons-edit {
+  text-align: center;
 }
 
 .btn-edit-password {
@@ -338,12 +333,12 @@ width: 100px;
   font-weight: $weight;
 }
 
-.btn-edit-email{
+.btn-edit-email {
   @extend .btn-edit-password;
   margin-top: $margin-top-20;
 }
 //EDIT RECIPE
-.content-image img{
+.content-image img {
   width: 200px;
   height: 230px;
 }

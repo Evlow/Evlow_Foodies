@@ -5,24 +5,23 @@
 {% block body %}
 
 <article class="dashboard">
-    <h2>Bienvenue {{ app.user.firstname }} !</h2>
 
-    <section class="edit-profil">
-        <h3 class="h3-profil"> Mes infos personnelles </h3>
-        <div class="profil">
+    <h2>Bienvenue {{ app.user.firstname }} sur ton espace !</h2>
+    <div class="content-profil">
+        <section class="edit-profil">
 
-            <p><strong>Nom :</strong> {{ app.user.firstname }}</p>
-            <br>
+            <h3 class="h3-profil"> Mes infos personnelles </h3>
+            <div class="profil">
 
-            <p><strong>Prénom :</strong>{{ app.user.lastname }}</p>
-            <br>
-
-            <p><strong>Pseudo :</strong> {{ app.user.pseudo }}</p>
-
-            <br>
-            <p><strong>Email : </strong> {{ app.user.email }}</p>
-            <br>
-        </div>
+                <p><strong>Nom :</strong> {{ app.user.firstname }}</p>
+                <br>
+                <p><strong>Prénom :</strong>{{ app.user.lastname }}</p>
+                <br>
+                <p><strong>Pseudo :</strong> {{ app.user.pseudo }}</p>
+                <br>
+                <p><strong>Email : </strong> {{ app.user.email }}</p>
+                <br>
+            </div>
             <div class="buttons-edit">
                 <div class="edit-password">
                     <a class="btn-edit-password"
@@ -35,23 +34,21 @@
                         email</a>
                 </div>
             </div>
-    </section>
+        </section>
 
-
-    <section class="edit-profil">
-        <h3 class="h3-profil"> Mes recettes publiées ({{ app.user.recipe|length }}) </h3>
-        <div class="profil">
-
-        	{% for recipe in app.user.recipe %}
+        <section class="edit-recipe">
+            <h3 class="h3-profil"> Mes recettes publiées ({{ app.user.recipe|length }}) </h3>
             <div class="profil">
-                <p><strong>Titre: </strong> {{ recipe.title }}</p><p><strong>Catégorie : </strong>{{ recipe.category }}</p>
-                <br>
+                {% for recipe in app.user.recipe %}
+                <div class="profil">
+                    <p><strong>Titre: </strong> {{ recipe.title }}</p>
+                    <p><strong>Catégorie : </strong>{{ recipe.category }}</p>
+                    <p><strong>Date de création : </strong>{{ recipe.createdAt|date("d/m/Y") }}</p>
+                    <br>
+                </div>
+                {% endfor %}
             </div>
-				{% endfor %}
-        </div>  
-    </section>
+        </section>
+    </div>
 </article>
-
-
-
 {% endblock %}

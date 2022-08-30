@@ -28,9 +28,9 @@
             <!--CONNEXION-->
             <div class="footer-connect">
                 {% if not is_granted('IS_AUTHENTICATED_FULLY') %}
-            <a class="btn-login" href="{{path('app_fo_login')}}">Se connecter</a>
+            <a class="btn-nav" href="{{path('app_fo_login')}}">Se connecter</a>
             {% else %}
-            <a class="btn-login" href="{{path('app_fo_logout')}}">Se deconnecter</a>
+            <a class="btn-nav" href="{{path('app_fo_logout')}}">Se deconnecter</a>
             {% endif %}
             </div>
         </div>

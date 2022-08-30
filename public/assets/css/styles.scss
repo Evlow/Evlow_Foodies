@@ -67,15 +67,11 @@ nav a {
   font-size: $size-link;
   font-weight: $weight;
 }
-.btn-registration {
+.btn-nav {
   @include button($third-color, 120px, 30px, 1em);
   color: #000;
 }
 
-.btn-login {
-  @include button($third-color, 130px, 30px, 1em);
-  color: #000;
-}
 
 .btn-login-home {
   @include button($third-color, 170px, 35px, 1em);
@@ -159,7 +155,7 @@ nav a {
 
 //FOOTER
 footer {
-  background-color: rgba(152, 228, 129, 0.0784313725);
+  background-color:#F7FDF5;
 
   padding-top: 20px;
 }
