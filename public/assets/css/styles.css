@@ -192,7 +192,7 @@ footer {
 
 .input-newsletter {
   border-color: #ffa05c;
-  width: 200px;
+  width: 220px;
   border-top: none;
   border-left: none;
   border-right: none;
@@ -296,7 +296,7 @@ input {
   border-right: none;
   border-bottom: solid 2px #9ce7a9;
   background: transparent;
-  width: 200px;
+  width: 250px;
   margin: 5px 80px 5px 0;
 }
 

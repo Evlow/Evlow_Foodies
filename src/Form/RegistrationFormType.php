@@ -26,15 +26,13 @@ class RegistrationFormType extends AbstractType
             "label" => false,
             "attr" => [
                 "placeholder" => "*Nom",
-                "class" => "",
-
             ]
         ])
         ->add('lastName', TextType::class, [
             "label" => false,
             "attr" => [
                 "placeholder" => "*Prénom",
-                "class" => ""
+              
             ]
         ])
 
@@ -42,14 +40,12 @@ class RegistrationFormType extends AbstractType
             "label" => false,
             "attr" => [
                 "placeholder" => "Pseudo",
-                "class" => ""
             ]
         ])
         ->add('email', EmailType::class, [
             "label" => false,
             "attr" => [
                 "placeholder" => "*Email",
-                "class" => ""
             ]
         ])
 
@@ -80,7 +76,7 @@ class RegistrationFormType extends AbstractType
                 new Length([
                     'min' => 6,
                     'minMessage' => 'Votre mot de passe doit comporter au moins 6 caractères',
-                    'max' => 4096,
+                    'max' => 500,
                 ]),
             ],
         ])
@@ -95,7 +91,7 @@ class RegistrationFormType extends AbstractType
             'mapped' => false,
             'constraints' => [
                 new IsTrue([
-                    'message' => 'Vous devez accepter nos conditions..',
+                    'message' => 'Vous devez accepter nos conditions.',
                 ]),
             ],
   

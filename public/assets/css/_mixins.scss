@@ -70,3 +70,11 @@
     margin: 0 auto;
 }
 
+@mixin width70-auto {
+    width: 70%;
+    margin: 0 auto;
+}
+@mixin width30-auto {
+    width: 30%;
+    margin: 0 auto;
+}

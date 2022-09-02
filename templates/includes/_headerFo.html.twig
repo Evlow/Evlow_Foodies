@@ -1,47 +1,31 @@
 <header>
-	<a href="{{path('app_fo_home')}}">
-		<h1>EVLOW FOODIES</h1>
-	</a>
-	<h2>| Des recettes pour tous les goûts |</h2>
-	<!--NAV-->
-	<nav>
-		<ul>
-			<li>
-				<a href="{{path('app_fo_savory_recipes')}}">Recettes salées</a>
-			</li>
-			<li>
-				<a href="{{path('app_fo_sweet_recipes')}}">Recettes sucrées</a>
-			</li>
-			<li>
-				<a href="{{path('app_fo_little_gones_recipes')}}">Recettes p'tits gônes</a>
-			</li>
-			<li>
-				<a href="{{path('app_fo_specific_recipes')}}">Régimes spécifiques</a>
-			</li>
-			<li>
-				<a href="{{path('app_fo_contact')}}">Contact</a>
-			</li>
-
-			{% if not is_granted('IS_AUTHENTICATED_FULLY') %}
-				<li>
-					<a class="btn-nav" href="{{path('app_fo_registration')}}">S'inscrire</a>
-				</li>
-			{% else %}
-				<li>
-					<a class="btn-nav" href="{{path('app_bo_dashboard', {'id': app.user.id}) }}">Mon compte</a>
-				</li>
-			{% endif %}
-
-			{% if not is_granted('IS_AUTHENTICATED_FULLY') %}
-				<li>
-					<a class="btn-nav" href="{{path('app_fo_login')}}">Se connecter</a>
-				</li>
-			{% else %}
-				<li>
-					<a class="btn-nav" href="{{path('app_fo_logout')}}">Se deconnecter</a>
-				</li>
-			{% endif %}
-
-		</ul>
-	</nav>
+    <a href="{{path('app_fo_home')}}"> <h1>EVLOW FOODIES</h1></a>
+    <h2>| Des recettes pour tous les goûts |</h2>
+    <!--NAV-->
+    <nav>
+        <ul>
+            <li><a href="{{path('app_fo_savory_recipes')}}">Recettes salées</a>    
+            </li>
+            <li><a href="{{path('app_fo_sweet_recipes')}}">Recettes sucrées</a>    
+            </li>
+            <li><a href="{{path('app_fo_little_gones_recipes')}}">Recettes p'tits gônes</a>    
+            </li>
+            <li><a href="{{path('app_fo_specific_recipes')}}">Régimes spécifiques</a>
+            </li>
+            <li><a href="{{path('app_fo_contact')}}">Contact</a></li>
+          
+            {% if not is_granted('IS_AUTHENTICATED_FULLY') %}
+            <li ><a class="btn-nav" href="{{path('app_fo_registration')}}">S'inscrire</a></li>
+            {% else %}
+            <li><a class="btn-nav" href="{{path('app_bo_dashboard', {'id': app.user.id}) }}">Mon compte</a></li>
+            {% endif %}
+      
+            {% if not is_granted('IS_AUTHENTICATED_FULLY') %}
+            <li><a class="btn-nav" href="{{path('app_fo_login')}}">Se connecter</a></li>
+            {% else %}
+            <li><a class="btn-nav" href="{{path('app_fo_logout')}}">Se deconnecter</a></li>
+            {% endif %}
+      
+        </ul>
+    </nav>
 </header>

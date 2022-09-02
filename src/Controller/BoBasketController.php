@@ -31,7 +31,7 @@ class BoBasketController extends AbstractController
         $title = $recipe->getTitle();
         //Prepare la requete de suppression
         $entityManager->remove($recipe);
-        //Modification en bdd
+        // Modifie la base de données
         $entityManager->flush();
 
         $this->addFlash("success", "La supression de la $recipe: ' $title ' a été effectuée");

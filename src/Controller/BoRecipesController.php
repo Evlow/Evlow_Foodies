@@ -18,7 +18,7 @@ class BoRecipesController extends AbstractController
 {
     #[Route('/recettes', name: 'app_recipe')]
     public function index(ManagerRegistry $doctrine): Response
-    //On récupères toutes les recettes
+    //Récupère les recettes de l'utilisateur connecté
     { 
         $recipes = $doctrine->getRepository(Recipes::class)->findBy(['users'=>$this->getUser()]);
 
@@ -30,36 +30,36 @@ class BoRecipesController extends AbstractController
 
     #[Route('/recette/ajouter', name: 'app_bo_recipes_add')]
     public function RecipeAdd(Request $request, EntityManagerInterface $entityManager): Response
-    
-    {   $user = $this->getUser(); //recupère le user connecté
 
-        // On instancie notre objet produit
+        // Recupération de l'utilisateur connecté
+    {   $user = $this->getUser(); 
+
+        // Intanciation d'une nouvelle recette
         $recipe = new Recipes();
 
-        // On initialise nos champs dates avec la date d'aujourd'hui
+        // Initalisiation des champs dates avec la date d'aujourd'hui
         $recipe->setCreatedAt(new DateTimeImmutable('now'));
 
         $recipe->setUsers($user); 
 
-        // Etape 01 : Crée une instance de la classe Form à partir de la classe Recipes
+        // Création d'une instance de la classe Form à partir de la classe Recipes
         $formRecipe = $this->createForm(RecipeType::class, $recipe);
-        // Etape 02 : Permet de gérer le traitement de la saisie du formulaire.
+        // Gestion du traitement de la saisie du formulaire.
         $formRecipe->handleRequest($request);
 
-        // Etape 03 : test si le formulaire a été saisi et si les règles de validations sont vérifiées
+        // Test si le formulaire a été saisi et si les règles de validations sont vérifiées
         if ($formRecipe->isSubmitted() && $formRecipe->isValid()) {
-            // Etape 3.1 : On demande à doctrine de surveiller / gerer l'objet en cours
+            // Demande à doctrine de gèrer l'objet en cours
             $entityManager->persist($recipe);
-            // Etape 3.2 : On envoi les données a la bdd
+            // Envoie les données à la base de données
             $entityManager->flush();
-            // Etape 3.3 : Affichage d'un message succès
+            // Affichage d'un message de succès
             $this->addFlash('success_product', 'La recette ' . $recipe->getTitle() . ' a été ajoutée !');
-            // Etape 3.4 : redirection
+            // Redirection
             return $this->redirectToRoute('app_recipe');
         }
 
         return $this->render('pages/back/add_recipes.html.twig', [
-            //Enevoi variables à la vue
             'form_title' => 'Ajouter une recette',
             'form_submit' => 'Ajoutez',
             'formRecipe' => $formRecipe->createView()
@@ -70,22 +70,22 @@ class BoRecipesController extends AbstractController
     #[Route('/recette/modifier/{id}', name: 'app_bo_recipes_edit')]
     public function recipeUpdate($id, Request $request, ManagerRegistry $doctrine): Response
     {
-        // On recupère le produit sélectionné avec l'ID
+        // Récupération du produit sélectionné avec l'ID
         $recipe = $doctrine->getRepository(Recipes::class)->find($id);
-        // On initialise nos champs dates avec la date d'aujourd'hui
+        // Initialisation des champs dates avec la date d'aujourd'hui
         $recipe->setUpdatedAt(new DateTimeImmutable('now'));
-        // Etape 01 : Crée une instance de la classe Form à partir de la classe Recipes
+        // Création d'une instance de la classe Form à partir de la classe Recipes
         $formRecipe = $this->createForm(RecipeType::class, $recipe);
-        // Etape 02 : Permet de gérer le traitement de la saisie du formulaire.
+        // Gestion du traitement de la saisie du formulaire.
         $formRecipe->handleRequest($request);
-        // Etape 03 : test si le formulaire a été saisi et si les règles de validations sont vérifiées
+        // Test si le formulaire a été saisi et si les règles de validations sont vérifiées
         if ($formRecipe->isSubmitted() && $formRecipe->isValid()) {
             $entityManager = $doctrine->getManager();
-            // Etape 3.2 : On envoi les données a la bdd
+            // Envoie les données à la base de données
             $entityManager->flush();
-            // Etape 3.3 : Affichage d'un message succès
+            // Affichage d'un message de succès
             $this->addFlash('success_product', 'La recette ' . $recipe->getTitle() . ' a été modifiée !');
-            // Etape 3.4 : redirection
+            // Redirection
             return $this->redirectToRoute('app_recipe');
         }
         return $this->render('pages/back/edit_recipes.html.twig', [
@@ -96,14 +96,17 @@ class BoRecipesController extends AbstractController
     #[Route('/recette/supprimer/{id}', name: 'app_bo_recipes_del')]
     public function recipeDelete($id, ManagerRegistry $doctrine): RedirectResponse
     {
-        // On recupère la recette sélectionnée avec l'ID
+        // Récupération de la recette sélectionnée avec l'ID
         $recipe = $doctrine->getRepository(Recipes::class)->find($id);
-
+        // Manipulation des entités
         $entityManager = $doctrine->getManager();
+        // Préparation de la requête de suppression
         $entityManager->remove($recipe);
+        // Modification des données 
         $entityManager->flush();
+        // Affichage d'un message de succès
         $this->addFlash('success_edit', 'La recette ' . $recipe->getTitle() . ' a été supprimée !');
-
+        // Redirection
         return $this->redirectToRoute('app_recipe');
     }
 
