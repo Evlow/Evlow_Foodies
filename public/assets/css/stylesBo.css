@@ -17,7 +17,6 @@ main {
 }
 
 article {
-  height: 100vh;
   background-color: #fae9dc;
 }
 
@@ -64,7 +63,6 @@ p {
 }
 
 .title {
-  width: 10%;
   padding-left: 10px;
   display: flex;
   align-items: center;
@@ -100,7 +98,7 @@ header {
 }
 
 aside {
-  background-color: #FFC296;
+  background-color: #ffc296;
   height: 100vh;
   width: 10vw;
   position: fixed;
@@ -119,7 +117,7 @@ aside {
 .nav-aside li {
   border: none;
   border-radius: 20px 0 20px;
-  width: 130px;
+  width: 90%;
   margin-bottom: 20px;
   padding: 5px 0 5px 0;
   background-color: antiquewhite;
@@ -165,7 +163,6 @@ aside {
 textarea {
   border-radius: 10px;
   border-color: #ffa05c;
-  width: 550px;
   height: 90px;
 }
 
@@ -179,6 +176,10 @@ textarea {
   margin-top: 20px;
 }
 
+.edit-recipe {
+  margin-bottom: 30px;
+}
+
 .profil-recipe {
   padding-left: 30px;
 }
@@ -190,6 +191,10 @@ textarea {
 
 .buttons-edit {
   padding: 20px 0 20px 0;
+}
+
+.content-profil {
+  padding-bottom: 10px;
 }
 
 .add-recipes {
@@ -272,8 +277,8 @@ input {
 }
 
 .recipe-img-home {
-  height: 230px;
-  width: 95%;
+  height: 220px;
+  width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
 }
@@ -341,4 +346,69 @@ input {
 .content-image img {
   width: 200px;
   height: 230px;
+}
+
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+  }
+  aside {
+    position: relative;
+    height: auto;
+    width: 100vw;
+  }
+  .nav-aside li {
+    width: 300px;
+  }
+  .edit-profil, .edit-recipe {
+    width: 90%;
+  }
+  h2 {
+    font-size: 1.4em;
+  }
+  .h3-profil {
+    font-size: 1.3em;
+  }
+  main {
+    width: 100%;
+    margin-top: 380px;
+  }
+  .add-recipes {
+    padding-left: 0;
+  }
+  .content-image {
+    text-align: center;
+  }
+  .bloc-ingredient,
+.bloc-preparation {
+    width: 50%;
+  }
+  .content-preparation {
+    flex-direction: column;
+  }
+  textarea {
+    width: 200%;
+  }
+  label {
+    text-align: left;
+  }
+  #recipe_category {
+    width: 25%;
+  }
+  .card, .add-recipe {
+    width: 90%;
+    margin: auto;
+    margin-bottom: 30px;
+  }
+  .btn-card {
+    gap: 20px;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 10px;
+  }
+}
+@media (max-width: 991.98px) {
+  .content-card {
+    flex-direction: column;
+  }
 }/*# sourceMappingURL=stylesBo.css.map */

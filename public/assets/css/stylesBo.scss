@@ -7,7 +7,7 @@
 #page {
   display: flex;
   align-items: flex-end;
-  width: 100vw; 
+  width: 100vw;
 }
 main {
   width: 90%;
@@ -16,10 +16,9 @@ main {
   right: 0;
 }
 article {
-  height: 100vh;
   background-color: #fae9dc;
 }
-.recipes{
+.recipes {
   padding-top: $padding-top-30;
 }
 
@@ -27,7 +26,7 @@ h1 {
   padding: $padding-top-bottom-10;
   text-align: left;
   font-weight: $weight;
-  color:black;
+  color: black;
 }
 
 h2 {
@@ -59,7 +58,6 @@ p {
 }
 
 .title {
-  width: 10%;
   padding-left: 10px;
   display: flex;
   align-items: center;
@@ -75,7 +73,7 @@ p {
 }
 
 .nav-back a {
-color: black;
+  color: black;
   font-weight: $weight;
   font-size: $size-link;
 }
@@ -93,7 +91,7 @@ header {
 }
 
 aside {
-  background-color:#FFC296;
+  background-color: #ffc296;
   height: 100vh;
   width: 10vw;
   position: fixed;
@@ -111,7 +109,7 @@ aside {
 .nav-aside li {
   border: none;
   border-radius: 20px 0 20px;
-  width: 130px;
+  width: 90%;
   margin-bottom: 20px;
   padding: 5px 0 5px 0;
   background-color: antiquewhite;
@@ -156,7 +154,7 @@ aside {
 textarea {
   border-radius: 10px;
   border-color: $third-color;
-  width: 550px;
+
   height: 90px;
 }
 
@@ -168,29 +166,29 @@ textarea {
   text-align: center;
   border-radius: 5px;
   margin-bottom: $margin-bottom-20;
-margin-top: $margin-top-20}
-
-.edit-recipe {
-@extend .edit-profil;
-
+  margin-top: $margin-top-20;
 }
 
+.edit-recipe {
+  @extend .edit-profil;
+  margin-bottom: $margin-bottom-30;
+}
 
-.profil-recipe{
-
+.profil-recipe {
   padding-left: $padding-left-30;
 }
 .h3-profil {
-
   padding: $padding-top-bottom-20;
   color: $third-color;
-  
 }
 
-.buttons-edit{
-  padding:$padding-top-bottom-20;
+.buttons-edit {
+  padding: $padding-top-bottom-20;
 }
 
+.content-profil {
+  padding-bottom: $padding-bottom-10;
+}
 
 //ADD RECIPES
 
@@ -272,9 +270,9 @@ input {
   border: 2px solid $third-color;
 }
 .recipe-img-home {
-  height: 230px;
-  width: 95%;
-object-fit:cover;
+  height: 220px;
+  width: 100%;
+  object-fit: cover;
 }
 .recipes-h3 {
   padding: $padding-20;
@@ -343,4 +341,96 @@ object-fit:cover;
 .content-image img {
   width: 200px;
   height: 230px;
+}
+
+//RESPONSIVE
+
+@media (max-width: 768px) {
+  //DASHBOARD
+  header {
+    flex-direction: column;
+  }
+
+  aside {
+    position: relative;
+    height: auto;
+    width: 100vw;
+  }
+  .nav-aside li {
+    width: 300px;
+  }
+
+  .edit-profil {
+    width: 90%;
+  }
+  h2 {
+    font-size: 1.4em;
+  }
+
+  .h3-profil {
+    font-size: 1.3em;
+  }
+
+  //RECIPES
+
+
+  //ADD RECIPES
+
+  main {
+    width: 100%;
+    margin-top: 380px;
+  }
+
+  .add-recipes {
+    padding-left: 0;
+  }
+
+  .content-image {
+    text-align: center;
+  }
+
+  .bloc-ingredient,
+  .bloc-preparation {
+    width: 50%;
+  }
+
+  .content-preparation {
+    flex-direction: column;
+  }
+  textarea {
+    width: 200%;
+  }
+
+  label {
+    text-align: left;
+  }
+
+  #recipe_category {
+    width: 25%;
+  }
+
+  //RECIPES
+
+  .card {
+    width: 90%;
+    margin: auto;
+    margin-bottom: $margin-bottom-30;
+  }
+
+  .btn-card {
+    gap: 20px;
+    display: flex;
+    justify-content: center;
+    padding-bottom: $padding-bottom-10;
+  }
+}
+
+@media (max-width: 991.98px) {
+
+  //RECIPES
+
+  .content-card {
+    flex-direction: column;
+  }
+  
 }

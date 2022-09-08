@@ -3,39 +3,37 @@
 {% block body %}
 
 	<article class="recipes">
-			{% for message in app.flashes('success') %}
-				<div class="alert alert-success mt-4">
-					{{ message }}
-				</div>
-        </div>
-			{% endfor %}
-			<section class="content-card">
+		{% for message in app.flashes('success') %}
+			<div class="alert alert-success mt-4">
+				{{ message }}
+			</div>
+		</div>
+	{% endfor %}
+	<section class="content-card">
+		<div class="add-recipe">
+
+			<a href="{{path('app_bo_recipes_add')}}">
+				<h3>+
+					<br>
+					Ajouter une recette
+				</h3>
+			</a>
 			
-				<div class="add-recipe">
-					<a href="{{path('app_bo_recipes_add')}}">
-						<h3>+
-							<br>
-							Ajouter une recette
-						</h3>
-					</a>
+		</div>
+
+		{% for recipe in recipes %}
+			<div class="inline-product"></div>
+			<div class="card">
+				<h3 class="recipes-h3">{{recipe.title}}</h3>
+				<div class="content-recipe-img">
+					<img class="recipe-img-home" src="{{vich_uploader_asset(recipe, 'imageFile')}}" alt="image">
 				</div>
-				
-				{% for recipe in recipes %}
-				<div class="inline-product"></div>
-					<div class="card">
-						<h3 class="recipes-h3">{{recipe.title}}</h3>
-						<div class="content-recipe-img">
-							<img class="recipe-img-home" src="{{vich_uploader_asset(recipe, 'imageFile')}}" alt="image">
-						</div>
-						<div class="btn-card">
-						<a class="btn-edit" href="{{ path('app_bo_recipes_edit', { id: recipe.id }) }}">MODIFIER</a>
-						<a class="btn-delete" href="{{ path('app_bo_recipes_del', { id: recipe.id }) }}">SUPPRIMER</a>
-					</div>
+				<div class="btn-card">
+					<a class="btn-edit" href="{{ path('app_bo_recipes_edit', { id: recipe.id }) }}">MODIFIER</a>
+					<a class="btn-delete" href="{{ path('app_bo_recipes_del', { id: recipe.id }) }}">SUPPRIMER</a>
 				</div>
-				{% endfor %}
-    
-			</section>
-			
-				</article>
-			
-			{% endblock %}
+			</div>
+		{% endfor %}
+
+	</section>
+</article>{% endblock %}

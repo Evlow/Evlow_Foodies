@@ -436,15 +436,20 @@ h3 {
 //recipes//
 
 .recipe-img-home {
-  width: 200px;
-  height: 200px;
-  object-fit: cover;
+  width: 250px;
   overflow: hidden;
+  object-fit: cover;
+  height: 220px;
 }
 
 .content-recipe-img {
   width: 100%;
   height: auto;
+}
+
+.card{
+background-color:#F7FDF5;
+border-radius: 10px;
 }
 .carts {
   width: 90%;
@@ -459,12 +464,6 @@ h3 {
   display: flex;
   justify-content: space-evenly;
   padding: $padding-top-bottom-50;
-}
-
-.card {
-  width: 20%;
-  border: rgb(105, 9, 9) solid 3px;
-  text-align: center;
 }
 
 .p-recipe {
@@ -904,6 +903,9 @@ text-align: center;}
 
 .img-favoris {
   width: 40px;
+margin: auto;
+display: flex;
+padding-bottom: $padding-bottom-10;
 }
 
 
@@ -926,4 +928,99 @@ width: 250px;
 
 .article-edit{
   @extend .article-registration;
+}
+
+//RESPONSIVE
+
+@media (max-width: 768px) {
+
+//HOME
+
+h1{
+  font-size: 2.5em;
+}
+h2{
+  font-size: 1em;
+  padding: $padding-top-bottom-20;
+}
+
+nav ul {
+  flex-direction: column;
+  display: block;
+  height:auto;
+}
+
+  .btn-nav{
+    margin: auto;
+
+  }
+
+  nav li {
+    padding-bottom: $padding-bottom-10;
+    margin: $margin-top-bottom-10;
+  }
+
+
+  .paragraphe{
+    line-height: 30px;
+  }
+
+.paragraphe p {
+  font-size: 0.9em;
+}
+
+.content-intro{
+  height: 200px;
+  font-size: 1em;
+}
+
+h3{
+  font-size: 1.3em;
+  width: 100%;
+}
+
+.carts{
+  width: 100%;
+  
+}
+.content-card{
+text-align: center;
+  flex-direction: column;
+}
+
+.card{
+  margin-bottom: $margin-bottom-30;
+}
+
+.btn-login-home{
+  width: 130px;
+}
+
+  //FOOTER
+
+  .content-footer{
+    display: block;
+    justify-content: center;
+  }
+
+  .input-newsletter{
+    margin: 0;
+  }
+
+  .footer-column{
+    padding-bottom: $padding-bottom-20;
+  }
+
+  .footer-newsletter{
+   @extend.footer-column;
+  }
+
+  .footer-contact{
+    @extend .footer-column
+  }
+
+  .other ul {
+    display: block;
+  }
+
 }

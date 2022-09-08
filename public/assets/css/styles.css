@@ -502,16 +502,21 @@ h3 {
 }
 
 .recipe-img-home {
-  width: 200px;
-  height: 200px;
+  width: 250px;
+  overflow: hidden;
   -o-object-fit: cover;
      object-fit: cover;
-  overflow: hidden;
+  height: 220px;
 }
 
 .content-recipe-img {
   width: 100%;
   height: auto;
+}
+
+.card {
+  background-color: #F7FDF5;
+  border-radius: 10px;
 }
 
 .carts {
@@ -529,12 +534,6 @@ h3 {
   display: flex;
   justify-content: space-evenly;
   padding: 50px 0 50px 0;
-}
-
-.card {
-  width: 20%;
-  border: rgb(105, 9, 9) solid 3px;
-  text-align: center;
 }
 
 .p-recipe {
@@ -1032,6 +1031,9 @@ h3 {
 
 .img-favoris {
   width: 40px;
+  margin: auto;
+  display: flex;
+  padding-bottom: 10px;
 }
 
 #user_password_plainPassword_first, #user_password_plainPassword_second, #user_password_newPassword {
@@ -1051,4 +1053,66 @@ h3 {
   justify-content: center;
   align-items: center;
   margin: 30px auto 0;
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2.5em;
+  }
+  h2 {
+    font-size: 1em;
+    padding: 20px 0 20px 0;
+  }
+  nav ul {
+    flex-direction: column;
+    display: block;
+    height: auto;
+  }
+  .btn-nav {
+    margin: auto;
+  }
+  nav li {
+    padding-bottom: 10px;
+    margin: 10px 0 10px 0;
+  }
+  .paragraphe {
+    line-height: 30px;
+  }
+  .paragraphe p {
+    font-size: 0.9em;
+  }
+  .content-intro {
+    height: 200px;
+    font-size: 1em;
+  }
+  h3 {
+    font-size: 1.3em;
+    width: 100%;
+  }
+  .carts {
+    width: 100%;
+  }
+  .content-card {
+    text-align: center;
+    flex-direction: column;
+  }
+  .card {
+    margin-bottom: 30px;
+  }
+  .btn-login-home {
+    width: 130px;
+  }
+  .content-footer {
+    display: block;
+    justify-content: center;
+  }
+  .input-newsletter {
+    margin: 0;
+  }
+  .footer-column, .footer-contact, .footer-newsletter {
+    padding-bottom: 20px;
+  }
+  .other ul {
+    display: block;
+  }
 }/*# sourceMappingURL=styles.css.map */
