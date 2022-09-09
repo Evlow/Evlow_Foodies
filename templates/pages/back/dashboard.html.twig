@@ -13,11 +13,11 @@
             <h3 class="h3-profil"> Mes infos personnelles </h3>
             <div class="profil">
 
-                <p><strong>Nom :</strong> {{ app.user.firstname }}</p>
+                <p><strong>Nom : </strong> {{ app.user.lastname }}</p>
                 <br>
-                <p><strong>Prénom :</strong>{{ app.user.lastname }}</p>
+                <p><strong>Prénom : </strong>{{ app.user.firstname }}</p>
                 <br>
-                <p><strong>Pseudo :</strong> {{ app.user.pseudo }}</p>
+                <p><strong>Pseudo : </strong> {{ app.user.pseudo }}</p>
                 <br>
                 <p><strong>Email : </strong> {{ app.user.email }}</p>
                 <br>
@@ -41,7 +41,7 @@
             <div class="profil">
                 {% for recipe in app.user.recipe %}
                 <div class="profil">
-                    <p><strong>Titre: </strong> {{ recipe.title }}</p>
+                    <p><strong>Titre : </strong> {{ recipe.title }}</p>
                     <p><strong>Catégorie : </strong>{{ recipe.category }}</p>
                     <p><strong>Date de création : </strong>{{ recipe.createdAt|date("d/m/Y") }}</p>
                     <br>
