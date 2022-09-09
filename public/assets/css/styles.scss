@@ -427,10 +427,11 @@ h3 {
 }
 .bloc-title {
   padding: 30px 0 30px 0;
+  justify-content: center;
 }
 .title-flex {
   display: flex;
-  align-items: center;
+margin: 0 auto;
 }
 
 //recipes//
