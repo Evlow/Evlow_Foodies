@@ -12,7 +12,7 @@
 main {
   width: 90%;
   position: absolute;
-  top: 40px;
+  top: 80px;
   right: 0;
 }
 article {
@@ -22,13 +22,10 @@ article {
   padding-top: $padding-top-30;
 
 }
-
-h1 {
-  padding: $padding-top-bottom-10;
-  text-align: left;
-  font-weight: $weight;
-  color: black;
+.logo{
+  width: 80px;
 }
+
 
 h2 {
   font-size: 2em;
@@ -59,9 +56,8 @@ p {
 }
 
 .title {
-  padding-left: 10px;
-  display: flex;
-  align-items: center;
+  width: 10vw;
+  text-align: center;
 }
 
 .nav-back {
@@ -76,7 +72,7 @@ p {
 .nav-back a {
   color: black;
   font-weight: $weight;
-  font-size: $size-link;
+  font-size: 1.2em;
 }
 header {
   background-color: #ffa05c;
@@ -84,7 +80,6 @@ header {
   position: fixed;
   top: 0;
   z-index: 1;
-  padding-bottom: 5px;
   font-size: $size-link;
   align-content: center;
   align-items: center;
@@ -98,6 +93,7 @@ aside {
   position: fixed;
   top: 0;
   font-weight: $weight;
+  padding-top: 20px;
 }
 .nav-aside a {
   color: black;
@@ -121,7 +117,7 @@ aside {
 }
 
 .nav-aside ul {
-  padding-top: 80px;
+  padding-top: 100px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -374,17 +370,28 @@ input {
   //DASHBOARD
   header {
     flex-direction: column;
+    padding-bottom: $padding-bottom-10;
   }
 
   aside {
     position: relative;
     height: auto;
     width: 100vw;
+    
+padding-bottom: 50px;
   }
   .nav-aside li {
-    width: 300px;
+    width: 250px;
   }
+.nav-aside ul{
+  padding-top: 130px;
 
+}
+
+.title{
+  width: auto;
+  padding-top: 10px;
+}
   .edit-profil {
     width: 90%;
   }
@@ -405,6 +412,7 @@ input {
   main {
     width: 100%;
     margin-top: 380px;
+    top:120px
   }
 
   .add-recipes {
