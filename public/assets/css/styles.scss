@@ -561,10 +561,13 @@ color:red;
   margin: $padding-top-bottom-50;
 }
 .button-connect {
-  @include button($secondary-color, 180px, 32px, 1.1em);
+  @include button($secondary-color, 130px, 32px, 1.1em);
   margin-top: $margin-top-30;
 }
 
+#contact_envoyer{
+  width: 180px;
+}
 .form-contact {
   flex-direction: column;
   display: flex;
@@ -584,6 +587,7 @@ color:red;
 }
 .bloc-name-contact {
   width: 100%;
+  margin-right: 10px;
 }
 .bloc-email {
   margin: $margin-top-bottom-10;
@@ -614,7 +618,7 @@ color:red;
 }
 #contact_message {
   margin-top: $margin-top-10;
-  width: 485px;
+  width: 100%;
   height: 150px;
   border-color: #9ce7a9;
   border-radius: 5px;
@@ -997,6 +1001,53 @@ text-align: center;
   width: 130px;
 }
 
+//INSCRIPTION
+
+.bloc-agree{
+  padding-left: 5px;
+width:auto;
+}
+
+input{
+  margin-right: 10px;
+  width: 170px;
+}
+
+.content-registration{
+  width: 100%;
+}
+
+.form-registration{
+  padding-left:10px;
+}
+
+::placeholder{
+  font-size: 1em;
+}
+//CONTACT
+ 
+#contact_message{
+  width: 90%;
+}
+.span-contact{
+  text-align: center;
+}
+
+//RECIPES
+
+.paragraphe-savory, .paragraphe-specific, .paragraphe-gones, .paragraphe-sweet {
+  font-size: 1.2em;
+  padding: 20px;
+
+}
+
+.content-intro-savory, .content-intro-specific, .content-intro-gones, .content-intro-sweet{
+  height: 200px;
+}
+
+//CONNECT
+
+.form-connect {width: 80%;}
   //FOOTER
 
   .content-footer{
@@ -1025,3 +1076,26 @@ text-align: center;
   }
 
 }
+
+  @media only screen
+  and (min-device-width : 768px)
+  and (max-device-width : 1250px){
+//RECIPES
+
+nav a {
+  font-size: 0.9em;
+}
+
+.btn-nav {
+  font-size: 0.9em;
+  width: 90px;
+}
+.content-card {
+  flex-wrap: wrap;
+ justify-content: center;
+}
+
+.card {
+  margin:20px auto;
+}
+  }
