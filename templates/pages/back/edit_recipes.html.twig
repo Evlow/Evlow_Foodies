@@ -17,6 +17,15 @@
                 {{ form_label(formRecipe.imageFile) }}
                 {{ form_widget(formRecipe.imageFile) }}
             </div>
+
+            <div class="bloc-title">
+                <div class="ovale">
+                    <h3 class="title-flex"><img class="ingredients" src="{{ asset('assets/picture/ingredient.svg') }}"
+                            alt="image ingrédients" />Ingédients
+                    </h3>
+                </div>
+            </div>
+            
             <div class="content-ingredients">
                 <div class="bloc-ingredient">
                     {{ form_label(formRecipe.ingredient_1) }}
@@ -72,6 +81,15 @@
                     {{ form_widget(formRecipe.ingredient_12) }}
                 </div>
             </div>
+
+            <div class="bloc-title">
+                <div class="ovale">
+                    <h3 class="title-flex"><img class="preparations" src="{{ asset('assets/picture/preparation.svg') }}"
+                            alt="image préparation" />Préparations
+                    </h3>
+                </div>
+            </div>
+
 
             <div class="content-preparation">
                 <div class="bloc-preparation">

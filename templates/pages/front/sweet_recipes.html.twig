@@ -5,43 +5,45 @@
 {% endblock %}
 
 {% block title %}
-Recettes sucrées | Evlow Foodies 
+Recettes sucrées | Evlow Foodies
 {% endblock %}
 
 
 {% block body %}
- <!--INTRODUCTION-->
- <div class="content-intro-sweet">
-     <div class="paragraphe-sweet">
-         <p>Les recettes sucrées</p>
-     </div>
- </div>
- <div class="carts">
+<!--INTRODUCTION-->
+<div class="content-intro-sweet">
+    <div class="paragraphe-sweet">
+        <p>Les recettes sucrées</p>
+    </div>
+</div>
+<div class="carts">
     <section class="content-card">
         {% for recipe in recipes %}
-        <article class="card"> 
-            <img class="recipe-img-home" src="{{vich_uploader_asset(recipe, 'imageFile')}}" alt="image">
+        <article class="card">
+            <img class="recipe-img-home" src="{{vich_uploader_asset(recipe, 'imageFile')}}" alt="{{recipe.title}}">
             <h3 class="recipes-h3">{{recipe.title}}</h3>
             <p>{{recipe.description}}</p>
             <a class="btn-recipe" href="{{ path('app_fo_recipe_sheet', { id: recipe.id }) }}">Voir la recette</a>
             {% if is_granted("ROLE_USER") %}
             {% set isFavorite = false %}
             {% for favoris in recipe.favoris %}
-                {% if favoris.id == app.user.id %}
-                    {% set isFavorite = true %}
-                {% endif %}    
+            {% if favoris.id == app.user.id %}
+            {% set isFavorite = true %}
+            {% endif %}
             {% endfor %}
             {% if isFavorite %}
-            <a href="{{ path('remove_bo_favorites', {id: recipe.id}) }}"><img class="img-favoris" src="{{asset('assets/picture/red-favoris.svg') }}" alt="icone favoris"></a>
+            <a href="{{ path('remove_bo_favorites', {id: recipe.id}) }}"><img class="img-favoris"
+                    src="{{asset('assets/picture/red-favoris.svg') }}" alt="icone favoris"></a>
             {% else %}
-            <a href="{{ path('add_bo_favorites', {id: recipe.id}) }}"><img class="img-favoris" src="{{asset('assets/picture/black-favoris.svg') }}" alt="icone favoris"></a>
+            <a href="{{ path('add_bo_favorites', {id: recipe.id}) }}"><img class="img-favoris"
+                    src="{{asset('assets/picture/black-favoris.svg') }}" alt="icone favoris"></a>
             {% endif %}
 
-        {% else %}
-        <img class="img-favoris" src="{{asset('assets/picture/black-favoris.svg') }}" alt="icone favoris"></li>        
-        {% endif %}
-</article>
-{% endfor %}
-</section>
+            {% else %}
+            <img class="img-favoris" src="{{asset('assets/picture/black-favoris.svg') }}" alt="icone favoris"></li>
+            {% endif %}
+        </article>
+        {% endfor %}
+    </section>
 </div>
 {% endblock %}

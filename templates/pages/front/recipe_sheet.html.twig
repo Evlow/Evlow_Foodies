@@ -12,7 +12,7 @@
         <h3 class="h3-recipe-sheet">{{recipe.title}}</h3>
     </div>
     <div class="content-img-sheet">
-        <img class="recipe-sheet-img" src="{{vich_uploader_asset(recipe, 'imageFile')}}" alt="image">
+        <img class="recipe-sheet-img" src="{{vich_uploader_asset(recipe, 'imageFile')}}" alt="{{recipe.title}}">
     </div>
     <p>{{recipe.description}}</p>
 </div>
@@ -27,7 +27,7 @@
                 </h4>
             </div>
         </div>
-
+        {% for recipe in recipes %}
         <ul>
             <li>{{recipe.ingredient1}}</li>
             <li>{{recipe.ingredient2}}</li>
@@ -37,8 +37,8 @@
             <li>{{recipe.ingredient6}}</li>
             <li>{{recipe.ingredient7}}</li>
             <li>{{recipe.ingredient8}}</li>
-
         </ul>
+     {% endfor %}
     </section>
 
     <section class="section-preparations">
@@ -57,6 +57,7 @@
             <li>{{recipe.preparation3}}</li>
             <li>{{recipe.preparation4}}</li>
             <li>{{recipe.preparation5}}</li>
+            <li>{{recipe.preparation6}}</li>
         </ul>
     </section>
     <span class="span-created">Date de publication : {{ recipe.createdAt|date("d/m/Y") }}</span>

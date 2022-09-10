@@ -13,8 +13,9 @@ class FoLittleGonesRecipesController extends AbstractController
     public function index(RecipesRepository $repository): Response    {
         $recipe = $repository->findBy([
             'category' => 3,
+         
         ]);
-    
+       
         return $this->render('pages/front/little_gones_recipes.html.twig', 
         [
            'recipes'=>$recipe,

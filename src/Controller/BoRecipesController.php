@@ -21,10 +21,10 @@ class BoRecipesController extends AbstractController
     public function viewRecipe(ManagerRegistry $doctrine): Response
 
     {   //Récupération des recettes de l'utilisateur connecté
-        $recipes = $doctrine->getRepository(Recipes::class)->findBy(['users' => $this->getUser()]);
+        $recipe = $doctrine->getRepository(Recipes::class)->findBy(['users' => $this->getUser()]);
 
         return $this->render('pages/back/recipes.html.twig', [
-            'recipes' => $recipes,
+            'recipes' => $recipe,
 
         ]);
     }

@@ -15,7 +15,6 @@ class FoSavoryRecipesController extends AbstractController
         $recipe = $repository->findBy([
             'category' => 1,
         ]);
-    
         return $this->render('pages/front/savory_recipes.html.twig', 
         [
            'recipes'=>$recipe,
