@@ -272,13 +272,6 @@ input {
   border: 2px solid #ffa05c;
 }
 
-.recipe-img-home {
-  height: 220px;
-  width: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-
 .recipes-h3 {
   padding: 20px;
   font-size: 1.3em;
