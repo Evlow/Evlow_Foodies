@@ -14,8 +14,8 @@ security:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
             security: false
         main:
-   
             lazy: true
+            login_throttling: null
             provider: app_user_provider
             custom_authenticator: App\Security\UsersAuthentificatorAuthenticator
                

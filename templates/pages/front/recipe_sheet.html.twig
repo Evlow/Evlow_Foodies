@@ -14,7 +14,6 @@
     <div class="content-img-sheet">
         <img class="recipe-sheet-img" src="{{vich_uploader_asset(recipe, 'imageFile')}}" alt="{{recipe.title}}">
     </div>
-    <p>{{recipe.description}}</p>
 </div>
 
 <article class="content-article">
@@ -27,18 +26,14 @@
                 </h4>
             </div>
         </div>
-        {% for recipe in recipes %}
+
         <ul>
             <li>{{recipe.ingredient1}}</li>
             <li>{{recipe.ingredient2}}</li>
             <li>{{recipe.ingredient3}}</li>
             <li>{{recipe.ingredient4}}</li>
-            <li>{{recipe.ingredient5}}</li>
-            <li>{{recipe.ingredient6}}</li>
-            <li>{{recipe.ingredient7}}</li>
-            <li>{{recipe.ingredient8}}</li>
         </ul>
-     {% endfor %}
+
     </section>
 
     <section class="section-preparations">
