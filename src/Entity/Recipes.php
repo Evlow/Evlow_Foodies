@@ -10,8 +10,9 @@ use Symfony\Component\HttpFoundation\File\File;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
-#[UniqueEntity('Title')]
+#[UniqueEntity(fields: ['Title'], message: 'Il existe déjà une recette nommée avec ce titre.')]
 #[ORM\Entity(repositoryClass: RecipesRepository::class)]
+
 #[Vich\Uploadable]
 
 class Recipes

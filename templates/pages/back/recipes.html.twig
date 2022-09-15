@@ -26,7 +26,7 @@
 			<div class="card">
 				<h3 class="recipes-h3">{{recipe.title}}</h3>
 				<div class="content-recipe-img">
-					<img class="recipe-img-home" src="{{vich_uploader_asset(recipe, 'imageFile')}}" alt="image">
+					<img class="recipe-img-home" src="{{vich_uploader_asset(recipe, 'imageFile') }}" alt="image">
 				</div>
 				<div class="btn-card">
 					<a class="btn-edit" href="{{ path('app_bo_recipes_edit', { id: recipe.id }) }}">MODIFIER</a>

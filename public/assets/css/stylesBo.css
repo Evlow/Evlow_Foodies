@@ -22,6 +22,7 @@ article {
 
 .recipes {
   padding-top: 30px;
+  height: 100vh;
 }
 
 .logo {
@@ -272,8 +273,15 @@ input {
   border: 2px solid #ffa05c;
 }
 
+.recipe-img-home {
+  height: 220px;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
 .recipes-h3 {
-  padding: 20px;
+  padding: 20px 0 20px 0;
   font-size: 1.3em;
   width: 100%;
 }

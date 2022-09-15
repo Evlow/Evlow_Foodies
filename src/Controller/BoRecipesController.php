@@ -17,9 +17,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 class BoRecipesController extends AbstractController
 {
     #[Route('/recettes', name: 'app_recipe')]
-
     public function viewRecipe(ManagerRegistry $doctrine): Response
-
     {   //Récupération des recettes de l'utilisateur connecté
         $recipe = $doctrine->getRepository(Recipes::class)->findBy(['users' => $this->getUser()]);
 
@@ -30,9 +28,7 @@ class BoRecipesController extends AbstractController
     }
 
     #[Route('/recette/ajouter', name: 'app_bo_recipes_add')]
-
     public function addRecipe(Request $request, EntityManagerInterface $entityManager): Response
-
     {   // Recupération de l'utilisateur connecté
         $user = $this->getUser();
 
@@ -60,7 +56,6 @@ class BoRecipesController extends AbstractController
             // Redirection
             return $this->redirectToRoute('app_recipe');
         }
-
         return $this->render('pages/back/add_recipes.html.twig', [
             'form_title' => 'Ajouter une recette',
             'form_submit' => 'Ajoutez',
@@ -70,10 +65,8 @@ class BoRecipesController extends AbstractController
 
 
     #[Route('/recette/modifier/{id}', name: 'app_bo_recipes_edit')]
-
     public function editRecipe($id, Request $request, ManagerRegistry $doctrine): Response
-    {
-        // Récupération du produit sélectionné avec l'ID
+    {   // Récupération du produit sélectionné avec l'ID
         $recipe = $doctrine->getRepository(Recipes::class)->find($id);
 
         // Initialisation des champs dates avec la date d'aujourd'hui
@@ -101,10 +94,8 @@ class BoRecipesController extends AbstractController
     }
 
     #[Route('/recette/supprimer/{id}', name: 'app_bo_recipes_del')]
-
     public function deleteRecipe($id, ManagerRegistry $doctrine): RedirectResponse
-    {
-        // Récupération de la recette sélectionnée avec l'ID
+    {   // Récupération de la recette sélectionnée avec l'ID
         $recipe = $doctrine->getRepository(Recipes::class)->find($id);
 
         // Manipulation des entités

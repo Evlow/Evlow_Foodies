@@ -17,14 +17,15 @@ class BoFavoritesController extends AbstractController
     public function index(ManagerRegistry $doctrine): Response
     {
         $user = $this->getUser();
-        // dd($user);
+
         $recipes = $doctrine->getRepository(Recipes::class)->findBy(['users' => $this->getUser()]);
         $favoris = $doctrine->getRepository(Favoris::class)->findBy(['users' => $this->getUser()]);
-         dd($favoris);
 
 
         return $this->render('pages/back/favorites.html.twig', [
             'recipes' => $recipes,
+            'user' => $user,
+            'favoris' => $favoris,
         ]);
     }
 
@@ -32,7 +33,7 @@ class BoFavoritesController extends AbstractController
 
     public function addFavoris(Recipes $recipe, EntityManagerInterface $entityManager, ManagerRegistry $doctrine)
     {
-        
+
         $favoris = new Favoris();
         $favoris->setUsers($this->getUser());
         $favoris->setRecipe($recipe);
@@ -61,5 +62,4 @@ class BoFavoritesController extends AbstractController
             'recipes' => $recipe,
         ]);
     }
-
 }

@@ -43,7 +43,7 @@
                 <div class="card"> 
                     <h3 class="recipes-h3">{{recipe.title}}</h3>
                     <div class="content-recipe-img">
-                    <img class="recipe-img-home" src="{{vich_uploader_asset(recipe, 'imageFile')|imagine_filter('rectangle') }}" alt="{{recipe.title}}">
+                    <img class="recipe-img-home" src="{{vich_uploader_asset(recipe, 'imageFile') }}" alt="{{recipe.title}}">
                 </div>
                     <a class="btn-recipe" href="{{ path('app_fo_recipe_sheet', { id: recipe.id }) }}">Voir la recette</a>
                 </div>
