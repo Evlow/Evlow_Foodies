@@ -204,6 +204,7 @@ textarea {
   border-radius: 5px;
   margin: 10px 0 10px 0;
   padding: 5px;
+  text-align: center;
 }
 
 input {
@@ -222,7 +223,6 @@ input {
 }
 
 .content-title {
-  background-color: white;
   margin: 10px 0 10px 0;
   text-align: center;
   padding: 10px;
@@ -235,15 +235,20 @@ input {
   margin: 5px auto 5px;
 }
 
-.bloc-ingredient, .bloc-preparation {
+.bloc-ingredient, .bloc-preparation, .bloc-description {
   width: 25%;
   display: flex;
   flex-direction: column;
   padding: 10px;
 }
 
-.bloc-preparation {
+.bloc-preparation, .bloc-description {
   width: 50%;
+}
+
+.bloc-description {
+  text-align: center;
+  margin: 0 auto;
 }
 
 .btn-bo {
@@ -367,6 +372,7 @@ input {
 .content-image img {
   width: 200px;
   height: 230px;
+  margin: 0 auto;
 }
 
 @media (max-width: 768px) {
@@ -407,10 +413,10 @@ input {
   .add-recipes {
     padding-left: 0;
   }
-  .content-image {
+  .image-recipe {
     text-align: center;
   }
-  .bloc-ingredient,
+  .bloc-ingredient, .bloc-description,
 .bloc-preparation {
     width: 50%;
   }

@@ -18,7 +18,10 @@
                 {{ form_label(formRecipe.imageFile) }}
                 {{ form_widget(formRecipe.imageFile) }}
             </div>
-
+            <div class="bloc-description">
+                {{ form_label(formRecipe.description) }}
+                {{ form_widget(formRecipe.description) }}
+            </div>
             <div class="bloc-title">
                 <div class="ovale">
                     <h3 class="title-flex"><img class="ingredients" src="{{ asset('assets/picture/ingredient.svg') }}"

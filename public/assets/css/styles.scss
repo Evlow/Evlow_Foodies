@@ -89,28 +89,7 @@ nav a {
   border-radius: 15px 0 15px;
   margin: $padding-top-bottom-30;
 }
-/* MENU DEROULANT */
 
-// #unrolling {
-//   text-align: center;
-// }
-
-// #unrolling ul {
-//   position: absolute;
-//   /* on cache les sous menus complètement sur la gauche */
-//   left: -999em;
-// }
-// #unrolling li:hover ul {
-//   /* Au survol des li du menu on replace les sous menus */
-//   left: auto;
-//   border: none;
-// }
-// #unrolling a {
-//   text-decoration: none;
-//   display: block;
-//   color: #000;
-// }
-//article
 
 .logo-social img {
   width: $network;
@@ -126,18 +105,14 @@ nav a {
   margin: auto;
 }
 
-// .section-ingredients li::before {
-//   content: "♦";
-//   font-size: $p-size;
+.list-number {
+  font-weight: bold;
+}
 
-//   padding-right: $padding-right-10;
-// }
-// .section-preparations li::before {
-//   content: "♦";
-// }
 .section-ingredients li {
   padding-left: 40px;
   margin-bottom: 10px;
+  font-size: 1.1em;
 }
 
 .ovale {
@@ -432,6 +407,8 @@ h3 {
 .title-flex {
   display: flex;
 margin: 0 auto;
+align-items: center;
+font-size: $title-h4-recipe;
 }
 
 //recipes//
@@ -914,6 +891,10 @@ padding-bottom: $padding-bottom-10;
 }
 
 
+.recipe-description{
+  text-align: center
+}
+
 //EDIT USER & PASSWORD// 
 
 .content-edit-user{
@@ -1146,11 +1127,11 @@ input{
 //RECIPES
 
 nav a {
-  font-size: 0.9em;
+  font-size: 1em;
 }
 
 .btn-nav {
-  font-size: 0.9em;
+  font-size: 1em;
   width: 90px;
 }
 .content-card {

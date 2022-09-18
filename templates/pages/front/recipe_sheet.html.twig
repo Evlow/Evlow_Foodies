@@ -6,14 +6,11 @@
         <h3 class="h3-recipe-sheet">{{recipe.title}}</h3>
     </div>
     <div class="content-img-sheet">
-
-        <img class="recipe-sheet-img" src="{{vich_uploader_asset(recipe, 'imageFile')}}" alt="{{recipe.title}}">
-        
+        <img class="recipe-sheet-img" src="{{vich_uploader_asset(recipe, 'imageFile')}}" alt="{{recipe.title}}">   
     </div>
+    <p class="recipe-description">{{recipe.description}}</p>
 </div>
-
 <article class="content-article">
-
     <section class="section-ingredients">
         <div class="bloc-title">
             <div class="ovale">
@@ -54,12 +51,12 @@
         </div>
         
         <ul>
-            <li>{% if recipe.preparation1 is null %} {% else %}♦ {{recipe.preparation1}}</li> {% endif %}
-            <li>{% if recipe.preparation2 is null %} {% else %}♦ {{recipe.preparation2}}</li> {% endif %}
-            <li>{% if recipe.preparation3 is null %} {% else %}♦ {{recipe.preparation3}}</li> {% endif %}
-            <li>{% if recipe.preparation4 is null %} {% else %}♦ {{recipe.preparation4}}</li> {% endif %}
-            <li>{% if recipe.preparation5 is null %} {% else %}♦ {{recipe.preparation5}}</li> {% endif %}
-            <li>{% if recipe.preparation6 is null %} {% else %}♦ {{recipe.preparation6}}</li> {% endif %}
+            <li>{% if recipe.preparation1 is null %} {% else %}<span class="list-number">1.</span> {{recipe.preparation1}}</li> {% endif %}
+            <li>{% if recipe.preparation2 is null %} {% else %}<span class="list-number">2.</span> {{recipe.preparation2}}</li> {% endif %}
+            <li>{% if recipe.preparation3 is null %} {% else %}<span class="list-number">3.</span> {{recipe.preparation3}}</li> {% endif %}
+            <li>{% if recipe.preparation4 is null %} {% else %}<span class="list-number">4.</span> {{recipe.preparation4}}</li> {% endif %}
+            <li>{% if recipe.preparation5 is null %} {% else %}<span class="list-number">5.</span> {{recipe.preparation5}}</li> {% endif %}
+            <li>{% if recipe.preparation6 is null %} {% else %}<span class="list-number">6.</span> {{recipe.preparation6}}</li> {% endif %}
 
         </ul>
     </section>

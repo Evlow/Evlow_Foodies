@@ -19,5 +19,9 @@
     {% block body %}{% endblock %}
     <!-- Footer-->
     {% block footer %}{% include 'includes/_footerFo.html.twig' %}{% endblock %}
+
+    {% block javascripts %}
+    <script src="{{ asset('js/script.js') }}"></script>
+    {% endblock %}
     </body>
 </html>

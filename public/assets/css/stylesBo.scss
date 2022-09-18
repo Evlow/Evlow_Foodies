@@ -113,7 +113,6 @@ aside {
   background-color: antiquewhite;
   font-size: $size-link;
   display: flex;
-
   flex-direction: column;
 }
 
@@ -142,6 +141,7 @@ aside {
   justify-content: center;
   align-items: center;
   margin: 0 auto;
+ 
 }
 
 #input-title {
@@ -199,6 +199,7 @@ textarea {
   border-radius: 5px;
   margin: $margin-top-bottom-10;
   padding: $padding-5;
+text-align: center;
 }
 input {
   border-radius: 5px;
@@ -214,7 +215,7 @@ input {
   padding: 10px;
 }
 .content-title {
-  background-color: white;
+  
   margin: $margin-top-bottom-10;
   text-align: center;
   padding: 10px;
@@ -240,7 +241,12 @@ input {
   @extend .bloc-ingredient;
   width: 50%;
 }
-
+.bloc-description{
+  @extend .bloc-preparation;
+  text-align: center;
+  margin: 0 auto;
+  
+}
 .btn-bo {
   background-color: white;
   width: 120px;
@@ -360,9 +366,11 @@ input {
   margin-top: $margin-top-20;
 }
 //EDIT RECIPE
+
 .content-image img {
   width: 200px;
   height: 230px;
+margin: 0 auto;
 }
 
 //RESPONSIVE
@@ -420,8 +428,8 @@ padding-bottom: 50px;
     padding-left: 0;
   }
 
-  .content-image {
-    text-align: center;
+  .image-recipe {
+  text-align: center;
   }
 
   .bloc-ingredient,

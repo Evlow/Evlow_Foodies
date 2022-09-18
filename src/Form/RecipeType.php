@@ -38,6 +38,13 @@ class RecipeType extends AbstractType
 
 
             ])
+            ->add('description', TextareaType::class, [
+                'label' => 'Description :',
+                'required' => false,
+                "attr" => [
+                    "class" => "label-preparation"
+                ]
+            ])
             ->add('ingredient_1', TextType::class, [
                 'label' => 'Ingrédient n°1 :',
                 "attr" => [
