@@ -20,6 +20,8 @@
     <!-- Footer-->
     {% block footer %}{% include 'includes/_footerFo.html.twig' %}{% endblock %}
     <!-- Core theme JS-->
-    {% block javascript %}{% endblock %}
+    {% block javascripts %}
+              <script src="{{ asset('js/script.js') }}"></script>
+              {% endblock %}
     </body>
 </html>

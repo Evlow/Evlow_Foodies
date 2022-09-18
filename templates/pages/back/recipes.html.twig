@@ -2,12 +2,12 @@
 
 {% block body %}
 
-	<article class="recipes">
-		{% for message in app.flashes('success') %}
-			<div class="alert alert-success mt-4">
-				{{ message }}
-			</div>
-		</div>
+<article class="recipes">
+	{% for message in app.flashes('success') %}
+	<div class="alert alert-success mt-4">
+		{{ message }}
+	</div>
+	</div>
 	{% endfor %}
 	<section class="content-card">
 		<div class="add-recipe">
@@ -18,22 +18,30 @@
 					Ajouter une recette
 				</h3>
 			</a>
-			
+
 		</div>
 
 		{% for recipe in recipes %}
-			<div class="inline-product"></div>
-			<div class="card">
-				<h3 class="recipes-h3">{{recipe.title}}</h3>
-				<div class="content-recipe-img">
-					<img class="recipe-img-home" src="{{vich_uploader_asset(recipe, 'imageFile') }}" alt="image">
-				</div>
-				<div class="btn-card">
-					<a class="btn-edit" href="{{ path('app_bo_recipes_edit', { id: recipe.id }) }}">MODIFIER</a>
-					<a class="btn-delete" href="{{ path('app_bo_recipes_del', { id: recipe.id }) }}">SUPPRIMER</a>
-				</div>
+		<div class="inline-product"></div>
+		<div class="card">
+			<h3 class="recipes-h3">{{recipe.title}}</h3>
+			<div class="content-recipe-img">
+				<a href="{{ path('app_fo_recipe_sheet', { id: recipe.id }) }}"><img class="recipe-img-home"
+						src="{{vich_uploader_asset(recipe, 'imageFile') }}" alt="image"></a>
 			</div>
+			<div class="btn-card">
+				<a class="btn-edit" href="{{ path('app_bo_recipes_edit', { id: recipe.id }) }}">MODIFIER</a>
+				<a input type="submit" class="btn-delete" href="{{ path('app_bo_recipes_del', { id: recipe.id }) }}" onclick="testConfirmDialog()">SUPPRIMER</a>
+			</div>
+		</div>
+
+
+		
 		{% endfor %}
 
 	</section>
-</article>{% endblock %}
+</article>
+{% endblock %}
+
+{% block javascripts %}
+{% endblock %}

@@ -12,12 +12,12 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 class FoRecipeSheetController extends AbstractController
 {
     #[Route('/recette/fiche-recette/{id}', name: 'app_fo_recipe_sheet')]
-    public function index( int $id, RecipesRepository $repository, Recipes $recipes): Response
+    public function index( int $id, RecipesRepository $repository, Recipes $recipe): Response
     {
-        $recipes = $repository->find($id);
+        $recipe = $repository->find($id);
 
         return $this->render('pages/front/recipe_sheet.html.twig', [
-           'recipe'=>$recipes,     
+           'recipe'=>$recipe,     
         ]);
     }
 }

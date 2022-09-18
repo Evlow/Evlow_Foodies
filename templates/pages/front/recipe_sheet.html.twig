@@ -1,12 +1,6 @@
 {% extends '/bases/baseFo.html.twig' %}
 
-{% block title %}
-{{recipe.title}}
-{% endblock %}
-
-
 {% block body %}
-
 <div class="content-intro-recipe-sheet">
     <div class="paragraphe-recipe-sheet">
         <h3 class="h3-recipe-sheet">{{recipe.title}}</h3>
@@ -30,10 +24,21 @@
         </div>
 
         <ul>
-            <li>{{recipe.ingredient1}}</li>
-            <li>{{recipe.ingredient2}}</li>
-            <li>{{recipe.ingredient3}}</li>
-            <li>{{recipe.ingredient4}}</li>
+            <li>♦ {{recipe.ingredient1}}</li>
+            <li>♦ {{recipe.ingredient2}}</li>
+            <li>{% if recipe.ingredient3 is null %} {% else %}♦ {{recipe.ingredient3}}</li> {% endif %}
+            <li>{% if recipe.ingredient4 is null %} {% else %}♦ {{recipe.ingredient4}}</li> {% endif %}       
+            <li>{% if recipe.ingredient5 is null %} {% else %}♦ {{recipe.ingredient5}}</li> {% endif %}
+            <li>{% if recipe.ingredient6 is null %} {% else %}♦ {{recipe.ingredient6}}</li> {% endif %}    
+            <li>{% if recipe.ingredient7 is null %} {% else %}♦ {{recipe.ingredient7}}</li> {% endif %}
+            <li>{% if recipe.ingredient8 is null %} {% else %}♦ {{recipe.ingredient8}}</li> {% endif %}       
+            <li>{% if recipe.ingredient9 is null %} {% else %}♦ {{recipe.ingredient9}}</li> {% endif %}
+            <li>{% if recipe.ingredient10 is null %} {% else %}♦ {{recipe.ingredient10}}</li> {% endif %}    
+            <li>{% if recipe.ingredient11 is null %} {% else %}♦ {{recipe.ingredient11}}</li> {% endif %}
+            <li>{% if recipe.ingredient12 is null %} {% else %}♦ {{recipe.ingredient12}}</li> {% endif %}    
+            <li>{% if recipe.ingredient13 is null %} {% else %}♦ {{recipe.ingredient13}}</li> {% endif %}
+            <li>{% if recipe.ingredient14 is null %} {% else %}♦ {{recipe.ingredient14}}</li> {% endif %}       
+            <li>{% if recipe.ingredient15 is null %} {% else %}♦ {{recipe.ingredient15}}</li> {% endif %}
         </ul>
 
     </section>
@@ -49,16 +54,15 @@
         </div>
         
         <ul>
-            <li>{{recipe.preparation1}}</li>
-            <li>{{recipe.preparation2}}</li>
-            <li>{{recipe.preparation3}}</li>
-            <li>{{recipe.preparation4}}</li>
-            <li>{{recipe.preparation5}}</li>
-            <li>{{recipe.preparation6}}</li>
+            <li>{% if recipe.preparation1 is null %} {% else %}♦ {{recipe.preparation1}}</li> {% endif %}
+            <li>{% if recipe.preparation2 is null %} {% else %}♦ {{recipe.preparation2}}</li> {% endif %}
+            <li>{% if recipe.preparation3 is null %} {% else %}♦ {{recipe.preparation3}}</li> {% endif %}
+            <li>{% if recipe.preparation4 is null %} {% else %}♦ {{recipe.preparation4}}</li> {% endif %}
+            <li>{% if recipe.preparation5 is null %} {% else %}♦ {{recipe.preparation5}}</li> {% endif %}
+            <li>{% if recipe.preparation6 is null %} {% else %}♦ {{recipe.preparation6}}</li> {% endif %}
+
         </ul>
     </section>
-    <span class="span-created">Date de publication : {{ recipe.createdAt|date("d/m/Y") }}</span>
-
 </article>
 
 

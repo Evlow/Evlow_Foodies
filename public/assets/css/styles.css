@@ -1,4 +1,3 @@
-@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Advent+Pro:wght@200&family=Beau+Rivage&family=David+Libre:wght@400;500&family=Palanquin:wght@100&family=Thasadith&display=swap");
 * {
   font-family: "Advent Pro", sans-serif;
@@ -131,16 +130,6 @@ nav a {
 .content-recipe {
   width: 60%;
   margin: auto;
-}
-
-.section-ingredients li::before, .section-preparations li::before {
-  content: "♦";
-  font-size: 1.1em;
-  padding-right: 10px;
-}
-
-.section-preparations li::before {
-  content: "♦";
 }
 
 .section-ingredients li, .section-preparations li {
@@ -465,16 +454,6 @@ h3 {
 .content-recipe {
   width: 60%;
   margin: auto;
-}
-
-.section-ingredients li::before, .section-preparations li::before {
-  content: "♦";
-  font-size: 1.1em;
-  padding-right: 10px;
-}
-
-.section-preparations li::before {
-  content: "♦";
 }
 
 .section-ingredients li, .section-preparations li {
@@ -1137,26 +1116,102 @@ h3 {
   .span-contact {
     text-align: center;
   }
+  .popup {
+    width: 80%;
+    padding: 15px;
+    left: 0;
+    margin-left: 5%;
+    border: 1px solid rgb(1, 82, 73);
+    border-radius: 10px;
+    color: rgb(1, 82, 73);
+    background: white;
+    position: absolute;
+    top: 15%;
+    box-shadow: 5px 5px 5px #000;
+    z-index: 10001;
+    font-weight: 700;
+    text-align: center;
+  }
+  .overlay {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.85);
+    z-index: 10000;
+    display: none;
+  }
+}
+@media (max-width: 768px) and (min-width: 768px) {
+  .popup {
+    width: 66.66666666%;
+    margin-left: 16.666666%;
+  }
+}
+@media (max-width: 768px) and (min-width: 992px) {
+  .popup {
+    width: 80%;
+    margin-left: 25%;
+  }
+}
+@media (max-width: 768px) and (min-width: 1200px) {
+  .popup {
+    width: 33.33333%;
+    margin-left: 33.33333%;
+  }
+}
+@media (max-width: 768px) {
+  .dialog-btn {
+    background-color: #44B78B;
+    color: white;
+    font-weight: 700;
+    border: 1px solid #44B78B;
+    border-radius: 10px;
+    height: 30px;
+    width: 30%;
+  }
+}
+@media (max-width: 768px) {
+  .dialog-btn:hover {
+    background-color: #015249;
+    cursor: pointer;
+  }
+}
+@media (max-width: 768px) {
   .paragraphe-savory, .paragraphe-specific, .paragraphe-gones, .paragraphe-sweet {
     font-size: 1.2em;
     padding: 20px;
   }
+}
+@media (max-width: 768px) {
   .content-intro-savory, .content-intro-specific, .content-intro-gones, .content-intro-sweet {
     height: 200px;
   }
+}
+@media (max-width: 768px) {
   .form-connect {
     width: 80%;
   }
+}
+@media (max-width: 768px) {
   .content-footer {
     display: block;
     justify-content: center;
   }
+}
+@media (max-width: 768px) {
   .input-newsletter {
     margin: 0;
   }
+}
+@media (max-width: 768px) {
   .footer-column, .footer-contact, .footer-newsletter {
     padding-bottom: 20px;
   }
+}
+@media (max-width: 768px) {
   .other ul {
     display: block;
   }

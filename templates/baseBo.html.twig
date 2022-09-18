@@ -1,27 +1,32 @@
 <!DOCTYPE html>
 <html lang="fr">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="Site de recettes réalisé avec Symfony." />
-        <meta name="author" content=" Mathilde PEAUGER" />
-        <title>{% block title %}Evlow Foodies{% endblock %}</title>
-        <!-- Favicon-->
-        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
-   
 
-        <link href="{{ asset('assets/css/reset.css') }}" rel="stylesheet">
-        <link href="{{ asset('assets/css/stylesBo.css') }}" rel="stylesheet">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="Site de recettes réalisé avec Symfony." />
+    <meta name="author" content=" Mathilde PEAUGER" />
+    <title>{% block title %}Evlow Foodies{% endblock %}</title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
 
-    </head>
-    <body>
+
+    <link href="{{ asset('assets/css/reset.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/css/stylesBo.css') }}" rel="stylesheet">
+
+</head>
+
+<body>
     <!-- Navbar-->
     {% block navbar %}{% include 'includes/_navBarBo.html.twig' %}{% endblock %}
     <!-- Header-->
     {% block aside %}{% include 'includes/_asideBo.html.twig' %}{% endblock %}
-     <!-- Body-->
+    <!-- Body-->
     {% block body %}{% endblock %}
     <!-- Core theme JS-->
-    {% block javascript %}{% endblock %}
-    </body>
+    {% block javascripts %}
+    <script src="{{ asset('js/script.js') }}"></script>
+    {% endblock %}
+</body>
+
 </html>
