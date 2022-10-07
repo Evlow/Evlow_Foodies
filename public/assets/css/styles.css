@@ -1029,6 +1029,7 @@ h3 {
 
 .recipe-description {
   text-align: center;
+  padding-bottom: 20px;
 }
 
 #user_password_plainPassword_first, #user_password_plainPassword_second, #user_password_newPassword {

@@ -2,17 +2,19 @@
 
 namespace App\Entity;
 
-use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
+use App\Entity\Users;
+use App\Entity\Favoris;
+use App\Entity\Category;
 use Doctrine\ORM\Mapping as ORM;
 use App\Repository\RecipesRepository;
+use Doctrine\Common\Collections\Collection;
 use Symfony\Component\HttpFoundation\File\File;
+use Doctrine\Common\Collections\ArrayCollection;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 #[UniqueEntity(fields: ['Title'], message: 'Il existe déjà une recette nommée avec ce titre.')]
 #[ORM\Entity(repositoryClass: RecipesRepository::class)]
-
 #[Vich\Uploadable]
 
 class Recipes
@@ -528,5 +530,7 @@ class Recipes
 
         return $this;
     }
+
+    
 
 }
